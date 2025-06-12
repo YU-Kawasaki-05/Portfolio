@@ -1,0 +1,16 @@
+---
+description: テストと型安全・バリデーション共通方針
+globs: 
+alwaysApply: false
+---
+---
+description: >
+  単体テスト・E2E・CI 設定時に参照。
+applyMode: Manual
+globs:
+  - "tests/**/*"
+---
+
+- **Jest + React Testing Library** を標準。  
+- E2E は **Playwright**、CI で `--reporter html`。  
+- カバレッジ閾値: `statements 80 / branches 70`.  

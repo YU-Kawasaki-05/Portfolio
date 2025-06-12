@@ -1,0 +1,16 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: >
+  Cursor の AI 応答を常に日本語に固定するルール。
+applyMode: AutoAttached
+globs:
+  - "*"
+---
+
+- すべてのプロンプト返答・コードコメントは **日本語**。  
+- 外部 API 名やクラス名など固有語は原文維持してよい。  
+
