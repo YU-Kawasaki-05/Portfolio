@@ -26,11 +26,11 @@ const config: Config = {
         hover: '#1A1A1A',
       },
       
-      // フォントファミリー
+      // フォントファミリー（軽量化: システムフォントのみ）
       fontFamily: {
-        heading: ['var(--font-heading)', 'Space Grotesk', 'sans-serif'],
-        body: ['var(--font-body)', 'Inter', 'sans-serif'],
-        jp: ['var(--font-jp)', 'Noto Sans JP', 'sans-serif'],
+        heading: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        body: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        jp: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Hiragino Sans', 'sans-serif'],
       },
       
       // フォントサイズスケール

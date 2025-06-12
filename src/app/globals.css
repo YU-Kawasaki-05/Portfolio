@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CSS変数定義 - Neo-Typographic Fusion */
+/* CSS変数定義 - Neo-Typographic Fusion（軽量版） */
 :root {
   /* カラーパレット */
   --color-bg: #0F0F0F;
@@ -10,14 +10,9 @@
   --color-red: #FF2D55;
   --color-blue: #1479FF;
   --color-yellow: #F5C400;
-  
-  /* フォントファミリー */
-  --font-heading: var(--font-heading);
-  --font-body: var(--font-body);
-  --font-jp: var(--font-jp);
 }
 
-/* ベーススタイル - Performance最適化 */
+/* ベーススタイル - モバイルPerformance最適化 */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -26,17 +21,23 @@
 
 html {
   color-scheme: dark;
+  /* モバイル最適化 */
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  font-family: var(--font-body), system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  /* 軽量化: システムフォントのみ */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.6;
-  font-feature-settings: 'kern' 1;
-  text-rendering: optimizeLegibility;
+  /* モバイル最適化 */
+  text-rendering: optimizeSpeed; /* モバイル: 速度優先 */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* タッチ操作最適化 */
+  touch-action: manipulation;
 }
 
 /* ダークモード対応 */

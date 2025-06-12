@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 // アイコンコンポーネント（HeaderNavと同じアイコンを再利用）
 const HomeIcon = () => (
@@ -48,12 +48,6 @@ const XIcon = () => (
   </svg>
 );
 
-interface SidebarNavProps {
-  isOpen: boolean;
-  onToggle: () => void;
-  onClose: () => void;
-}
-
 // ナビゲーション項目の定義
 const navItems = [
   { href: '/', label: 'Home', icon: HomeIcon, emoji: '🏠' },
@@ -64,46 +58,36 @@ const navItems = [
   { href: '/blog', label: 'Blog', icon: EditIcon, emoji: '📝' }
 ];
 
-export default function SidebarNav({ isOpen, onToggle, onClose }: SidebarNavProps) {
+export default function SidebarNav() {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
-  // ESCキーでドロワーを閉じる
+  // Escape キーで閉じる
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isOpen) {
-        onClose();
+        setIsOpen(false);
       }
     };
-
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, onClose]);
+  }, [isOpen]);
 
-  // ドロワーが開いている時にボディのスクロールを防ぐ
+  // Body スクロール抑止
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-
+    document.body.style.overflow = isOpen ? 'hidden' : 'unset';
     return () => {
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
 
-  // ハンバーガーメニューボタン（HeaderNavのボタンに置き換える）
+  // トリガーボタン
   useEffect(() => {
-    const handleTriggerClick = () => {
-      onToggle();
-    };
-
+    const handleTriggerClick = () => setIsOpen((prev) => !prev);
     const trigger = document.querySelector('[data-sidebar-trigger]');
-    if (trigger) {
-      trigger.addEventListener('click', handleTriggerClick);
-      return () => trigger.removeEventListener('click', handleTriggerClick);
-    }
-  }, [onToggle]);
+    trigger?.addEventListener('click', handleTriggerClick);
+    return () => trigger?.removeEventListener('click', handleTriggerClick);
+  }, []);
 
   return (
     <>
@@ -114,7 +98,7 @@ export default function SidebarNav({ isOpen, onToggle, onClose }: SidebarNavProp
           transition-opacity duration-200
           ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}
         `}
-        onClick={onClose}
+        onClick={() => setIsOpen(false)}
         aria-hidden="true"
       />
 
@@ -137,7 +121,7 @@ export default function SidebarNav({ isOpen, onToggle, onClose }: SidebarNavProp
           </div>
           
           <button 
-            onClick={onClose}
+            onClick={() => setIsOpen(false)}
             className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-text/10 transition-colors"
             aria-label="メニューを閉じる"
           >
@@ -155,7 +139,7 @@ export default function SidebarNav({ isOpen, onToggle, onClose }: SidebarNavProp
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    onClick={onClose}
+                    onClick={() => setIsOpen(false)}
                     className={`
                       flex items-center space-x-3 px-4 py-3 rounded-lg
                       transition-all duration-200 ease-out

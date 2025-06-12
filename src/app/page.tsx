@@ -1,5 +1,8 @@
 import Layout from '@/components/layout/Layout';
 
+// 完全静的化してモバイルパフォーマンスを向上
+export const dynamic = 'force-static';
+
 export default function Home() {
   return (
     <Layout>

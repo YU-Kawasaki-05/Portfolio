@@ -1,25 +1,7 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 
-// Neo-Typographic Fusionフォント設定 - Performance最適化（軽量化）
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  weight: ["700"], // 見出し用のみ
-  display: "swap",
-  preload: true,
-  fallback: ["system-ui", "sans-serif"],
-});
-
-const inter = Inter({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400"], // 本文用のみ
-  display: "swap",
-  preload: true,
-  fallback: ["system-ui", "sans-serif"],
-});
+// モバイルパフォーマンス最優先: Webフォント完全削除、システムフォントのみ使用
 
 export const metadata: Metadata = {
   title: "Neo‑Typographic Fusion | Portfolio",
@@ -51,8 +33,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={`${spaceGrotesk.variable} ${inter.variable}`}>
-      <body className="bg-bg text-text font-body antialiased">
+    <html lang="ja">
+      <body className="bg-bg text-text antialiased">
         {children}
       </body>
     </html>

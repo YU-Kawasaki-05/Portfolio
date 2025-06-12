@@ -1,9 +1,10 @@
-'use client';
+import { Suspense } from 'react';
+import dynamic from 'next/dynamic';
 
-import { useState } from 'react';
-import HeaderNav from './HeaderNav';
-import SidebarNav from './SidebarNav';
-import Footer from './Footer';
+// 動的インポートでバンドルサイズ削減
+const HeaderNav = dynamic(() => import('./HeaderNav'));
+const SidebarNav = dynamic(() => import('./SidebarNav'));
+const Footer = dynamic(() => import('./Footer'));
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,27 +13,17 @@ interface LayoutProps {
 }
 
 export default function Layout({ children, showFooter = true, className = '' }: LayoutProps) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  const handleSidebarToggle = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
-
-  const handleSidebarClose = () => {
-    setSidebarOpen(false);
-  };
-
   return (
     <div className={`min-h-screen flex flex-col bg-bg text-text ${className}`}>
       {/* ヘッダーナビゲーション */}
-      <HeaderNav />
+      <Suspense fallback={<div className="h-20 bg-bg" />}>
+        <HeaderNav />
+      </Suspense>
 
       {/* サイドバーナビゲーション（モバイル） */}
-      <SidebarNav
-        isOpen={sidebarOpen}
-        onToggle={handleSidebarToggle}
-        onClose={handleSidebarClose}
-      />
+      <Suspense fallback={null}>
+        <SidebarNav />
+      </Suspense>
 
       {/* メインコンテンツ */}
       <main className="flex-1 pt-20 lg:pt-20">
@@ -40,7 +31,11 @@ export default function Layout({ children, showFooter = true, className = '' }: 
       </main>
 
       {/* フッター */}
-      {showFooter && <Footer />}
+      {showFooter && (
+        <Suspense fallback={<div className="h-16 bg-bg" />}>
+          <Footer />
+        </Suspense>
+      )}
     </div>
   );
 } 
