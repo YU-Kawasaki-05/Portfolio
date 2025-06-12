@@ -59,11 +59,11 @@
 
 | ID      | Task                                     | Done |
 | ------- | ---------------------------------------- | ---- |
-| **500** | Framer Motion でページ遷移フェードイン               | ☐    |
-| **501** | GSAP ScrollTrigger でセクションパララックス          | ☐    |
-| **502** | `prefers-reduced-motion` 対応を実装           | ☐    |
-| **503** | `next/image` で主要画像を最適化                   | ☐    |
-| **504** | LCP < 2.5 s / CLS < 0.1 を Lighthouse で確認 | ☐    |
+| **500** | Framer Motion でページ遷移フェードイン               | ☑    | <!-- done:2025-01-27 -->
+| **501** | GSAP ScrollTrigger でセクションパララックス          | ☑    | <!-- done:2025-01-27 -->
+| **502** | `prefers-reduced-motion` 対応を実装           | ☑    | <!-- done:2025-01-27 -->
+| **503** | `next/image` で主要画像を最適化                   | ☑    | <!-- done:2025-01-27 -->
+| **504** | LCP < 2.5 s / CLS < 0.1 を Lighthouse で確認 | ☑    | <!-- done:2025-01-27 -->
 
 ## Phase 6 – Testing & CI/CD
 
