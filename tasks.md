@@ -4,19 +4,19 @@
 
 ---
 
-## Phase 0 – Environment & Rules
+## Phase 0 – Environment & Rules
 
 | ID      | Task                                                         | Done |
 | ------- | ------------------------------------------------------------ | ---- |
-| **000** | Node 18 LTS & pnpm をインストール                                   | ☐    |
-| **001** | `pnpm create next-app` で **neo-typographic-fusion** プロジェクト生成 | ☐    |
-| **002** | `pnpm add …` で依存一括追加 (README §4 参照)                          | ☐    |
-| **003** | `contentlayer init` & `shadcn-ui init` を実行                   | ☐    |
-| **004** | `.cursor/rules/` に 8 ルールファイルを配置                              | ☐    |
-| **005** | `pnpm dev` が起動することを確認                                        | ☐    |
-| **006** | 初回コミット & GitHub リポジトリ作成                                      | ☐    |
+| **000** | Node 18 LTS & pnpm をインストール                                   | ☑    | <!-- done:2025-01-27 -->
+| **001** | `pnpm create next-app` で **neo-typographic-fusion** プロジェクト生成 | ☑    | <!-- done:2025-01-27 -->
+| **002** | `pnpm add …` で依存一括追加 (README §4 参照)                          | ☑    | <!-- done:2025-01-27 -->
+| **003** | `contentlayer init` & `shadcn-ui init` を実行                   | ☑    | <!-- done:2025-01-27 -->
+| **004** | `.cursor/rules/` に 8 ルールファイルを配置                              | ☑    | <!-- done:2025-01-27 -->
+| **005** | `pnpm dev` が起動することを確認                                        | ☑    | <!-- done:2025-01-27 -->
+| **006** | 初回コミット & GitHub リポジトリ作成                                      | ☑    | <!-- done:2025-01-27 -->
 
-## Phase 1 – Design System
+## Phase 1 – Design System
 
 | ID      | Task                                        | Done |
 | ------- | ------------------------------------------- | ---- |
@@ -26,7 +26,7 @@
 | **103** | Button と Card の design‑token 検証用 Story を作成  | ☐    |
 | **104** | Lighthouse (デスクトップ) で 90+ を確認               | ☐    |
 
-## Phase 2 – Layout Skeleton
+## Phase 2 – Layout Skeleton
 
 | ID      | Task                                | Done |
 | ------- | ----------------------------------- | ---- |
@@ -36,16 +36,16 @@
 | **203** | 3 ブレイクポイントでレイアウト崩れチェック              | ☐    |
 | **204** | Lighthouse モバイル 90+ 達成              | ☐    |
 
-## Phase 3 – 3D Hero & Mondrian
+## Phase 3 – 3D Hero & Mondrian
 
 | ID      | Task                                    | Done |
 | ------- | --------------------------------------- | ---- |
 | **300** | `Hero3D.tsx` – R3F で 3D TextGeometry 実装 | ☐    |
 | **301** | `MondrianBlock.tsx` – 背面カラー矩形コンポーネント    | ☐    |
 | **302** | 3D モデルを `dynamic import` で遅延読込          | ☐    |
-| **303** | FPS > 55 を確認 (Chrome DevTools)          | ☐    |
+| **303** | FPS > 55 を確認 (Chrome DevTools)          | ☐    |
 
-## Phase 4 – Content Layer
+## Phase 4 – Content Layer
 
 | ID      | Task                                            | Done |
 | ------- | ----------------------------------------------- | ---- |
@@ -55,7 +55,7 @@
 | **403** | `WorkArticle.tsx` MDX ページ実装                     | ☐    |
 | **404** | `ProfileCard.tsx` + Zustand で詳細切替               | ☐    |
 
-## Phase 5 – Animation & Performance
+## Phase 5 – Animation & Performance
 
 | ID      | Task                                     | Done |
 | ------- | ---------------------------------------- | ---- |
@@ -63,9 +63,9 @@
 | **501** | GSAP ScrollTrigger でセクションパララックス          | ☐    |
 | **502** | `prefers-reduced-motion` 対応を実装           | ☐    |
 | **503** | `next/image` で主要画像を最適化                   | ☐    |
-| **504** | LCP < 2.5 s / CLS < 0.1 を Lighthouse で確認 | ☐    |
+| **504** | LCP < 2.5 s / CLS < 0.1 を Lighthouse で確認 | ☐    |
 
-## Phase 6 – Testing & CI/CD
+## Phase 6 – Testing & CI/CD
 
 | ID      | Task                                       | Done |
 | ------- | ------------------------------------------ | ---- |
@@ -75,7 +75,7 @@
 | **603** | GitHub Actions: `ci.yml` で lint+test+build | ☐    |
 | **604** | カバレッジ 80/70 達成 → バッジを README に追加           | ☐    |
 
-## Phase 7 – Analytics & Deploy
+## Phase 7 – Analytics & Deploy
 
 | ID      | Task                                 | Done |
 | ------- | ------------------------------------ | ---- |
