@@ -40,10 +40,10 @@
 
 | ID      | Task                                    | Done |
 | ------- | --------------------------------------- | ---- |
-| **300** | `Hero3D.tsx` – R3F で 3D TextGeometry 実装 | ☐    |
-| **301** | `MondrianBlock.tsx` – 背面カラー矩形コンポーネント    | ☐    |
-| **302** | 3D モデルを `dynamic import` で遅延読込          | ☐    |
-| **303** | FPS > 55 を確認 (Chrome DevTools)          | ☐    |
+| **300** | `Hero3D.tsx` – R3F で 3D TextGeometry 実装 | ☑    | <!-- done:2025-01-27 -->
+| **301** | `MondrianBlock.tsx` – 背面カラー矩形コンポーネント    | ☑    | <!-- done:2025-01-27 -->
+| **302** | 3D モデルを `dynamic import` で遅延読込          | ☑    | <!-- done:2025-01-27 -->
+| **303** | FPS > 55 を確認 (Chrome DevTools)          | ☑    | <!-- done:2025-01-27 -->
 
 ## Phase 4 – Content Layer
 
