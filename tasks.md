@@ -24,7 +24,7 @@
 | **101** | `src/app/layout.tsx` でフォント変数を設定             | ☑    | <!-- done:2025-01-27 -->
 | **102** | Storybook を `pnpm dlx sb init` で導入          | ☑    | <!-- done:2025-01-27 -->
 | **103** | Button と Card の design‑token 検証用 Story を作成  | ☑    | <!-- done:2025-01-27 -->
-| **104** | Lighthouse (デスクトップ) で 90+ を確認               | ☐    |
+| **104** | Lighthouse (デスクトップ) で 90+ を確認               | ☑    | <!-- done:2025-01-27 -->
 
 ## Phase 2 – Layout Skeleton
 
