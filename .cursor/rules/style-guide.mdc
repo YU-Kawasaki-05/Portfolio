@@ -1,0 +1,17 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: >
+  プロジェクトのデザインシステム（色・タイポグラフィ）を強制。
+applyMode: AutoAttached
+globs:
+  - "src/**/*.{tsx,jsx,ts}"
+---
+
+- 背景 `#0F0F0F`・文字 `#F9F9F9` をデフォルト。  
+- アクセント色は `red(#FF2D55) / blue(#1479FF) / yellow(#F5C400)` のみ。  
+- 見出しフォント `var(--font-heading)`、本文 `var(--font-body)`。  
+- 面積ベースで **アクセント 10% 以下** を厳守。  

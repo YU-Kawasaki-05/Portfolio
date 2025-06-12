@@ -1,0 +1,18 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: >
+  WCAG 2.1 AA 相当のアクセシビリティ基準。
+applyMode: AutoAttached
+globs:
+  - "src/**/*.{tsx,jsx,html}"
+---
+
+- **コントラスト比 4.5:1** 以上を確保。  
+- インタラクティブ要素には `aria-label` もしくは `title`。  
+- キーボードフォーカス順は DOM 順と一致させる。  
+- `prefers-reduced-motion` 検出でアニメを停止。  
+

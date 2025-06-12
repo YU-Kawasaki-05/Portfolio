@@ -1,0 +1,16 @@
+---
+description: React + shadcn/UI コンポーネント指針
+globs: 
+alwaysApply: false
+---
+---
+description: >
+  UI コンポーネントを新規生成・修正する際に呼び出す補助ルール。
+applyMode: Manual
+globs:
+  - "src/components/**/*.{tsx,jsx}"
+---
+
+- **Props は厳密** — 必ず `interface` or `type` で宣言。  
+- **命名規則** — PascalCase ファイル & コンポーネント名を一致させる。  
+- **CSS** は Tailwind のみ。直書きスタイル/SCSS 禁止。  

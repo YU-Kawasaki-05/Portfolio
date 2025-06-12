@@ -1,0 +1,17 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: >
+  バックエンド (FastAPI など) 向けの Python コーディング方針。
+applyMode: AutoAttached
+globs:
+  - "backend/**/*.py"
+---
+
+- **型ヒント必須** — mypy で `strict` が通ること。  
+- **ロギング** は `structlog` を推奨。`print` 禁止。  
+- **I/O 境界** 以外は **同期コード** 優先、必要時のみ asyncio。  
+- DB アクセスは **リポジトリパターン** で分離する。  

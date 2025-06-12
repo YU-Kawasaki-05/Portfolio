@@ -1,0 +1,18 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: >
+  Next.js / Three.js / Tailwind のパフォーマンス最適化ポリシー。
+applyMode: AutoAttached
+globs:
+  - "src/**/*.{tsx,jsx}"
+---
+
+- `next/image` を使用し、**必ず width/height 指定**。  
+- Three.js の heavy 3D は **dynamic import + Suspense**。  
+- **prefetch={false}** を不要ページリンクに付与。  
+- Lighthouse `Performance 90+` を維持。スコア低下時はリジェクト。  
+
