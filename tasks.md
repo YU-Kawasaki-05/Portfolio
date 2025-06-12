@@ -1,6 +1,6 @@
-# Neo‑Typographic Fusion – Task Checklist
+# Neo‑Typographic Fusion – Task Checklist
 
-> **使い方** : この `tasks.md` を開き、フェーズごとに **☐ → ☑** に切り替えながら「次の未完タスクを実行して」と指示すれば、AI が順に処理できます。タスク ID も付けたので `@123` のように参照しても OK です。
+> **使い方** : この `tasks.md` を開き、フェーズごとに **☐ → ☑** に切り替えながら「次の未完タスクを実行して」と指示すれば、AI が順に処理できます。タスク ID も付けたので `@123` のように参照しても OK です。
 
 ---
 
@@ -49,11 +49,11 @@
 
 | ID      | Task                                            | Done |
 | ------- | ----------------------------------------------- | ---- |
-| **400** | `contentlayer.config.ts` に Works / Blog スキーマ作成  | ☐    |
-| **401** | サンプル MDX を `/content/works` `/content/blog` に追加 | ☐    |
-| **402** | `WorkTable.tsx` 表ビュー実装                          | ☐    |
-| **403** | `WorkArticle.tsx` MDX ページ実装                     | ☐    |
-| **404** | `ProfileCard.tsx` + Zustand で詳細切替               | ☐    |
+| **400** | `contentlayer.config.ts` に Works / Blog スキーマ作成  | ☑    | <!-- done:2025-01-27 -->
+| **401** | サンプル MDX を `/content/works` `/content/blog` に追加 | ☑    | <!-- done:2025-01-27 -->
+| **402** | `WorkTable.tsx` 表ビュー実装                          | ☑    | <!-- done:2025-01-27 -->
+| **403** | `WorkArticle.tsx` MDX ページ実装                     | ☑    | <!-- done:2025-01-27 -->
+| **404** | `ProfileCard.tsx` + Zustand で詳細切替               | ☑    | <!-- done:2025-01-27 -->
 
 ## Phase 5 – Animation & Performance
 

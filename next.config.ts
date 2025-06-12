@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { withContentlayer } from "next-contentlayer";
 
 const nextConfig: NextConfig = {
   // Performance最適化設定（モバイル強化）
@@ -37,8 +38,8 @@ const nextConfig: NextConfig = {
     return config;
   },
 
-  // Static export to eliminate server runtime for pure-static site
-  output: "export",
+  // Static export を一時的にコメントアウト（Contentlayer開発中）
+  // output: "export",
 
   // Fine-grained modularizeImports to reduce JS bundle size for unused sub-modules
   modularizeImports: {
@@ -51,4 +52,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withContentlayer(nextConfig);

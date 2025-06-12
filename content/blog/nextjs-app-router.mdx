@@ -1,0 +1,65 @@
+---
+title: Next.js 15 App Router 実践ガイド
+description: Server Components と Client Components の使い分けから、パフォーマンス最適化まで
+publishedAt: 2025-01-20
+category: tech
+tags:
+  - Next.js
+  - React
+  - Server Components
+  - Performance
+featured: true
+image: /images/blog/nextjs-15-guide.png
+readingTime: 8
+published: true
+---
+
+# Next.js 15 App Router 実践ガイド
+
+Next.js 15のApp Routerを使った開発で学んだベストプラクティスを共有します。
+
+## Server Components の活用
+
+### 基本原則
+```typescript
+// ✅ Good: Server Component
+export default async function ServerPage() {
+  const data = await fetch('/api/data');
+  return <DataDisplay data={data} />;
+}
+
+// ❌ Bad: 不要なClient Component  
+'use client';
+export default function ClientPage() {
+  const [data, setData] = useState(null);
+  // サーバーで取得できるデータをクライアントで処理
+}
+```
+
+### パフォーマンス最適化
+
+#### 1. 動的インポート
+```typescript
+const HeavyComponent = lazy(() => import('./HeavyComponent'));
+```
+
+#### 2. Streaming
+```typescript
+export default function Page() {
+  return (
+    <Suspense fallback={<Skeleton />}>
+      <AsyncComponent />
+    </Suspense>
+  );
+}
+```
+
+## 学んだこと
+
+- Server/Client境界の明確化
+- Suspenseによる段階的ローディング
+- Lightthouseスコア向上テクニック
+
+---
+
+実際のプロジェクトでPerformance 100を達成した具体的手法を解説しています。 
