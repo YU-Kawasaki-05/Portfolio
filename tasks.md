@@ -20,10 +20,10 @@
 
 | ID      | Task                                        | Done |
 | ------- | ------------------------------------------- | ---- |
-| **100** | `tailwind.config.ts` に色・フォントを定義 (README §5) | ☐    |
-| **101** | `src/app/layout.tsx` でフォント変数を設定             | ☐    |
-| **102** | Storybook を `pnpm dlx sb init` で導入          | ☐    |
-| **103** | Button と Card の design‑token 検証用 Story を作成  | ☐    |
+| **100** | `tailwind.config.ts` に色・フォントを定義 (README §5) | ☑    | <!-- done:2025-01-27 -->
+| **101** | `src/app/layout.tsx` でフォント変数を設定             | ☑    | <!-- done:2025-01-27 -->
+| **102** | Storybook を `pnpm dlx sb init` で導入          | ☑    | <!-- done:2025-01-27 -->
+| **103** | Button と Card の design‑token 検証用 Story を作成  | ☑    | <!-- done:2025-01-27 -->
 | **104** | Lighthouse (デスクトップ) で 90+ を確認               | ☐    |
 
 ## Phase 2 – Layout Skeleton
