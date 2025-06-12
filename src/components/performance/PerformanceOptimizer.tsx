@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { onCLS, onFID, onFCP, onLCP, onTTFB } from 'web-vitals';
+import { onCLS, onFCP, onLCP, onTTFB } from 'web-vitals';
 
 interface PerformanceOptimizerProps {
   children: React.ReactNode;
@@ -43,9 +43,8 @@ export default function PerformanceOptimizer({
   useEffect(() => {
     if (!enableWebVitals) return;
 
-    // Core Web Vitals の計測
+    // Core Web Vitals の計測 (onFIDは除外)
     onCLS(sendToAnalytics);
-    onFID(sendToAnalytics);
     onFCP(sendToAnalytics);
     onLCP(sendToAnalytics);
     onTTFB(sendToAnalytics);
