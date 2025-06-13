@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
+import PageTransition from "@/components/page-transition";
 
 // Neo‑Typographic Fusion フォント設定
 const spaceGrotesk = Space_Grotesk({
@@ -25,22 +26,22 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "Kawasaki K – Portfolio",
-  description: "AI コンサル & エンジニアとしての信頼感と遊び心を同時に演出する Neo‑Typographic Fusion ポートフォリオ",
-  keywords: ["AI", "コンサル", "エンジニア", "ポートフォリオ", "Next.js", "Three.js"],
-  authors: [{ name: "Kawasaki K" }],
-  creator: "Kawasaki K",
+  title: "Neo-Typographic Fusion – Portfolio",
+  description: "タイポグラフィと3Dグラフィックスを融合させた、モダンでインタラクティブなポートフォリオサイト",
+  keywords: ["Portfolio", "Web Development", "React", "Next.js", "Three.js", "TypeScript"],
+  authors: [{ name: "Developer" }],
+  creator: "Developer",
   openGraph: {
     type: "website",
     locale: "ja_JP",
-    title: "Kawasaki K – Portfolio",
-    description: "AI コンサル & エンジニアとしての信頼感と遊び心を同時に演出",
-    siteName: "Kawasaki K Portfolio",
+    title: "Neo-Typographic Fusion – Portfolio",
+    description: "タイポグラフィと3Dグラフィックスを融合させた、モダンでインタラクティブなポートフォリオサイト",
+    siteName: "Neo-Typographic Fusion Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kawasaki K – Portfolio",
-    description: "AI コンサル & エンジニアとしての信頼感と遊び心を同時に演出",
+    title: "Neo-Typographic Fusion – Portfolio",
+    description: "タイポグラフィと3Dグラフィックスを融合させた、モダンでインタラクティブなポートフォリオサイト",
   },
 };
 
@@ -50,9 +51,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={`${spaceGrotesk.variable} ${inter.variable} ${notoSansJP.variable} dark`}>
-      <body className="font-body bg-bg text-text antialiased">
-        {children}
+    <html lang="ja" className={`${spaceGrotesk.variable} ${inter.variable} ${notoSansJP.variable}`}>
+      <body className="font-sans bg-[#0F0F0F] text-[#F9F9F9] antialiased">
+        <PageTransition>
+          {children}
+        </PageTransition>
       </body>
     </html>
   );

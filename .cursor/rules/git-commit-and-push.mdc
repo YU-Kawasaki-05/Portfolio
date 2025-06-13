@@ -6,7 +6,7 @@ alwaysApply: false
 ---
 description: >
   ステージ済み変更を **詳細な日本語コミットメッセージ** にまとめ、
-  `git commit` ➜ `git push origin main` まで実行するルール。
+  `git commit` ➜ `git push origin feature/design-system-update` まで実行するルール。
   Conventional Commits + 日本語補足文 を採用。
 
 applyMode: Agent Requested
@@ -45,13 +45,13 @@ BREAKING CHANGE: 影響範囲 (ある場合のみ)
 - 50 文字以内、命令形。“〜を追加” “〜を修正”。
 
 # ✅ 実行ステップ
-
+0. ブランチはローカルの`feature/design-system-update`で行う。
 1. **CHANGELOG.md が変更されているか確認**  
    - なければ `chore(changelog): 新エントリ追加 (#300)` を先に作成。  
 2. 変更ファイルを scope 別に自動分類し message を生成。  
 3. `git commit -m "$MESSAGE"` を実行。  
 4. リモート `origin` が無い場合は停止し、ユーザーへ警告コメント。  
-5. `git push origin main`。push 失敗時は再試行せずエラー出力。  
+5. `git push origin feature/design-system-update`。push 失敗時は再試行せずエラー出力。  
 
 # 🚫 禁止事項
 

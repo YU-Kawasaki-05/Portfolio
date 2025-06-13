@@ -37,6 +37,15 @@
 | **202** | `Hero3D.tsx` を R3F で実装 (テキストと CTA)                    |  ☐   |
 | **203** | Home ページ: Works/Blog プレビューセクションを実装             |  ☐   |
 | **204** | Home ページ: `design/04_pages/home.md` 通りのナビゲーションカードを実装 |  ☐   |
+| **208** | `SiteHubShowcase` の `#profile` `#services` … セクションを削除し、NavCards のみ残す |  ☑   |
+| **209** | `src/app/profile/page.tsx` を作成し `<ProfileLayout>` を移植  |  ☑   |
+| **210** | `src/app/services/page.tsx` を作成し `<ServiceLayout>` を移植 |  ☑   |
+| **211** | `src/app/sns/page.tsx` を作成し `<SNSLayout>` を移植          |  ☑   |
+| **212** | `src/app/portfolio/page.tsx` を作成し `<PortfolioLayout>` を移植 |  ☑   |
+| **213** | `src/app/blog/page.tsx` を作成し `<BlogLayout>` を移植        |  ☑   |
+| **214** | HeaderNav / SidebarNav のアンカーリンク `#profile` → `/profile` などに変更 |  ☑   |
+| **215** | Framer Motion でページ遷移フェードを `src/app/layout.tsx` に実装 |  ☑   |
+| **216** | Playwright E2E: Home → Profile → Back の遷移テスト追加        |  ☑   |
 
 ## Phase 3 – Main Pages Implementation
 
