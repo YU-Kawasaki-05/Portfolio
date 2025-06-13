@@ -34,9 +34,9 @@
 | ------- | ------------------------------------------------------------ | :--: |
 | **200** | `contentlayer.config.ts` に Works/Blog/Profile スキーマを作成  |  ☑   |
 | **201** | `content/` に各スキーマのサンプル MDX を配置                   |  ☑   |
-| **202** | `Hero3D.tsx` を R3F で実装 (テキストと CTA)                    |  ☐   |
-| **203** | Home ページ: Works/Blog プレビューセクションを実装             |  ☐   |
-| **204** | Home ページ: `design/04_pages/home.md` 通りのナビゲーションカードを実装 |  ☐   |
+| **202** | `Hero3D.tsx` を R3F で実装 (テキストと CTA)                    |  ☑   |
+| **203** | Home ページ: Works/Blog プレビューセクションを実装             |  ☑   |
+| **204** | Home ページ: `design/04_pages/home.md` 通りのナビゲーションカードを実装 |  ☑   |
 | **208** | `SiteHubShowcase` の `#profile` `#services` … セクションを削除し、NavCards のみ残す |  ☑   |
 | **209** | `src/app/profile/page.tsx` を作成し `<ProfileLayout>` を移植  |  ☑   |
 | **210** | `src/app/services/page.tsx` を作成し `<ServiceLayout>` を移植 |  ☑   |
@@ -51,12 +51,12 @@
 
 | ID      | Task                                                         | Done |
 | ------- | ------------------------------------------------------------ | :--: |
-| **300** | Portfolio (Works) ページ: `WorkTable` で一覧表示               |  ☐   |
-| **301** | Portfolio (Works) ページ: `[slug]` で MDX 詳細ページ表示      |  ☐   |
-| **302** | Blog ページ: カードグリッドで一覧表示                          |  ☐   |
-| **303** | Blog ページ: `[slug]` で MDX 詳細ページ表示                    |  ☐   |
-| **304** | Profile ページ: `ProfileCard` やスキルリストを実装             |  ☐   |
-| **305** | Services, SNS ページを静的に実装                             |  ☐   |
+| **300** | Portfolio (Works) ページ: `WorkTable` で一覧表示               |  ☑   |
+| **301** | Portfolio (Works) ページ: `[slug]` で MDX 詳細ページ表示      |  ☑   |
+| **302** | Blog ページ: カードグリッドで一覧表示                          |  ☑   |
+| **303** | Blog ページ: `[slug]` で MDX 詳細ページ表示                    |  ☑   |
+| **304** | Profile ページ: `ProfileCard` やスキルリストを実装             |  ☑   |
+| **305** | Services, SNS ページを静的に実装                             |  ☑   |
 
 ## Phase 4 – Animation & Optimization
 
