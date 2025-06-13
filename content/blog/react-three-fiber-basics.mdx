@@ -1,0 +1,174 @@
+---
+slug: "react-three-fiber-basics"
+title: "React Three Fiberで始める3Dウェブ開発"
+date: "2024-03-10"
+excerpt: "React Three Fiberの基本概念から実践的な3Dシーンの構築まで、初心者向けに分かりやすく解説します。"
+cover: "/images/blog/react-three-fiber-basics.jpg"
+tags: ["React", "Three.js", "WebGL", "3D", "Tutorial"]
+---
+
+# React Three Fiberで始める3Dウェブ開発
+
+React Three Fiberは、Three.jsをReactで使いやすくしたライブラリです。この記事では、基本的な使い方から実践的な3Dシーンの構築まで解説します。
+
+## React Three Fiberとは
+
+React Three Fiberは、Three.jsのReactレンダラーです。Three.jsの強力な3D機能をReactのコンポーネントベースの開発スタイルで利用できます。
+
+### 主な特徴
+
+- **宣言的**: JSXで3Dシーンを記述
+- **コンポーネント指向**: 再利用可能な3Dコンポーネント
+- **React統合**: Reactのライフサイクルと状態管理を活用
+- **パフォーマンス**: Three.jsの性能をそのまま活用
+
+## セットアップ
+
+まず、必要なパッケージをインストールします：
+
+```bash
+npm install three @react-three/fiber
+npm install --save-dev @types/three
+```
+
+## 基本的な3Dシーン
+
+最初の3Dシーンを作成してみましょう：
+
+```jsx
+import { Canvas } from '@react-three/fiber'
+
+function Box() {
+  return (
+    <mesh>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial color="orange" />
+    </mesh>
+  )
+}
+
+function App() {
+  return (
+    <Canvas>
+      <ambientLight />
+      <pointLight position={[10, 10, 10]} />
+      <Box />
+    </Canvas>
+  )
+}
+```
+
+## アニメーション
+
+useFrameフックを使用してアニメーションを追加：
+
+```jsx
+import { useFrame } from '@react-three/fiber'
+import { useRef } from 'react'
+
+function RotatingBox() {
+  const meshRef = useRef()
+  
+  useFrame((state, delta) => {
+    meshRef.current.rotation.x += delta
+    meshRef.current.rotation.y += delta
+  })
+  
+  return (
+    <mesh ref={meshRef}>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial color="orange" />
+    </mesh>
+  )
+}
+```
+
+## インタラクション
+
+マウスイベントを追加して、インタラクティブな要素を作成：
+
+```jsx
+function InteractiveBox() {
+  const [hovered, setHovered] = useState(false)
+  const [clicked, setClicked] = useState(false)
+  
+  return (
+    <mesh
+      scale={clicked ? 1.5 : 1}
+      onClick={() => setClicked(!clicked)}
+      onPointerOver={() => setHovered(true)}
+      onPointerOut={() => setHovered(false)}
+    >
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
+    </mesh>
+  )
+}
+```
+
+## パフォーマンス最適化
+
+### 1. インスタンシング
+
+同じジオメトリを大量に表示する場合：
+
+```jsx
+import { InstancedMesh } from 'three'
+
+function InstancedBoxes({ count = 1000 }) {
+  const meshRef = useRef()
+  
+  useEffect(() => {
+    const dummy = new Object3D()
+    
+    for (let i = 0; i < count; i++) {
+      dummy.position.set(
+        (Math.random() - 0.5) * 20,
+        (Math.random() - 0.5) * 20,
+        (Math.random() - 0.5) * 20
+      )
+      dummy.updateMatrix()
+      meshRef.current.setMatrixAt(i, dummy.matrix)
+    }
+    
+    meshRef.current.instanceMatrix.needsUpdate = true
+  }, [count])
+  
+  return (
+    <instancedMesh ref={meshRef} args={[null, null, count]}>
+      <boxGeometry args={[0.1, 0.1, 0.1]} />
+      <meshStandardMaterial />
+    </instancedMesh>
+  )
+}
+```
+
+### 2. LOD（Level of Detail）
+
+距離に応じて詳細度を調整：
+
+```jsx
+import { Lod } from '@react-three/drei'
+
+function OptimizedModel() {
+  return (
+    <Lod distances={[0, 10, 20]}>
+      <HighDetailModel />
+      <MediumDetailModel />
+      <LowDetailModel />
+    </Lod>
+  )
+}
+```
+
+## まとめ
+
+React Three Fiberを使用することで、Reactの開発体験を保ちながら強力な3D機能を活用できます。
+
+### 次のステップ
+
+- [@react-three/drei](https://github.com/pmndrs/drei)でより多くのヘルパーを活用
+- [react-spring](https://react-spring.io/)でより高度なアニメーション
+- [Blender](https://www.blender.org/)で3Dモデルを作成してインポート
+
+3Dウェブ開発の世界は無限の可能性に満ちています。ぜひ挑戦してみてください！ 

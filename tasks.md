@@ -8,25 +8,25 @@
 
 | ID      | Task                                                         | Done |
 | ------- | ------------------------------------------------------------ | :--: |
-| **000** | Node 18 LTS & pnpm をインストール                              |  ☐   |
-| **001** | `pnpm create next-app` でプロジェクト生成                      |  ☐   |
-| **002** | 依存一括追加 (`pnpm add ...`)                                  |  ☐   |
-| **003** | `contentlayer init` & `shadcn-ui init` を実行                  |  ☐   |
+| **000** | Node 18 LTS & pnpm をインストール                              |  ☑   |
+| **001** | `pnpm create next-app` でプロジェクト生成                      |  ☑   |
+| **002** | 依存一括追加 (`pnpm add ...`)                                  |  ☑   |
+| **003** | `contentlayer init` & `shadcn-ui init` を実行                  |  ☑   |
 | **004** | `design/` フォルダを本設計書で更新 (済)                        |  ☑   |
-| **005** | `.cursor/rules/` にルールファイルを配置                        |  ☐   |
-| **006** | `pnpm dev` が起動することを確認                                |  ☐   |
-| **007** | 初回コミット & GitHub リポジトリ作成                           |  ☐   |
+| **005** | `.cursor/rules/` にルールファイルを配置                        |  ☑   |
+| **006** | `pnpm dev` が起動することを確認                                |  ☑   |
+| **007** | 初回コミット & GitHub リポジトリ作成                           |  ☑   |
 
 ## Phase 1 – Design System & Core Layout
 
 | ID      | Task                                                         | Done |
 | ------- | ------------------------------------------------------------ | :--: |
-| **100** | `tailwind.config.ts` に `design/01_design-tokens.md` を反映    |  ☐   |
-| **101** | `src/app/layout.tsx` でフォント変数を設定                      |  ☐   |
-| **102** | `src/components/layout/page-shell.tsx` を作成                  |  ☐   |
-| **103** | Storybook を導入し、Button/Card のトークンを検証               |  ☐   |
-| **104** | `HeaderNav` と `Footer` を実装し `page-shell` に統合           |  ☐   |
-| **105** | `SidebarNav` (モバイル用ドロワー) を実装                       |  ☐   |
+| **100** | `tailwind.config.ts` に `design/01_design-tokens.md` を反映    |  ☑   |
+| **101** | `src/app/layout.tsx` でフォント変数を設定                      |  ☑   |
+| **102** | `src/components/layout/page-shell.tsx` を作成                  |  ☑   |
+| **103** | Storybook を導入し、Button/Card のトークンを検証               |  ☑   |
+| **104** | `HeaderNav` と `Footer` を実装し `page-shell` に統合           |  ☑   |
+| **105** | `SidebarNav` (モバイル用ドロワー) を実装                       |  ☑   |
 
 ## Phase 2 – Content Schema & Home Page
 
