@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [未リリース] - 2024-03-21
+
+### Changed
+* design: CTO レビュー準拠でコンポーネント分割・Contentlayer 方針を追記 (#330)
+  - `03_components.md` に Slots 列を追加
+  - Blog/Portfolio を Container-Presentational アーキテクチャに刷新
+  - `07_content-layer.md` を新規作成
+  - `02_layout-guidelines.md` に PageShell Server Component を追記
+  - `00_overview.md` に成長戦略とKPIを追加
+
+## [0.1.0] - 2024-03-20
+
+### Added
+* 初期構築：Next.js 15 + TypeScript + Tailwind CSS環境構築
+* shadcn/ui統合
+* Cursorルール設定
+* Phase 0完了
+
 ## [Unreleased] - YYYY-MM-DD
 
 ### Changed
