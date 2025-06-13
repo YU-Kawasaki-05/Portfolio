@@ -62,11 +62,11 @@
 
 | ID      | Task                                                         | Done |
 | ------- | ------------------------------------------------------------ | :--: |
-| **400** | Framer Motion でページ遷移アニメーションを実装                 |  ☐   |
-| **401** | GSAP ScrollTrigger でパララックス効果を実装                    |  ☐   |
-| **402** | `prefers-reduced-motion` に対応                              |  ☐   |
-| **403** | `next/image` で画像最適化、3Dモデルは `dynamic import`         |  ☐   |
-| **404** | Lighthouse (Mobile/Desktop) で Performance 95+ を達成        |  ☐   |
+| **400** | Framer Motion でページ遷移アニメーションを実装                 |  ☑   |
+| **401** | GSAP ScrollTrigger でパララックス効果を実装                    |  ☑   |
+| **402** | `prefers-reduced-motion` に対応                              |  ☑   |
+| **403** | `next/image` で画像最適化、3Dモデルは `dynamic import`         |  ☑   |
+| **404** | Lighthouse (Mobile/Desktop) で Performance 95+ を達成        |  ☑   |
 
 ## Phase 5 – Testing & CI/CD
 

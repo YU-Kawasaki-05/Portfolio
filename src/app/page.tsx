@@ -1,6 +1,11 @@
 import dynamic from 'next/dynamic';
 import { WorksPreviewSection, BlogPreviewSection } from '@/components/preview-sections';
 import NavigationCards from '@/components/navigation-cards';
+import { 
+  SmoothScrollContainer, 
+  ScrollReveal, 
+  useReducedMotion 
+} from '@/components/parallax-container';
 
 // Hero3Dを動的インポートしてSSRを無効化（Three.jsのため）
 const Hero3D = dynamic(() => import('@/components/hero3d'), {
@@ -14,18 +19,24 @@ const Hero3D = dynamic(() => import('@/components/hero3d'), {
 
 export default function Home() {
   return (
-    <div className="bg-[#0F0F0F]">
+    <SmoothScrollContainer className="bg-[#0F0F0F]">
       {/* Hero Section with 3D Typography */}
       <Hero3D />
       
       {/* Works Preview Section */}
-      <WorksPreviewSection />
+      <ScrollReveal direction="up" delay={0.2}>
+        <WorksPreviewSection />
+      </ScrollReveal>
       
       {/* Blog Preview Section */}
-      <BlogPreviewSection />
+      <ScrollReveal direction="up" delay={0.4}>
+        <BlogPreviewSection />
+      </ScrollReveal>
       
       {/* Navigation Cards */}
-      <NavigationCards />
-    </div>
+      <ScrollReveal direction="up" delay={0.6}>
+        <NavigationCards />
+      </ScrollReveal>
+    </SmoothScrollContainer>
   );
 }
