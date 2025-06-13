@@ -32,8 +32,8 @@
 
 | ID      | Task                                                         | Done |
 | ------- | ------------------------------------------------------------ | :--: |
-| **200** | `contentlayer.config.ts` に Works/Blog/Profile スキーマを作成  |  ☐   |
-| **201** | `content/` に各スキーマのサンプル MDX を配置                   |  ☐   |
+| **200** | `contentlayer.config.ts` に Works/Blog/Profile スキーマを作成  |  ☑   |
+| **201** | `content/` に各スキーマのサンプル MDX を配置                   |  ☑   |
 | **202** | `Hero3D.tsx` を R3F で実装 (テキストと CTA)                    |  ☐   |
 | **203** | Home ページ: Works/Blog プレビューセクションを実装             |  ☐   |
 | **204** | Home ページ: `design/04_pages/home.md` 通りのナビゲーションカードを実装 |  ☐   |
