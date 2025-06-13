@@ -277,10 +277,10 @@ export function SmoothScrollContainer({
     });
 
     // レスポンシブ対応でモバイルでは無効化
-    const mediaQuery = window.matchMedia('(min-width: 768px)');
+    const mediaQuery = typeof window !== 'undefined' ? window.matchMedia('(min-width: 768px)') : null;
     
     const updateScrollBehavior = () => {
-      if (mediaQuery.matches) {
+      if (mediaQuery && mediaQuery.matches) {
         // デスクトップ: スムーズスクロール有効
         document.documentElement.style.scrollBehavior = 'smooth';
       } else {
@@ -289,11 +289,15 @@ export function SmoothScrollContainer({
       }
     };
 
-    updateScrollBehavior();
-    mediaQuery.addEventListener('change', updateScrollBehavior);
+    if (mediaQuery) {
+      updateScrollBehavior();
+      mediaQuery.addEventListener('change', updateScrollBehavior);
+    }
 
     return () => {
-      mediaQuery.removeEventListener('change', updateScrollBehavior);
+      if (mediaQuery) {
+        mediaQuery.removeEventListener('change', updateScrollBehavior);
+      }
       document.documentElement.style.scrollBehavior = 'auto';
     };
   }, []);
@@ -312,10 +316,10 @@ export function useReducedMotion() {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mediaQuery = typeof window !== 'undefined' ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
     
     const updateMotionPreference = () => {
-      if (mediaQuery.matches) {
+      if (mediaQuery && mediaQuery.matches) {
         // モーション軽減モード
         gsap.set('*', { duration: 0 });
         ScrollTrigger.getAll().forEach(trigger => {
@@ -324,11 +328,15 @@ export function useReducedMotion() {
       }
     };
 
-    updateMotionPreference();
-    mediaQuery.addEventListener('change', updateMotionPreference);
+    if (mediaQuery) {
+      updateMotionPreference();
+      mediaQuery.addEventListener('change', updateMotionPreference);
+    }
 
     return () => {
-      mediaQuery.removeEventListener('change', updateMotionPreference);
+      if (mediaQuery) {
+        mediaQuery.removeEventListener('change', updateMotionPreference);
+      }
     };
   }, []);
 } 

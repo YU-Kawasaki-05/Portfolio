@@ -38,6 +38,8 @@ export default function MotionProvider({ children }: MotionProviderProps) {
     : !prefersReducedMotion;
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     // LocalStorageからユーザー設定を読み込み
     const savedPreference = localStorage.getItem('motion-preference');
     if (savedPreference !== null) {
@@ -60,6 +62,8 @@ export default function MotionProvider({ children }: MotionProviderProps) {
   }, []);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     // モーション設定に応じてCSS変数を更新
     const root = document.documentElement;
     
@@ -79,7 +83,9 @@ export default function MotionProvider({ children }: MotionProviderProps) {
   const toggleMotion = () => {
     const newPreference = !isMotionEnabled;
     setUserMotionPreference(newPreference);
-    localStorage.setItem('motion-preference', newPreference.toString());
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('motion-preference', newPreference.toString());
+    }
   };
 
   const contextValue = {

@@ -40,7 +40,9 @@ export default function PageTransition({ children }: PageTransitionProps) {
     const loadingTimer = setTimeout(() => {
       setIsLoading(false)
       // スクロール位置をトップにリセット
-      window.scrollTo({ top: 0, behavior: 'smooth' })
+      if (typeof window !== 'undefined') {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
     }, 600)
 
     return () => {

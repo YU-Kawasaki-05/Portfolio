@@ -246,7 +246,7 @@ export default function Hero3D() {
       alpha: true,
       powerPreference: 'high-performance' as const,
     },
-    dpr: [1, Math.min(window.devicePixelRatio, 2)],
+    dpr: [1, typeof window !== 'undefined' ? Math.min(window.devicePixelRatio, 2) : 2],
     performance: { min: 0.5 },
     frameloop: isMotionEnabled ? 'always' as const : 'demand' as const,
   }), [isMotionEnabled]);

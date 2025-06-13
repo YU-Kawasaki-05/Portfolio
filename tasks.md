@@ -66,7 +66,7 @@
 | **401** | GSAP ScrollTrigger でパララックス効果を実装                    |  ☑   |
 | **402** | `prefers-reduced-motion` に対応                              |  ☑   |
 | **403** | `next/image` で画像最適化、3Dモデルは `dynamic import`         |  ☑   |
-| **404** | Lighthouse (Mobile/Desktop) で Performance 95+ を達成        |  ☑   |
+| **404** | Lighthouse Performance 95+ 達成 + SSRエラー対応完了          |  ☑   |
 
 ## Phase 5 – Testing & CI/CD
 
