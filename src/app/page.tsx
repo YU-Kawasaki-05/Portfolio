@@ -3,13 +3,11 @@ import { WorksPreviewSection, BlogPreviewSection } from '@/components/preview-se
 import NavigationCards from '@/components/navigation-cards';
 import { 
   SmoothScrollContainer, 
-  ScrollReveal, 
-  useReducedMotion 
+  ScrollReveal 
 } from '@/components/parallax-container';
 
 // Hero3Dを動的インポートしてSSRを無効化（Three.jsのため）
 const Hero3D = dynamic(() => import('@/components/hero3d'), {
-  ssr: false,
   loading: () => (
     <div className="min-h-screen bg-[#0F0F0F] flex items-center justify-center">
       <div className="text-[#F9F9F9] text-xl">Loading 3D Scene...</div>

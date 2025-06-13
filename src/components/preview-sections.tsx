@@ -1,9 +1,64 @@
 import React from 'react';
 import Link from 'next/link';
-import { allWorks, allBlogs } from 'contentlayer/generated';
+// import { allWorks, allBlogs } from 'contentlayer/generated';
 import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
 import { ArrowRight, Calendar, Tag } from 'lucide-react';
+
+// 一時的なモックデータ
+const allWorks = [
+  {
+    slug: 'neo-fusion-portfolio',
+    title: 'Neo-Typographic Fusion Portfolio',
+    excerpt: '3Dタイポグラフィとモダンデザインを融合させたポートフォリオサイト',
+    date: '2024-01-15',
+    tags: ['React', 'Three.js', 'TypeScript', 'Next.js'],
+    url: '/portfolio/neo-fusion-portfolio'
+  },
+  {
+    slug: 'interactive-3d-gallery',
+    title: 'Interactive 3D Gallery',
+    excerpt: 'WebGLを使用したインタラクティブな3Dギャラリーアプリケーション',
+    date: '2023-11-20',
+    tags: ['Three.js', 'WebGL', 'JavaScript', 'GLSL'],
+    url: '/portfolio/interactive-3d-gallery'
+  },
+  {
+    slug: 'motion-design-website',
+    title: 'Motion Design Website',
+    excerpt: 'Framer Motionを活用したアニメーション豊富なWebサイト',
+    date: '2023-09-10',
+    tags: ['Framer Motion', 'React', 'CSS', 'Animation'],
+    url: '/portfolio/motion-design-website'
+  }
+];
+
+const allBlogs = [
+  {
+    slug: 'react-three-fiber-basics',
+    title: 'React Three Fiberの基礎',
+    excerpt: 'React Three Fiberを使ってWebGL 3Dシーンを作成する方法を解説します',
+    date: '2024-01-10',
+    tags: ['React', 'Three.js', 'WebGL', '3D', 'Tutorial'],
+    url: '/blog/react-three-fiber-basics'
+  },
+  {
+    slug: 'nextjs-performance-optimization',
+    title: 'Next.js パフォーマンス最適化ガイド',
+    excerpt: 'Next.jsアプリケーションのパフォーマンスを向上させるテクニックをまとめました',
+    date: '2023-12-15',
+    tags: ['Next.js', 'Performance', 'Optimization', 'React'],
+    url: '/blog/nextjs-performance-optimization'
+  },
+  {
+    slug: 'modern-css-techniques',
+    title: 'モダンCSS テクニック集',
+    excerpt: 'CSS Grid、Flexbox、カスタムプロパティなど最新のCSS機能を活用したテクニック',
+    date: '2023-11-05',
+    tags: ['CSS', 'Grid', 'Flexbox', 'Frontend'],
+    url: '/blog/modern-css-techniques'
+  }
+];
 
 /**
  * Worksプレビューカード

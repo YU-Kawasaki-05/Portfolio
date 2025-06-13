@@ -1,10 +1,59 @@
 import { notFound } from 'next/navigation';
-import { allWorks, type Work } from 'contentlayer/generated';
 import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
 import { Calendar, Tag, ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import Link from 'next/link';
-import { getMDXComponent } from 'next-contentlayer/hooks';
+
+// 一時的なモックデータ
+const allWorks = [
+  {
+    slug: 'neo-fusion-portfolio',
+    title: 'Neo-Typographic Fusion Portfolio',
+    excerpt: '3Dタイポグラフィとモダンデザインを融合させたポートフォリオサイト',
+    date: '2024-01-15',
+    tags: ['React', 'Three.js', 'TypeScript', 'Next.js'],
+    url: '/portfolio/neo-fusion-portfolio',
+    cover: null,
+    content: `このプロジェクトは、モダンなWebテクノロジーを駆使して制作されたポートフォリオサイトです。
+
+## 技術仕様
+
+- **フレームワーク**: Next.js 14 with App Router
+- **3Dライブラリ**: React Three Fiber & Drei
+- **アニメーション**: Framer Motion & GSAP
+- **スタイリング**: Tailwind CSS
+- **タイプセーフティ**: TypeScript
+
+## 主な機能
+
+1. **3Dタイポグラフィ**: WebGLを使用したインタラクティブな文字表現
+2. **パララックス効果**: GSAPを活用したスムーズなスクロールアニメーション
+3. **レスポンシブデザイン**: モバイルからデスクトップまで最適化
+4. **パフォーマンス最適化**: Lighthouse スコア 95+ を達成
+
+このポートフォリオサイトは、ユーザビリティとビジュアルインパクトを両立させることを目指して開発されました。`
+  },
+  {
+    slug: 'interactive-3d-gallery',
+    title: 'Interactive 3D Gallery',
+    excerpt: 'WebGLを使用したインタラクティブな3Dギャラリーアプリケーション',
+    date: '2023-11-20',
+    tags: ['Three.js', 'WebGL', 'JavaScript', 'GLSL'],
+    url: '/portfolio/interactive-3d-gallery',
+    cover: null,
+    content: 'インタラクティブな3Dギャラリーの詳細説明...'
+  },
+  {
+    slug: 'motion-design-website',
+    title: 'Motion Design Website',
+    excerpt: 'Framer Motionを活用したアニメーション豊富なWebサイト',
+    date: '2023-09-10',
+    tags: ['Framer Motion', 'React', 'CSS', 'Animation'],
+    url: '/portfolio/motion-design-website',
+    cover: null,
+    content: 'モーションデザインWebサイトの詳細説明...'
+  }
+];
 
 interface WorkPageProps {
   params: {
@@ -48,8 +97,6 @@ export default function WorkPage({ params }: WorkPageProps) {
   if (!work) {
     notFound();
   }
-
-  const MDXContent = getMDXComponent(work.body.code);
 
   return (
     <div className="bg-[#0F0F0F] min-h-screen">
@@ -115,19 +162,17 @@ export default function WorkPage({ params }: WorkPageProps) {
       </div>
 
       {/* カバー画像 */}
-      {work.cover && (
-        <div className="bg-gradient-to-br from-[#FF2D55]/20 to-[#1479FF]/20 h-64 sm:h-80 flex items-center justify-center">
-          <div className="text-[#F9F9F9] text-2xl font-bold opacity-50">
-            {work.title}
-          </div>
+      <div className="bg-gradient-to-br from-[#FF2D55]/20 to-[#1479FF]/20 h-64 sm:h-80 flex items-center justify-center">
+        <div className="text-[#F9F9F9] text-2xl font-bold opacity-50">
+          {work.title}
         </div>
-      )}
+      </div>
 
-      {/* MDXコンテンツ */}
+      {/* コンテンツ */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="prose prose-invert prose-lg max-w-none">
-          <div className="mdx-content">
-            <MDXContent />
+          <div className="text-[#F9F9F9] whitespace-pre-line leading-relaxed">
+            {work.content}
           </div>
         </div>
       </article>

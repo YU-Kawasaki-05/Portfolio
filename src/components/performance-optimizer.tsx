@@ -10,18 +10,20 @@ export function PerformanceMonitor() {
 
   useEffect(() => {
     // Web Vitals の監視
-    if (typeof window !== 'undefined' && 'web-vital' in window) {
+    if (typeof window !== 'undefined') {
       import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
         getCLS((metric) => setVitals(prev => ({ ...prev, cls: metric })));
         getFID((metric) => setVitals(prev => ({ ...prev, fid: metric })));
         getFCP((metric) => setVitals(prev => ({ ...prev, fcp: metric })));
         getLCP((metric) => setVitals(prev => ({ ...prev, lcp: metric })));
         getTTFB((metric) => setVitals(prev => ({ ...prev, ttfb: metric })));
+      }).catch((error) => {
+        console.warn('Web Vitals not available:', error);
       });
     }
 
     // パフォーマンス観測者
-    if ('PerformanceObserver' in window) {
+    if (typeof window !== 'undefined' && 'PerformanceObserver' in window) {
       const observer = new PerformanceObserver((list) => {
         list.getEntries().forEach((entry) => {
           // Long Tasks の検出
@@ -30,8 +32,8 @@ export function PerformanceMonitor() {
           }
           
           // Layout Shift の検出
-          if (entry.entryType === 'layout-shift' && !entry.hadRecentInput) {
-            console.warn('Layout shift detected:', entry.value);
+          if (entry.entryType === 'layout-shift' && !(entry as any).hadRecentInput) {
+            console.warn('Layout shift detected:', (entry as any).value);
           }
         });
       });
@@ -40,6 +42,7 @@ export function PerformanceMonitor() {
         observer.observe({ entryTypes: ['longtask', 'layout-shift'] });
       } catch (e) {
         // サポートされていない場合は無視
+        console.warn('PerformanceObserver not supported:', e);
       }
 
       return () => observer.disconnect();
@@ -54,6 +57,8 @@ export function PerformanceMonitor() {
  */
 export function ImagePreloader({ images }: { images: string[] }) {
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     // 重要な画像のプリロード
     images.forEach((src) => {
       const link = document.createElement('link');
@@ -72,6 +77,8 @@ export function ImagePreloader({ images }: { images: string[] }) {
  */
 export function CSSOptimizer() {
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     // 未使用のCSS削除とクリティカルCSS最適化
     const criticalStyles = `
       /* クリティカルパス用の最小限CSS */
@@ -93,7 +100,9 @@ export function CSSOptimizer() {
     document.head.appendChild(style);
 
     return () => {
-      document.head.removeChild(style);
+      if (document.head.contains(style)) {
+        document.head.removeChild(style);
+      }
     };
   }, []);
 
@@ -105,6 +114,8 @@ export function CSSOptimizer() {
  */
 export function ResourceOptimizer() {
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     // Service Worker の登録
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js')
@@ -146,6 +157,8 @@ export function ResourceOptimizer() {
  */
 export function MemoryMonitor() {
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     const checkMemoryUsage = () => {
       if ('memory' in performance) {
         const memory = (performance as any).memory;
@@ -232,6 +245,8 @@ export const performanceUtils = {
 
   // リソースの優先読み込み
   preloadResource: (href: string, as: string, type?: string) => {
+    if (typeof window === 'undefined') return;
+    
     const link = document.createElement('link');
     link.rel = 'preload';
     link.href = href;
@@ -242,8 +257,10 @@ export const performanceUtils = {
 
   // 遅延実行
   defer: (callback: () => void) => {
+    if (typeof window === 'undefined') return;
+    
     if ('requestIdleCallback' in window) {
-      requestIdleCallback(callback);
+      (window as any).requestIdleCallback(callback);
     } else {
       setTimeout(callback, 1);
     }

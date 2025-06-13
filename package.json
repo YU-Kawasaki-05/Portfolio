@@ -22,6 +22,7 @@
     "contentlayer": "^0.3.4",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.17.3",
+    "gsap": "^3.13.0",
     "lucide-react": "^0.514.0",
     "next": "15.3.3",
     "next-contentlayer": "^0.3.4",
@@ -30,7 +31,8 @@
     "rehype-highlight": "^7.0.2",
     "remark-gfm": "^4.0.1",
     "tailwind-merge": "^3.3.1",
-    "three": "^0.177.0"
+    "three": "^0.177.0",
+    "web-vitals": "^5.0.3"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.0.0",
