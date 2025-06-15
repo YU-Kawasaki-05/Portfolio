@@ -57,7 +57,7 @@ export function Footer() {
               </h3>
             </div>
             <p className="text-[#7A7A7A] mb-6 max-w-md leading-relaxed">
-              タイポグラフィと3Dグラフィックスを融合させた、モダンでインタラクティブなポートフォリオサイト。
+              広範な生成AI知識と開発知見を活用し開発した川崎Kの個人サイト。
               React、Next.js、Three.jsを使用したWebエクスペリエンス。
             </p>
             

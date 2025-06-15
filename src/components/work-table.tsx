@@ -77,7 +77,7 @@ export default function WorkTable() {
             <Search size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#7A7A7A]" />
             <input
               type="text"
-              placeholder="作品を検索..."
+              placeholder="プロジェクトを検索..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-10 pr-4 py-3 bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg text-[#F9F9F9] placeholder-[#7A7A7A] focus:border-[#1479FF] focus:outline-none transition-colors"
@@ -103,7 +103,7 @@ export default function WorkTable() {
         {/* 結果数 */}
         <div className="mb-6">
           <p className="text-[#7A7A7A] text-sm">
-            {filteredWorks.length}件の作品が見つかりました
+            {filteredWorks.length}件のプロジェクトが見つかりました
           </p>
         </div>
 
@@ -113,7 +113,7 @@ export default function WorkTable() {
             <table className="w-full">
               <thead>
                 <tr className="border-b border-[#2A2A2A]">
-                  <th className="text-left py-4 px-6 text-[#F9F9F9] font-semibold">作品名</th>
+                  <th className="text-left py-4 px-6 text-[#F9F9F9] font-semibold">プロジェクト名</th>
                   <th className="text-left py-4 px-6 text-[#F9F9F9] font-semibold hidden sm:table-cell">日付</th>
                   <th className="text-left py-4 px-6 text-[#F9F9F9] font-semibold hidden md:table-cell">タグ</th>
                   <th className="text-left py-4 px-6 text-[#F9F9F9] font-semibold">アクション</th>
