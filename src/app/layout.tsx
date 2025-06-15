@@ -4,6 +4,8 @@ import "./globals.css";
 import PageTransition from "@/components/page-transition";
 import MotionProvider, { MotionToggle } from "@/components/motion-provider";
 import PerformanceOptimizer from "@/components/performance-optimizer";
+import HeaderNav from "@/components/layout/header-nav";
+import { Footer } from "@/components/layout/footer";
 
 // Neo‑Typographic Fusion フォント設定
 const spaceGrotesk = Space_Grotesk({
@@ -207,9 +209,20 @@ export default function RootLayout({
         />
         
         <MotionProvider>
-          <PageTransition>
-            {children}
-          </PageTransition>
+          {/* ヘッダーナビゲーション */}
+          <HeaderNav />
+          
+          {/* メインコンテンツ */}
+          <main className="min-h-screen pt-16">
+            <PageTransition>
+              {children}
+            </PageTransition>
+          </main>
+          
+          {/* フッター */}
+          <Footer />
+          
+          {/* モーション切り替えボタン */}
           <MotionToggle />
         </MotionProvider>
 
