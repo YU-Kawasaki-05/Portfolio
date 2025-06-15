@@ -63,10 +63,10 @@ export default function WorkTable() {
         {/* ヘッダー */}
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold font-heading text-[#F9F9F9] mb-4">
-            Portfolio
+            Works
           </h1>
           <p className="text-[#7A7A7A] text-lg max-w-2xl mx-auto">
-            制作実績とプロジェクトの詳細をご紹介します
+            実績とプロジェクトの詳細をご紹介します
           </p>
         </div>
 

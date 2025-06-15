@@ -14,7 +14,7 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { href: '/', label: 'Home', description: 'ホーム' },
-  { href: '/portfolio', label: 'Portfolio', description: '作品集' },
+  { href: '/portfolio', label: 'Works', description: '事例と実績' },
   { href: '/blog', label: 'Blog', description: 'ブログ' },
   { href: '/profile', label: 'Profile', description: 'プロフィール' },
   { href: '/services', label: 'Services', description: 'サービス' },

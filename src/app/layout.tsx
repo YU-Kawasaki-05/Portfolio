@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+﻿import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Inter, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import PageTransition from "@/components/page-transition";

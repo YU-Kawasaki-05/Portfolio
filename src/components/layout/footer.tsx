@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import { Github, Twitter, Linkedin, Mail, ExternalLink } from 'lucide-react';
+import { Github, X, Linkedin, Mail, ExternalLink } from 'lucide-react';
 
 const socialLinks = [
   { href: 'https://github.com/neo-fusion', icon: Github, label: 'GitHub' },
-  { href: 'https://twitter.com/neo_fusion_dev', icon: Twitter, label: 'Twitter' },
+  { href: 'https://x.com/neo_fusion_dev', icon: X, label: 'X' },
   { href: 'https://linkedin.com/in/neo-fusion', icon: Linkedin, label: 'LinkedIn' },
   { href: 'mailto:contact@neo-fusion.dev', icon: Mail, label: 'Email' },
 ];
@@ -14,7 +14,7 @@ const footerLinks = [
     title: 'Navigation',
     links: [
       { href: '/', label: 'Home', description: 'ホーム' },
-      { href: '/portfolio', label: 'Portfolio', description: '作品集' },
+      { href: '/portfolio', label: 'Works', description: '事例と実績' },
       { href: '/blog', label: 'Blog', description: 'ブログ' },
       { href: '/profile', label: 'Profile', description: 'プロフィール' },
     ],
@@ -30,7 +30,7 @@ const footerLinks = [
     title: 'Resources',
     links: [
       { href: '/blog', label: 'Tech Blog', description: '技術ブログ' },
-      { href: '/portfolio', label: 'Case Studies', description: '事例紹介' },
+      { href: '/portfolio', label: 'Works', description: '事例と実績' },
       { href: '/services', label: 'Consulting', description: 'コンサルティング' },
     ],
   },
@@ -128,7 +128,7 @@ export function Footer() {
                 Terms of Service
               </Link>
               <span className="text-[#5A5A5A]">
-                Made with ❤️ in Japan
+                Made with ❤️ and ☕ in Tokyo
               </span>
             </div>
           </div>
