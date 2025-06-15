@@ -99,8 +99,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@neo_fusion_dev",
-    creator: "@neo_fusion_dev",
+    site: "@foooten_",
+    creator: "@foooten_",
     title: "Neo-Typographic Fusion – Portfolio",
     description: "タイポグラフィと3Dグラフィックスを融合させた、モダンでインタラクティブなポートフォリオサイト",
     images: ["/twitter-image.png"],
@@ -248,9 +248,9 @@ export default function RootLayout({
                 "3D Graphics", "Web Development", "UI/UX Design"
               ],
               "sameAs": [
-                "https://github.com/neo-fusion",
-                "https://twitter.com/neo_fusion_dev",
-                "https://linkedin.com/in/neo-fusion"
+                "https://github.com/YU-Kawasaki-05",
+                "https://x.com/foooten_",
+                "https://www.linkedin.com/in/yu-kawasaki-a05441296/"
               ]
             })
           }}

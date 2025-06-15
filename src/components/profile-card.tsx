@@ -22,9 +22,9 @@ export default function ProfileCard() {
       contributions: 500,
     },
     social: {
-      github: 'https://github.com/username',
-      twitter: 'https://twitter.com/username',
-      linkedin: 'https://linkedin.com/in/username',
+      github: 'https://github.com/YU-Kawasaki-05',
+      twitter: 'https://x.com/foooten_',
+      linkedin: 'https://www.linkedin.com/in/yu-kawasaki-a05441296/',
     },
   };
 

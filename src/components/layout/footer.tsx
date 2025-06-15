@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { Github, Twitter, Linkedin, Mail, ExternalLink } from 'lucide-react';
 
 const socialLinks = [
-  { href: 'https://github.com/neo-fusion', icon: Github, label: 'GitHub' },
-  { href: 'https://twitter.com/neo_fusion_dev', icon: Twitter, label: 'Twitter' },
-  { href: 'https://linkedin.com/in/neo-fusion', icon: Linkedin, label: 'LinkedIn' },
+  { href: 'https://github.com/YU-Kawasaki-05', icon: Github, label: 'GitHub' },
+  { href: 'https://x.com/foooten_', icon: Twitter, label: 'X' },
+  { href: 'https://www.linkedin.com/in/yu-kawasaki-a05441296/', icon: Linkedin, label: 'LinkedIn' },
   { href: 'mailto:contact@neo-fusion.dev', icon: Mail, label: 'Email' },
 ];
 
