@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import { Github, X, Linkedin, Mail, ExternalLink } from 'lucide-react';
+import { Github, Twitter, Linkedin, Mail, ExternalLink } from 'lucide-react';
 
 const socialLinks = [
   { href: 'https://github.com/neo-fusion', icon: Github, label: 'GitHub' },
-  { href: 'https://x.com/neo_fusion_dev', icon: X, label: 'X' },
+  { href: 'https://twitter.com/neo_fusion_dev', icon: Twitter, label: 'Twitter' },
   { href: 'https://linkedin.com/in/neo-fusion', icon: Linkedin, label: 'LinkedIn' },
   { href: 'mailto:contact@neo-fusion.dev', icon: Mail, label: 'Email' },
 ];
