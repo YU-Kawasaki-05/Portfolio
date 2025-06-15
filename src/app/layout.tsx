@@ -202,7 +202,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
-      <body className="font-sans bg-[#0F0F0F] text-[#F9F9F9] antialiased">
+      <body className="font-sans bg-[#0F0F0F] text-[#F9F9F9] antialiased vsc-initialized" suppressHydrationWarning>
         <PerformanceOptimizer 
           criticalImages={criticalImages}
           enableMonitoring={process.env.NODE_ENV === 'production'}
