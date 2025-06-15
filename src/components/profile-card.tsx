@@ -8,10 +8,10 @@ import { MapPin, Calendar, Mail, Github, Twitter, Linkedin, ExternalLink } from 
  */
 export default function ProfileCard() {
   const profile = {
-    name: 'Neo‑Typographic Developer',
-    title: 'Frontend Engineer & 3D Web Developer',
+    name: '川崎K',
+    title: 'フルスタックエンジニア, AIコンサルタント',
     location: 'Tokyo, Japan',
-    joinDate: '2020年4月',
+    joinDate: '2024年1月',
     email: 'hello@example.com',
     bio: 'モダンなウェブ技術と3Dグラフィックスを組み合わせた、革新的なユーザーエクスペリエンスの創造に情熱を注いでいます。React、Three.js、TypeScriptを中心とした技術スタックで、美しく機能的なウェブアプリケーションを開発しています。',
     avatar: '👨‍💻',

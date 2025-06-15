@@ -30,7 +30,6 @@ const footerLinks = [
     title: 'Resources',
     links: [
       { href: '/blog', label: 'Tech Blog', description: '技術ブログ' },
-      { href: '/portfolio', label: 'Works', description: '事例と実績' },
       { href: '/services', label: 'Consulting', description: 'コンサルティング' },
     ],
   },

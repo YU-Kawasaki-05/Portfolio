@@ -21,7 +21,7 @@ export default function ProfilePage() {
             Profile
           </h1>
           <p className="text-[#7A7A7A] text-lg max-w-2xl mx-auto">
-            フロントエンドエンジニア・3Dウェブ開発者としての経歴とスキル
+            開発者、AIコンサルタントとしての経歴とスキル
           </p>
         </ScrollReveal>
 
