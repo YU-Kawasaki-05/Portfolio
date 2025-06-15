@@ -88,7 +88,6 @@
 | **603** | PWA 対応 (マニフェスト、Service Worker) を行い Audit 90+ を確認 |  ☐   |
 | **604** | README を最終化し、`v1.0.0` タグを打ってリリース               |  ☐   |
 
----
 
 ## ✏️ 追加タスク用テンプレ
 
@@ -99,3 +98,10 @@
 ```
 
 > **Tip**: タスク完了時に `☐` → `☑` へ手動変換すると Cursor が「残タスク」を自動検出しやすくなります。
+
+| 820 | `ServiceAccordionShowcase.tsx` の state 初期値を `{ Consulting:true, Development:false, Automation:false, Training:false }` に変更 | ☑ |
+| 821 | `ServiceAccordionShowcase.tsx` の JSX を **主力カード廃止** → カテゴリごとにまとめ、全カードをアコーディオン内に移動 | ☑ |
+| 822 | アコーディオン開閉アイコンを `ChevronDown / ChevronUp` で統一 | ☑ |
+| 823 | サービスデータを `services/data.ts` に切り出し、カテゴリ順に並べ替え | ☑ |
+| 824 | `src/app/services/page.tsx` で新コンポーネントを dynamic import (SSR false) | ☑ |
+| 825 | Lighthouse CLS 再測定 (≦0.1) | ☐ |

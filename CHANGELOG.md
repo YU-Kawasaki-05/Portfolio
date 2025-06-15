@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `02_layout-guidelines.md` に PageShell Server Component を追記
   - `00_overview.md` に成長戦略とKPIを追加
 * nav: Header & Sidebar リンクを Router Link に変更 (#214)
+* services: 全カテゴリをアコーディオン、Consulting 初期展開に統一 (#820-824)
 
 ## [0.1.0] - 2024-03-20
 
