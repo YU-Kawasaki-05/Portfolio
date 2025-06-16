@@ -2,19 +2,49 @@
 
 import Hero3DWrapper from '@/components/3d/Hero3DWrapper';
 import MondrianBlock, { MondrianComposition } from '@/components/design/MondrianBlock';
+import Layout from '@/components/layout/Layout';
 
 export default function Demo3DPage() {
   return (
-    <div className="min-h-screen bg-bg text-text">
-      {/* Page Header */}
-      <div className="container mx-auto px-6 py-8">
-        <h1 className="text-5xl font-heading font-bold mb-4">
-          Phase 3 - 3D Hero & Mondrian Demo
-        </h1>
-        <p className="text-muted text-lg mb-8">
-          3Dコンポーネントとモンドリアンブロックのデモページ
-        </p>
-      </div>
+    <Layout>
+      {/* Hero Section with Full-Screen 3D */}
+      <section className="relative min-h-screen bg-bg overflow-hidden">
+        {/* Background 3D Scene */}
+        <div className="absolute inset-0">
+          <Hero3DWrapper 
+            text="Neo‑Typographic Fusion"
+            rotationSpeed={20}
+            accentColor="blue"
+            mouseFollow={true}
+          />
+        </div>
+
+        {/* Overlay Content */}
+        <div className="relative z-10 min-h-screen flex items-center justify-center">
+          <div className="text-center max-w-6xl mx-auto px-8">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-heading font-black text-white mb-8 leading-none drop-shadow-2xl">
+              <span className="text-white/90">3D</span>
+              <br />
+              <span className="text-red">Experience</span>
+            </h1>
+            <p className="text-xl md:text-3xl text-white/80 font-heading mb-12 drop-shadow-lg">
+              Three.js × React Three Fiber × WebGL
+            </p>
+            
+            {/* Interactive Indicator */}
+            <div className="animate-pulse text-white/60 text-lg font-heading">
+              ↻ マウスでインタラクション可能
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/60">
+          <div className="animate-bounce">
+            <div className="w-1 h-16 bg-gradient-to-b from-transparent via-white/60 to-transparent"></div>
+          </div>
+        </div>
+      </section>
 
       {/* Hero3D Demo */}
       <section className="mb-16">
@@ -149,6 +179,6 @@ export default function Demo3DPage() {
           </div>
         </div>
       </section>
-    </div>
+    </Layout>
   );
 } 
