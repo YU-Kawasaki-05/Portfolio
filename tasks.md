@@ -105,3 +105,13 @@
 | 823 | サービスデータを `services/data.ts` に切り出し、カテゴリ順に並べ替え | ☑ |
 | 824 | `src/app/services/page.tsx` で新コンポーネントを dynamic import (SSR false) | ☑ |
 | 825 | Lighthouse CLS 再測定 (≦0.1) | ☐ |
+| 826 | `src/components/skills-list.tsx` を **Skills セクション簡素化**: カテゴリ・ProgressBar・経験年数をすべて削除し、タグ型 Badges のみ表示 | ☑ |
+| 827 | スキルデータを `data/skills.ts` に移動し `type Skill = { name:string; icon?:ReactNode }` で定義 | ☑ |
+| 828 | `SkillBadge.tsx` コンポーネントを作成し shadcn/UI の `Badge` をラップ (色はレベル判定なし) | ☑ |
+| 829 | `SkillsSection.tsx` を新規作成し、`skills` 配列をグリッド表示 (列: auto-fit, min 120px) | ☑ |
+| 830 | `ProfilePage` で `SkillsList` → `SkillsSection` に置換、古いコンポーネントを削除 | ☑ |
+| 831 | アイコン: `simple-icons` または `lucide-react` を利用し、表示有無は `icon?` で条件分岐 | ☑ |
+| 832 | Storybook: `SkillsSection.stories.tsx` で UI を確認 & docs 追加 | ☑ |
+| 833 | Jest + RTL: `SkillsSection` のレンダリングテストとスナップショット追加 | ☑ |
+| 834 | Playwright: Profile ページでスキルタグの表示を確認する E2E を追加 | ☑ |
+| 835 | README & デザインドキュメントを更新 (スキルセクション仕様変更を反映) | ☐ |

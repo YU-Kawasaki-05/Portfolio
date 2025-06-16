@@ -1,5 +1,5 @@
 import ProfileCard from '@/components/profile-card';
-import SkillsList from '@/components/skills-list';
+import SkillsSection from '@/components/skills-section';
 import { 
   SmoothScrollContainer, 
   ScrollReveal, 
@@ -33,7 +33,7 @@ export default function ProfilePage() {
 
           {/* スキルリスト */}
           <ScrollReveal direction="right" delay={0.4} className="lg:col-span-2">
-            <SkillsList />
+            <SkillsSection />
           </ScrollReveal>
         </div>
       </div>
