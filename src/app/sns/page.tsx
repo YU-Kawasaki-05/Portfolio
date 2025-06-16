@@ -3,28 +3,28 @@ import { Twitter, Github, Linkedin, ExternalLink, Heart, MessageCircle, Repeat2,
 export default function SNSPage() {
   const socialStats = [
     {
-      platform: 'Twitter',
-      handle: '@neo_dev',
-      followers: '2.5K',
+      platform: 'X / Twitter',
+      handle: '@foooten_',
+      followers: '260',
       icon: <Twitter size={24} />,
       color: '#1479FF',
-      url: 'https://twitter.com/neo_dev',
+      url: 'https://x.com/foooten_',
     },
     {
       platform: 'GitHub',
       handle: 'neo-developer',
-      followers: '1.2K',
+      followers: '---',
       icon: <Github size={24} />,
       color: '#F9F9F9',
-      url: 'https://github.com/neo-developer',
+      url: 'https://github.com/YU-Kawasaki-05',
     },
     {
       platform: 'LinkedIn',
       handle: 'neo-developer',
-      followers: '800',
+      followers: '99',
       icon: <Linkedin size={24} />,
       color: '#1479FF',
-      url: 'https://linkedin.com/in/neo-developer',
+      url: 'https://www.linkedin.com/in/yu-kawasaki-a05441296/',
     },
   ];
 
