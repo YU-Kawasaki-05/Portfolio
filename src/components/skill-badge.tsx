@@ -12,7 +12,7 @@ interface SkillBadgeProps {
  */
 const SkillBadge: FC<SkillBadgeProps> = ({ skill }) => {
   return (
-    <Badge variant="outline" className="justify-center gap-1 w-full">
+    <Badge variant="outline" className="justify-center gap-1 w-full px-4 py-2 text-sm sm:text-base">
       {skill.icon && <span className="size-4">{skill.icon}</span>}
       {skill.name}
     </Badge>

@@ -9,12 +9,12 @@ export default function SkillsSection() {
     <section aria-labelledby="skills-section-heading">
       <h2
         id="skills-section-heading"
-        className="sr-only"
+        className="text-2xl sm:text-3xl font-bold font-heading text-[#F9F9F9] mb-6"
       >
         Skills
       </h2>
-      <div className="grid gap-3"
-        style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))' }}
+      <div className="grid gap-4"
+        style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))' }}
       >
         {skills.map((skill) => (
           <SkillBadge key={skill.name} skill={skill} />
