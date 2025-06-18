@@ -160,9 +160,3 @@ cover: "/images/portfolio-hero.webp"
 * **Vercel** > "Import Git" ➜ フレームワーク自動検出 `Next.js`。
 * 環境変数 (例: `NEXT_PUBLIC_SITE_URL`) を設定。
 * Preview URL を PR ごとに自動生成。
-
-## 11. 今後のタスク例 (Cursor に依頼)
-
-1. **Hero3D.tsx** – Space Grotesk の 3D TextGeometry を y軸 360°/30s で回転。
-2. **ScrollTrigger** – `/components/ScrollSection.tsx` を作り、section ごとに `data-speed` 属性でパララックス。
-3. **ProfileCard** – `selectedId` の Zustand store を実装し、クリックで詳細切り替え。

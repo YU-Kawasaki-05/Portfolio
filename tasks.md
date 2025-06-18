@@ -99,6 +99,8 @@
 
 > **Tip**: タスク完了時に `☐` → `☑` へ手動変換すると Cursor が「残タスク」を自動検出しやすくなります。
 
+| ID      | Task                                                         | Done |
+| ------- | ------------------------------------------------------------ | :--: |
 | 820 | `ServiceAccordionShowcase.tsx` の state 初期値を `{ Consulting:true, Development:false, Automation:false, Training:false }` に変更 | ☑ |
 | 821 | `ServiceAccordionShowcase.tsx` の JSX を **主力カード廃止** → カテゴリごとにまとめ、全カードをアコーディオン内に移動 | ☑ |
 | 822 | アコーディオン開閉アイコンを `ChevronDown / ChevronUp` で統一 | ☑ |

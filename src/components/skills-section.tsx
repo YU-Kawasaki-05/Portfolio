@@ -13,12 +13,14 @@ export default function SkillsSection() {
       >
         Skills
       </h2>
-      <div className="grid gap-4"
-        style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))' }}
-      >
-        {skills.map((skill) => (
-          <SkillBadge key={skill.name} skill={skill} />
-        ))}
+      <div className="border border-[#555] rounded-lg p-6 mt-6 mb-10">
+        <div className="grid gap-4"
+          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))' }}
+        >
+          {skills.map((skill) => (
+            <SkillBadge key={skill.name} skill={skill} />
+          ))}
+        </div>
       </div>
     </section>
   );
