@@ -19,7 +19,9 @@ export default function ServicesPage() {
         </div>
 
         {/* サービス一覧（アコーディオン） */}
-        <ServiceAccordionShowcase />
+        <div className="mb-20">
+          <ServiceAccordionShowcase />
+        </div>
 
         {/* お問い合わせセクション */}
         <section className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg p-12 text-center">
