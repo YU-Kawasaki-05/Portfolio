@@ -77,11 +77,11 @@
 | **502** | Playwright で Home → Portfolio の E2E テストを作成             |  ☐   |
 | **503** | GitHub Actions: `ci.yml` で lint, test, build を実行         |  ☐   |
 | **504** | テストカバレッジ 80% を達成し、バッジを README に追加          |  ☐   |
-| **510** | note.com RSS 取得バッチ (`/scripts/fetch-notes.ts`) を作成     |  ☐   |
-| **511** | 取得データを `/data/notes.json` に保存する処理を実装           |  ☐   |
-| **512** | GitHub Actions でバッチを定期実行 (daily at 03:00 UTC)      |  ☐   |
-| **513** | Blog ページで Contentlayer と note 記事をマージして表示        |  ☐   |
-| **514** | ローカル/プレビューで note 記事の表示と CLS (≤ 0.1) を確認   |  ☐   |
+| **510** | note.com RSS 取得バッチ (`/scripts/fetch-notes.ts`) を作成     |  ☑   |
+| **511** | 取得データを `/data/notes.json` に保存する処理を実装           |  ☑   |
+| **512** | GitHub Actions でバッチを定期実行 (daily at 03:00 UTC)      |  ☑   |
+| **513** | Blog ページで Contentlayer と note 記事をマージして表示        |  ☑   |
+| **514** | ローカル/プレビューで note 記事の表示と CLS (≤ 0.1) を確認   |  ☑   |
 
 ## Phase 6 – Deployment & Analytics
 
@@ -92,6 +92,7 @@
 | **602** | Vercel Analytics (Speed Insights, Web Vitals) を有効化       |  ☐   |
 | **603** | PWA 対応 (マニフェスト、Service Worker) を行い Audit 90+ を確認 |  ☐   |
 | **604** | README を最終化し、`v1.0.0` タグを打ってリリース               |  ☐   |
+
 
 ## ✏️ 追加タスク用テンプレ
 
@@ -112,6 +113,7 @@
 | 822 | アコーディオン開閉アイコンを `ChevronDown / ChevronUp` で統一 | ☑ |
 | 823 | サービスデータを `services/data.ts` に切り出し、カテゴリ順に並べ替え | ☑ |
 | 824 | `src/app/services/page.tsx` で新コンポーネントを dynamic import (SSR false) | ☑ |
+| 825 | Lighthouse CLS 再測定 (≦0.1) | ☐ |
 | 826 | `src/components/skills-list.tsx` を **Skills セクション簡素化**: カテゴリ・ProgressBar・経験年数をすべて削除し、タグ型 Badges のみ表示 | ☑ |
 | 827 | スキルデータを `data/skills.ts` に移動し `type Skill = { name:string; icon?:ReactNode }` で定義 | ☑ |
 | 828 | `SkillBadge.tsx` コンポーネントを作成し shadcn/UI の `Badge` をラップ (色はレベル判定なし) | ☑ |
@@ -121,5 +123,4 @@
 | 832 | Storybook: `SkillsSection.stories.tsx` で UI を確認 & docs 追加 | ☑ |
 | 833 | Jest + RTL: `SkillsSection` のレンダリングテストとスナップショット追加 | ☑ |
 | 834 | Playwright: Profile ページでスキルタグの表示を確認する E2E を追加 | ☑ |
-| 825 | Lighthouse CLS 再測定 (≦0.1) | ☐ |
 | 835 | README & デザインドキュメントを更新 (スキルセクション仕様変更を反映) | ☐ |
