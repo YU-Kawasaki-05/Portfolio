@@ -14,7 +14,7 @@ export default function ServicesPage() {
             Services
           </h1>
           <p className="text-[#7A7A7A] text-lg max-w-2xl mx-auto">
-            モダンなウェブ技術と3Dグラフィックスを活用した、高品質なサービスを提供します
+            生成AIに関する幅広い知見とコンサルティング・開発の経験を活かし、お客様が望む結果のために尽力します。
           </p>
         </div>
 
