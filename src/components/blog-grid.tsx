@@ -1,99 +1,66 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
-import { Calendar, Tag, Search, Filter, ArrowRight } from 'lucide-react';
+import { allBlogs, Blog } from 'contentlayer/generated';
+import { Calendar, Tag, Search, Filter, ArrowRight, ExternalLink } from 'lucide-react';
+import notePosts from '@/data/notes.json';
 
-// 仮のブログデータ（後でContentlayerに置き換え）
-const blogPosts = [
-  {
-    slug: 'react-three-fiber-basics',
-    title: 'React Three Fiberで始める3Dウェブ開発',
-    excerpt: 'React Three Fiberの基本概念から実践的な3Dシーンの構築まで、初心者向けに分かりやすく解説します。',
-    date: '2024-03-10',
-    tags: ['React', 'Three.js', 'WebGL', '3D', 'Tutorial'],
-    url: '/blog/react-three-fiber-basics',
-  },
-  {
-    slug: 'nextjs-performance-optimization',
-    title: 'Next.js 15のパフォーマンス最適化テクニック',
-    excerpt: 'Next.js 15の新機能を活用したパフォーマンス最適化の手法を実例とともに紹介します。',
-    date: '2024-02-28',
-    tags: ['Next.js', 'Performance', 'Optimization', 'React'],
-    url: '/blog/nextjs-performance-optimization',
-  },
-  {
-    slug: 'tailwind-design-system',
-    title: 'Tailwind CSSでスケーラブルなデザインシステムを構築する',
-    excerpt: 'Tailwind CSSを使用して、保守性と拡張性を兼ね備えたデザインシステムの構築方法を解説します。',
-    date: '2024-02-15',
-    tags: ['Tailwind CSS', 'Design System', 'CSS', 'Frontend'],
-    url: '/blog/tailwind-design-system',
-  },
-  {
-    slug: 'typescript-advanced-patterns',
-    title: 'TypeScriptの高度な型パターンとベストプラクティス',
-    excerpt: 'TypeScriptの型システムを最大限活用するための高度なパターンとベストプラクティスを紹介します。',
-    date: '2024-01-30',
-    tags: ['TypeScript', 'Types', 'Best Practices', 'JavaScript'],
-    url: '/blog/typescript-advanced-patterns',
-  },
-  {
-    slug: 'web-accessibility-guide',
-    title: 'Webアクセシビリティの実装ガイド',
-    excerpt: 'WCAG 2.1に準拠したアクセシブルなWebサイトの実装方法を具体例とともに解説します。',
-    date: '2024-01-15',
-    tags: ['Accessibility', 'WCAG', 'HTML', 'UX'],
-    url: '/blog/web-accessibility-guide',
-  },
-  {
-    slug: 'react-state-management',
-    title: 'React状態管理の選択肢と使い分け',
-    excerpt: 'useState、useReducer、Zustand、Reduxなど、Reactの状態管理ライブラリの特徴と使い分けを解説します。',
-    date: '2024-01-01',
-    tags: ['React', 'State Management', 'Zustand', 'Redux'],
-    url: '/blog/react-state-management',
-  },
-];
+// note.comの記事とContentlayerのブログ記事の型を統合
+type MergedPost = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  tags: string[];
+  url: string;
+  isExternal: boolean;
+  source?: 'note.com' | 'local';
+};
 
 /**
  * Blogカードコンポーネント
  */
-function BlogCard({ post }: { post: typeof blogPosts[0] }) {
-  return (
-    <Link
-      href={post.url}
-      className="group block bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg overflow-hidden hover:border-[#1479FF] transition-all duration-300 hover:scale-105"
-    >
+function BlogCard({ post }: { post: MergedPost }) {
+  const CardContent = (
+    <div className="group block bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg overflow-hidden hover:border-[#1479FF] transition-all duration-300 hover:scale-105 h-full flex flex-col">
       {/* カバー画像エリア */}
-      <div className="aspect-video bg-gradient-to-br from-[#1479FF]/20 to-[#F5C400]/20 flex items-center justify-center">
+      <div className="aspect-video bg-gradient-to-br from-[#1479FF]/20 to-[#F5C400]/20 flex items-center justify-center relative">
         <div className="text-[#F9F9F9] text-lg font-bold opacity-50 text-center px-4">
           {post.title}
         </div>
+        {post.isExternal && (
+          <span className="absolute top-2 right-2 bg-red-500/80 text-white text-xs px-2 py-1 rounded-full">
+            note.com
+          </span>
+        )}
       </div>
       
       {/* コンテンツ */}
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-[#F9F9F9] text-xl font-bold mb-3 group-hover:text-[#1479FF] transition-colors line-clamp-2">
           {post.title}
         </h3>
         
-        <p className="text-[#7A7A7A] text-sm mb-4 line-clamp-3 leading-relaxed">
+        <p className="text-[#7A7A7A] text-sm mb-4 line-clamp-3 leading-relaxed flex-grow">
           {post.excerpt}
         </p>
         
         {/* メタ情報 */}
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-4 mt-auto">
           <div className="flex items-center text-[#7A7A7A] text-xs">
             <Calendar size={14} className="mr-1" />
             {format(new Date(post.date), 'yyyy年M月d日', { locale: ja })}
           </div>
           
           <div className="flex items-center text-[#1479FF] text-sm font-medium">
-            読む
-            <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
+            {post.isExternal ? '読む' : '読む'}
+            {post.isExternal ? 
+              <ExternalLink size={16} className="ml-1 group-hover:translate-x-1 transition-transform" /> :
+              <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
+            }
           </div>
         </div>
         
@@ -115,9 +82,24 @@ function BlogCard({ post }: { post: typeof blogPosts[0] }) {
           )}
         </div>
       </div>
+    </div>
+  );
+
+  if (post.isExternal) {
+    return (
+      <a href={post.url} target="_blank" rel="noopener noreferrer" className="h-full">
+        {CardContent}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={post.url} className="h-full">
+      {CardContent}
     </Link>
   );
 }
+
 
 /**
  * BlogGridコンポーネント - ブログ記事一覧をカードグリッドで表示
@@ -126,20 +108,43 @@ export default function BlogGrid() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTag, setSelectedTag] = useState<string>('');
 
+  const allPosts = useMemo(() => {
+    const localPosts: MergedPost[] = allBlogs.map((blog: Blog) => ({
+      ...blog,
+      excerpt: blog.description || '',
+      isExternal: false,
+      source: 'local',
+    }));
+
+    const externalPosts: MergedPost[] = notePosts.map(post => ({
+      slug: post.link,
+      title: post.title,
+      excerpt: post.contentSnippet,
+      date: post.isoDate,
+      tags: ['note'],
+      url: post.link,
+      isExternal: true,
+      source: 'note.com'
+    }));
+    
+    return [...localPosts, ...externalPosts]
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  }, []);
+
+
   // 全タグを取得
-  const allTags = Array.from(
-    new Set(blogPosts.flatMap(post => post.tags))
-  ).sort();
+  const allTags = useMemo(() => Array.from(
+    new Set(allPosts.flatMap(post => post.tags))
+  ).sort(), [allPosts]);
 
   // フィルタリング
-  const filteredPosts = blogPosts
+  const filteredPosts = useMemo(() => allPosts
     .filter(post => {
       const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesTag = !selectedTag || post.tags.includes(selectedTag);
       return matchesSearch && matchesTag;
-    })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    }), [allPosts, searchTerm, selectedTag]);
 
   return (
     <div className="bg-[#0F0F0F] min-h-screen py-20">

@@ -1,0 +1,41 @@
+name: 'Note.com RSS Fetcher'
+
+on:
+  workflow_dispatch: # 手動実行を許可
+  schedule:
+    - cron: '0 3 * * *' # 毎日 AM3:00 (UTC) に実行
+
+jobs:
+  fetch-and-create-pr:
+    name: 'Fetch Note.com articles and create PR'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v4
+
+      - name: 'Setup Node.js and pnpm'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: 'Install Dependencies'
+        run: pnpm install
+
+      - name: 'Fetch Note.com Articles'
+        run: pnpm tsx scripts/fetch-notes.ts
+
+      - name: 'Create Pull Request if changes exist'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'feat(data): Update articles from note.com'
+          title: '📝 Update Note.com Articles'
+          body: |
+            Automated update of articles from note.com RSS feed.
+            This PR was created by the `fetch-notes` GitHub Actions workflow.
+          branch: 'chore/update-notes'
+          base: 'main' # or your default branch
+          delete-branch: true
+          labels: 'automation' 
