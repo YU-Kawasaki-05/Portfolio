@@ -1,0 +1,60 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: >
+  ステージ済み変更を **詳細な日本語コミットメッセージ** にまとめ、
+  `git commit` ➜ `git push origin feature/design-system-update` まで実行するルール。
+  Conventional Commits + 日本語補足文 を採用。
+
+applyMode: Agent Requested
+globs:
+  - "**/*"
+ruleType: git_commit
+---
+
+# 📝 コミットメッセージ規約
+
+```
+
+<type>(<scope>): <subject>  (#タスクID, 複数可)
+
+<空行>
+詳細説明: 何を・なぜ (80 桁折り)
+BREAKING CHANGE: 影響範囲 (ある場合のみ)
+
+```
+
+| type | 用途例 |
+|------|-------|
+| **feat** | 新機能 (`Hero3D.tsx` 追加など) |
+| **fix** | バグ修正 |
+| **chore** | 雑務・ドキュメント・CI |
+| **refactor** | 仕様変更なしの内部改善 |
+| **perf** | パフォーマンス向上 |
+| **docs** | ドキュメント追加/修正 |
+
+### scope
+
+- **tasks** / **components** / **layout** / **ci** / **rules** など自由。
+
+### subject の書き方
+
+- 50 文字以内、命令形。“〜を追加” “〜を修正”。
+
+# ✅ 実行ステップ
+0. ブランチはローカルの`feature/design-system-update`で行う。
+1. **CHANGELOG.md が変更されているか確認**  
+   - なければ `chore(changelog): 新エントリ追加 (#300)` を先に作成。  
+2. 変更ファイルを scope 別に自動分類し message を生成。  
+3. `git commit -m "$MESSAGE"` を実行。  
+4. リモート `origin` が無い場合は停止し、ユーザーへ警告コメント。  
+5. `git push origin feature/design-system-update`。push 失敗時は再試行せずエラー出力。  
+
+# 🚫 禁止事項
+
+- 未ステージファイルをコミットしない (`git add -p` 相当の差分確認必須)。  
+
+- テスト失敗 (`pnpm test`) 時はコミットを中止してユーザーに報告。

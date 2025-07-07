@@ -1,0 +1,46 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: >
+  タスク完了・ファイル生成・仕様変更など “意味のある作業” を検知した際に
+  プロジェクト直下の CHANGELOG.md を自動更新するルール。
+  keep a changelog 形式 (日付 / 見出し / 箇条書き) を厳守。
+
+applyMode: Agent Requested
+globs:
+  - "CHANGELOG.md"
+ruleType: changelog_update
+---
+
+# 🚩 書式ガイド
+
+- 追記ブロックは **最上部** に挿入すること  
+```
+
+## \[未リリース] - 2025-06-12
+
+### Added
+
+* components: `Hero3D.tsx` を実装
+
+### Changed
+
+* tasks: ID 300 を ☑ に更新
+
+```
+- 変更タイプは **Added / Changed / Fixed / Removed** の 4 種に限定。
+- タスク完了の場合は、箇条書き行末に `(#300)` のように **ID** を付ける。
+- ファイル生成やレイアウト修正は `components:` `layout:` など **領域プレフィックス** を付ける。
+- 生成後は Markdown の整形を崩さない (`##` 見出し順、空行 1 行)。
+
+# ✅ 処理フロー
+
+1. **変更内容を収集** – git diff でステージ済みファイルを解析。  
+2. `## [未リリース] - YYYY-MM-DD` が無ければ生成。  
+3. 変更タイプ別に箇条書きを追加。重複行は結合しない。  
+4. ファイル保存後、次のコミットルールに制御を渡す。
+
+```

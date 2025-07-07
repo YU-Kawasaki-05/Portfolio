@@ -1,91 +1,98 @@
-# Neo‑Typographic Fusion – Task Checklist
+# Neo‑Typographic Fusion – Task Checklist
 
-> **使い方** : この `tasks.md` を開き、フェーズごとに **☐ → ☑** に切り替えながら「次の未完タスクを実行して」と指示すれば、AI が順に処理できます。タスク ID も付けたので `@123` のように参照しても OK です。
+> **使い方**: この `tasks.md` を開き、フェーズごとに **☐ → ☑** に切り替えながら「次の未完タスクを実行して」と指示すれば、AI が順に処理できます。
 
 ---
 
-## Phase 0 – Environment & Rules
+## Phase 0 – Foundation & Setup
 
 | ID      | Task                                                         | Done |
-| ------- | ------------------------------------------------------------ | ---- |
-| **000** | Node 18 LTS & pnpm をインストール                                   | ☐    |
-| **001** | `pnpm create next-app` で **neo-typographic-fusion** プロジェクト生成 | ☐    |
-| **002** | `pnpm add …` で依存一括追加 (README §4 参照)                          | ☐    |
-| **003** | `contentlayer init` & `shadcn-ui init` を実行                   | ☐    |
-| **004** | `.cursor/rules/` に 8 ルールファイルを配置                              | ☐    |
-| **005** | `pnpm dev` が起動することを確認                                        | ☐    |
-| **006** | 初回コミット & GitHub リポジトリ作成                                      | ☐    |
+| ------- | ------------------------------------------------------------ | :--: |
+| **000** | Node 18 LTS & pnpm をインストール                              |  ☑   |
+| **001** | `pnpm create next-app` でプロジェクト生成                      |  ☑   |
+| **002** | 依存一括追加 (`pnpm add ...`)                                  |  ☑   |
+| **003** | `contentlayer init` & `shadcn-ui init` を実行                  |  ☑   |
+| **004** | `design/` フォルダを本設計書で更新 (済)                        |  ☑   |
+| **005** | `.cursor/rules/` にルールファイルを配置                        |  ☑   |
+| **006** | `pnpm dev` が起動することを確認                                |  ☑   |
+| **007** | 初回コミット & GitHub リポジトリ作成                           |  ☑   |
 
-## Phase 1 – Design System
+## Phase 1 – Design System & Core Layout
 
-| ID      | Task                                        | Done |
-| ------- | ------------------------------------------- | ---- |
-| **100** | `tailwind.config.ts` に色・フォントを定義 (README §5) | ☐    |
-| **101** | `src/app/layout.tsx` でフォント変数を設定             | ☐    |
-| **102** | Storybook を `pnpm dlx sb init` で導入          | ☐    |
-| **103** | Button と Card の design‑token 検証用 Story を作成  | ☐    |
-| **104** | Lighthouse (デスクトップ) で 90+ を確認               | ☐    |
+| ID      | Task                                                         | Done |
+| ------- | ------------------------------------------------------------ | :--: |
+| **100** | `tailwind.config.ts` に `design/01_design-tokens.md` を反映    |  ☑   |
+| **101** | `src/app/layout.tsx` でフォント変数を設定                      |  ☑   |
+| **102** | `src/components/layout/page-shell.tsx` を作成                  |  ☑   |
+| **103** | Storybook を導入し、Button/Card のトークンを検証               |  ☑   |
+| **104** | `HeaderNav` と `Footer` を実装し `page-shell` に統合           |  ☑   |
+| **105** | `SidebarNav` (モバイル用ドロワー) を実装                       |  ☑   |
 
-## Phase 2 – Layout Skeleton
+## Phase 2 – Content Schema & Home Page
 
-| ID      | Task                                | Done |
-| ------- | ----------------------------------- | ---- |
-| **200** | `HeaderNav.tsx` 実装 (PC 固定ヘッダー)      | ☐    |
-| **201** | `SidebarNav.tsx` 実装 (ハンバーガー → ドロワー) | ☐    |
-| **202** | `Footer` を作成し ©2025 表示              | ☐    |
-| **203** | 3 ブレイクポイントでレイアウト崩れチェック              | ☐    |
-| **204** | Lighthouse モバイル 90+ 達成              | ☐    |
+| ID      | Task                                                         | Done |
+| ------- | ------------------------------------------------------------ | :--: |
+| **200** | `contentlayer.config.ts` に Works/Blog/Profile スキーマを作成  |  ☑   |
+| **201** | `content/` に各スキーマのサンプル MDX を配置                   |  ☑   |
+| **202** | `Hero3D.tsx` を R3F で実装 (テキストと CTA)                    |  ☑   |
+| **203** | Home ページ: Works/Blog プレビューセクションを実装             |  ☑   |
+| **204** | Home ページ: `design/04_pages/home.md` 通りのナビゲーションカードを実装 |  ☑   |
+| **208** | `SiteHubShowcase` の `#profile` `#services` … セクションを削除し、NavCards のみ残す |  ☑   |
+| **209** | `src/app/profile/page.tsx` を作成し `<ProfileLayout>` を移植  |  ☑   |
+| **210** | `src/app/services/page.tsx` を作成し `<ServiceLayout>` を移植 |  ☑   |
+| **211** | `src/app/sns/page.tsx` を作成し `<SNSLayout>` を移植          |  ☑   |
+| **212** | `src/app/portfolio/page.tsx` を作成し `<PortfolioLayout>` を移植 |  ☑   |
+| **213** | `src/app/blog/page.tsx` を作成し `<BlogLayout>` を移植        |  ☑   |
+| **214** | HeaderNav / SidebarNav のアンカーリンク `#profile` → `/profile` などに変更 |  ☑   |
+| **215** | Framer Motion でページ遷移フェードを `src/app/layout.tsx` に実装 |  ☑   |
+| **216** | Playwright E2E: Home → Profile → Back の遷移テスト追加        |  ☑   |
 
-## Phase 3 – 3D Hero & Mondrian
+## Phase 3 – Main Pages Implementation
 
-| ID      | Task                                    | Done |
-| ------- | --------------------------------------- | ---- |
-| **300** | `Hero3D.tsx` – R3F で 3D TextGeometry 実装 | ☐    |
-| **301** | `MondrianBlock.tsx` – 背面カラー矩形コンポーネント    | ☐    |
-| **302** | 3D モデルを `dynamic import` で遅延読込          | ☐    |
-| **303** | FPS > 55 を確認 (Chrome DevTools)          | ☐    |
+| ID      | Task                                                         | Done |
+| ------- | ------------------------------------------------------------ | :--: |
+| **300** | Portfolio (Works) ページ: `WorkTable` で一覧表示               |  ☑   |
+| **301** | Portfolio (Works) ページ: `[slug]` で MDX 詳細ページ表示      |  ☑   |
+| **302** | Blog ページ: カードグリッドで一覧表示                          |  ☑   |
+| **303** | Blog ページ: `[slug]` で MDX 詳細ページ表示                    |  ☑   |
+| **304** | Profile ページ: `ProfileCard` やスキルリストを実装             |  ☑   |
+| **305** | Services, SNS ページを静的に実装                             |  ☑   |
 
-## Phase 4 – Content Layer
+## Phase 4 – Animation & Optimization
 
-| ID      | Task                                            | Done |
-| ------- | ----------------------------------------------- | ---- |
-| **400** | `contentlayer.config.ts` に Works / Blog スキーマ作成  | ☐    |
-| **401** | サンプル MDX を `/content/works` `/content/blog` に追加 | ☐    |
-| **402** | `WorkTable.tsx` 表ビュー実装                          | ☐    |
-| **403** | `WorkArticle.tsx` MDX ページ実装                     | ☐    |
-| **404** | `ProfileCard.tsx` + Zustand で詳細切替               | ☐    |
+| ID      | Task                                                         | Done |
+| ------- | ------------------------------------------------------------ | :--: |
+| **400** | Framer Motion でページ遷移アニメーションを実装                 |  ☑   |
+| **401** | GSAP ScrollTrigger でパララックス効果を実装                    |  ☑   |
+| **402** | `prefers-reduced-motion` に対応                              |  ☑   |
+| **403** | `next/image` で画像最適化、3Dモデルは `dynamic import`         |  ☑   |
+| **404** | Lighthouse Performance 95+ 達成 + SSRエラー対応完了          |  ☑   |
 
-## Phase 5 – Animation & Performance
+## Phase 5 – Testing & CI/CD
 
-| ID      | Task                                     | Done |
-| ------- | ---------------------------------------- | ---- |
-| **500** | Framer Motion でページ遷移フェードイン               | ☐    |
-| **501** | GSAP ScrollTrigger でセクションパララックス          | ☐    |
-| **502** | `prefers-reduced-motion` 対応を実装           | ☐    |
-| **503** | `next/image` で主要画像を最適化                   | ☐    |
-| **504** | LCP < 2.5 s / CLS < 0.1 を Lighthouse で確認 | ☐    |
+| ID      | Task                                                         | Done |
+| ------- | ------------------------------------------------------------ | :--: |
+| **500** | Jest + RTL をセットアップ (`setupTests.ts`)                      |  ☐   |
+| **501** | `Hero3D` と `WorkTable` のユニットテストを作成                 |  ☐   |
+| **502** | Playwright で Home → Portfolio の E2E テストを作成             |  ☐   |
+| **503** | GitHub Actions: `ci.yml` で lint, test, build を実行         |  ☐   |
+| **504** | テストカバレッジ 80% を達成し、バッジを README に追加          |  ☐   |
+| **510** | note.com RSS 取得バッチ (`/scripts/fetch-notes.ts`) を作成     |  ☑   |
+| **511** | 取得データを `/data/notes.json` に保存する処理を実装           |  ☑   |
+| **512** | GitHub Actions でバッチを定期実行 (daily at 03:00 UTC)      |  ☑   |
+| **513** | Blog ページで Contentlayer と note 記事をマージして表示        |  ☑   |
+| **514** | ローカル/プレビューで note 記事の表示と CLS (≤ 0.1) を確認   |  ☑   |
 
-## Phase 6 – Testing & CI/CD
+## Phase 6 – Deployment & Analytics
 
-| ID      | Task                                       | Done |
-| ------- | ------------------------------------------ | ---- |
-| **600** | Jest + RTL セットアップ (`setupTests.ts`)        | ☐    |
-| **601** | `Hero3D` & `WorkTable` のユニットテスト作成          | ☐    |
-| **602** | Playwright で Home → Portfolio の E2E テスト    | ☐    |
-| **603** | GitHub Actions: `ci.yml` で lint+test+build | ☐    |
-| **604** | カバレッジ 80/70 達成 → バッジを README に追加           | ☐    |
+| ID      | Task                                                         | Done |
+| ------- | ------------------------------------------------------------ | :--: |
+| **600** | Vercel プロジェクトを作成し Production URL を取得                |  ☐   |
+| **601** | `NEXT_PUBLIC_SITE_URL` などの環境変数を設定                    |  ☐   |
+| **602** | Vercel Analytics (Speed Insights, Web Vitals) を有効化       |  ☐   |
+| **603** | PWA 対応 (マニフェスト、Service Worker) を行い Audit 90+ を確認 |  ☐   |
+| **604** | README を最終化し、`v1.0.0` タグを打ってリリース               |  ☐   |
 
-## Phase 7 – Analytics & Deploy
-
-| ID      | Task                                 | Done |
-| ------- | ------------------------------------ | ---- |
-| **700** | Vercel プロジェクトを作成し Production URL を取得 | ☐    |
-| **701** | `NEXT_PUBLIC_SITE_URL` 環境変数を設定       | ☐    |
-| **702** | Vercel Analytics (Edge) を有効化         | ☐    |
-| **703** | 最終 Lighthouse + PWA Audit で 90+ 維持   | ☐    |
-| **704** | README を最終版に更新しタグを打つ (`v1.0.0`)      | ☐    |
-
----
 
 ## ✏️ 追加タスク用テンプレ
 
@@ -96,3 +103,24 @@
 ```
 
 > **Tip**: タスク完了時に `☐` → `☑` へ手動変換すると Cursor が「残タスク」を自動検出しやすくなります。
+
+## Archived Tasks
+
+| ID      | Task                                                         | Done |
+| ------- | ------------------------------------------------------------ | :--: |
+| 820 | `ServiceAccordionShowcase.tsx` の state 初期値を `{ Consulting:true, Development:false, Automation:false, Training:false }` に変更 | ☑ |
+| 821 | `ServiceAccordionShowcase.tsx` の JSX を **主力カード廃止** → カテゴリごとにまとめ、全カードをアコーディオン内に移動 | ☑ |
+| 822 | アコーディオン開閉アイコンを `ChevronDown / ChevronUp` で統一 | ☑ |
+| 823 | サービスデータを `services/data.ts` に切り出し、カテゴリ順に並べ替え | ☑ |
+| 824 | `src/app/services/page.tsx` で新コンポーネントを dynamic import (SSR false) | ☑ |
+| 825 | Lighthouse CLS 再測定 (≦0.1) | ☐ |
+| 826 | `src/components/skills-list.tsx` を **Skills セクション簡素化**: カテゴリ・ProgressBar・経験年数をすべて削除し、タグ型 Badges のみ表示 | ☑ |
+| 827 | スキルデータを `data/skills.ts` に移動し `type Skill = { name:string; icon?:ReactNode }` で定義 | ☑ |
+| 828 | `SkillBadge.tsx` コンポーネントを作成し shadcn/UI の `Badge` をラップ (色はレベル判定なし) | ☑ |
+| 829 | `SkillsSection.tsx` を新規作成し、`skills` 配列をグリッド表示 (列: auto-fit, min 120px) | ☑ |
+| 830 | `ProfilePage` で `SkillsList` → `SkillsSection` に置換、古いコンポーネントを削除 | ☑ |
+| 831 | アイコン: `simple-icons` または `lucide-react` を利用し、表示有無は `icon?` で条件分岐 | ☑ |
+| 832 | Storybook: `SkillsSection.stories.tsx` で UI を確認 & docs 追加 | ☑ |
+| 833 | Jest + RTL: `SkillsSection` のレンダリングテストとスナップショット追加 | ☑ |
+| 834 | Playwright: Profile ページでスキルタグの表示を確認する E2E を追加 | ☑ |
+| 835 | README & デザインドキュメントを更新 (スキルセクション仕様変更を反映) | ☐ |
