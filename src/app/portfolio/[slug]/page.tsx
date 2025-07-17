@@ -10,7 +10,7 @@ const allWorks = [
     slug: 'neo-fusion-portfolio',
     title: 'Neo-Typographic Fusion Portfolio',
     excerpt: '3Dタイポグラフィとモダンデザインを融合させたポートフォリオサイト',
-    date: '2024-01-15',
+    date: '2025-07-14',
     tags: ['React', 'Three.js', 'TypeScript', 'Next.js'],
     url: '/portfolio/neo-fusion-portfolio',
     cover: null,
@@ -32,26 +32,6 @@ const allWorks = [
 4. **パフォーマンス最適化**: Lighthouse スコア 95+ を達成
 
 このポートフォリオサイトは、ユーザビリティとビジュアルインパクトを両立させることを目指して開発されました。`
-  },
-  {
-    slug: 'interactive-3d-gallery',
-    title: 'Interactive 3D Gallery',
-    excerpt: 'WebGLを使用したインタラクティブな3Dギャラリーアプリケーション',
-    date: '2023-11-20',
-    tags: ['Three.js', 'WebGL', 'JavaScript', 'GLSL'],
-    url: '/portfolio/interactive-3d-gallery',
-    cover: null,
-    content: 'インタラクティブな3Dギャラリーの詳細説明...'
-  },
-  {
-    slug: 'motion-design-website',
-    title: 'Motion Design Website',
-    excerpt: 'Framer Motionを活用したアニメーション豊富なWebサイト',
-    date: '2023-09-10',
-    tags: ['Framer Motion', 'React', 'CSS', 'Animation'],
-    url: '/portfolio/motion-design-website',
-    cover: null,
-    content: 'モーションデザインWebサイトの詳細説明...'
   }
 ];
 
@@ -152,10 +132,15 @@ export default function WorkPage({ params }: WorkPageProps) {
                 ライブデモ
               </button>
               
-              <button className="inline-flex items-center border border-[#1479FF] text-[#1479FF] hover:bg-[#1479FF] hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105">
+              <a 
+                href="https://github.com/YU-Kawasaki-05/Portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center border border-[#1479FF] text-[#1479FF] hover:bg-[#1479FF] hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+              >
                 <Github size={18} className="mr-2" />
                 ソースコード
-              </button>
+              </a>
             </div>
           </div>
         </div>

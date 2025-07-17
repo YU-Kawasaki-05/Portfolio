@@ -2,22 +2,10 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-// import { allWorks } from 'contentlayer/generated';
 import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
 import { Calendar, Tag, ExternalLink, Filter, Search } from 'lucide-react';
-
-// 一時的なモックデータ
-const allWorks = [
-  {
-    slug: 'neo-fusion-portfolio',
-    title: 'Neo-Typographic Fusion Portfolio',
-    excerpt: '3Dタイポグラフィとモダンデザインを融合させたポートフォリオサイト',
-    date: '2025-07-14',
-    tags: ['React', 'Three.js', 'TypeScript', 'Next.js'],
-    url: '/portfolio/neo-fusion-portfolio'
-  }
-];
+import { getAllWorks, searchWorks, getWorksByTag, getAllTags, type WorkData } from '@/data/works';
 
 /**
  * WorkTableコンポーネント - 作品一覧をテーブル形式で表示
@@ -27,19 +15,26 @@ export default function WorkTable() {
   const [selectedTag, setSelectedTag] = useState<string>('');
 
   // 全タグを取得
-  const allTags = Array.from(
-    new Set(allWorks.flatMap(work => work.tags || []))
-  ).sort();
+  const allTags = getAllTags();
 
   // フィルタリング
-  const filteredWorks = allWorks
-    .filter(work => {
-      const matchesSearch = work.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           work.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesTag = !selectedTag || (work.tags && work.tags.includes(selectedTag));
-      return matchesSearch && matchesTag;
-    })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const getFilteredWorks = (): WorkData[] => {
+    let works = getAllWorks();
+    
+    // 検索フィルターを適用
+    if (searchTerm) {
+      works = searchWorks(searchTerm);
+    }
+    
+    // タグフィルターを適用
+    if (selectedTag) {
+      works = works.filter(work => work.tags.includes(selectedTag));
+    }
+    
+    return works;
+  };
+  
+  const filteredWorks = getFilteredWorks();
 
   return (
     <div className="bg-[#0F0F0F] min-h-screen py-20">

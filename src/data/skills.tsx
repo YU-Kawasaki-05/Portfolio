@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import React, { type ReactNode } from 'react';
 import { Code2, Server, Cloud, GitBranch, Package } from 'lucide-react';
 
 export type Skill = {
