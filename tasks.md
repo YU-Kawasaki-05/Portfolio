@@ -77,6 +77,34 @@
 | **502** | Playwright で Home → Portfolio の E2E テストを作成             |  ☐   |
 | **503** | GitHub Actions: `ci.yml` で lint, test, build を実行         |  ☐   |
 | **504** | テストカバレッジ 80% を達成し、バッジを README に追加          |  ☐   |
+| **505** | 既存の `skills-section.test.tsx` の `@ts-nocheck` を削除して修正 |  ☐   |
+| **506** | `header-nav.tsx` のユニットテスト作成（レスポンシブ、ナビゲーション） |  ☐   |
+| **507** | `footer.tsx` のユニットテスト作成（リンク、アクセシビリティ） |  ☐   |
+| **508** | `navigation-cards.tsx` のユニットテスト作成（ホバー、ルーティング） |  ☐   |
+| **509** | `ServiceAccordionShowcase.tsx` のユニットテスト作成（展開/折りたたみ） |  ☐   |
+| **515** | `page-transition.tsx` のユニットテスト作成（アニメーション状態） |  ☐   |
+| **516** | `blog-grid.tsx` のユニットテスト作成（検索、フィルタリング） |  ☐   |
+| **517** | `profile-card.tsx` のユニットテスト作成（データ表示、リンク） |  ☐   |
+| **518** | `optimized-image.tsx` のユニットテスト作成（遅延読み込み、エラー処理） |  ☐   |
+| **519** | `ui/button.tsx` のユニットテスト作成（バリアント、アクセシビリティ） |  ☐   |
+| **520** | `ui/card.tsx` のユニットテスト作成（コンポーネント構成） |  ☐   |
+| **521** | `ui/badge.tsx` のユニットテスト作成（バリアント表示） |  ☐   |
+| **522** | `motion-provider.tsx` のユニットテスト作成（コンテキスト、設定） |  ☐   |
+| **523** | `parallax-container.tsx` のユニットテスト作成（スクロール効果） |  ☐   |
+| **524** | Playwright E2E: レスポンシブナビゲーションテスト |  ☐   |
+| **525** | Playwright E2E: ブログ検索・フィルタリングテスト |  ☐   |
+| **526** | Playwright E2E: サービスアコーディオンテスト |  ☐   |
+| **527** | Storybook: 全UI コンポーネントのストーリー作成 |  ☐   |
+| **528** | Storybook: アクセシビリティテスト（a11y addon）の設定 |  ☐   |
+| **529** | Vitest + Storybook 統合テストの設定確認 |  ☐   |
+| **530** | データ同期問題の調査・分析（Home/Portfolio/Blog間の重複データ特定） |  ☑   |
+| **531** | `src/data/works.ts` を作成し、Works データを一元管理 |  ☐   |
+| **532** | `src/data/blogs.ts` を作成し、Blog データを一元管理 |  ☐   |
+| **533** | `preview-sections.tsx` を共通データソース利用に変更 |  ☐   |
+| **534** | `work-table.tsx` を共通データソース利用に変更 |  ☐   |
+| **535** | `[slug]/page.tsx` を共通データソース利用に変更 |  ☐   |
+| **536** | `blog-grid.tsx` の外部データとローカルデータの統合確認 |  ☐   |
+| **537** | 全ページでのデータ同期確認（1箇所編集→全箇所反映テスト） |  ☐   |
 | **510** | note.com RSS 取得バッチ (`/scripts/fetch-notes.ts`) を作成     |  ☑   |
 | **511** | 取得データを `/data/notes.json` に保存する処理を実装           |  ☑   |
 | **512** | GitHub Actions でバッチを定期実行 (daily at 03:00 UTC)      |  ☑   |
@@ -118,9 +146,9 @@
 | 827 | スキルデータを `data/skills.ts` に移動し `type Skill = { name:string; icon?:ReactNode }` で定義 | ☑ |
 | 828 | `SkillBadge.tsx` コンポーネントを作成し shadcn/UI の `Badge` をラップ (色はレベル判定なし) | ☑ |
 | 829 | `SkillsSection.tsx` を新規作成し、`skills` 配列をグリッド表示 (列: auto-fit, min 120px) | ☑ |
-| 830 | `ProfilePage` で `SkillsList` → `SkillsSection` に置換、古いコンポーネントを削除 | ☑ |
-| 831 | アイコン: `simple-icons` または `lucide-react` を利用し、表示有無は `icon?` で条件分岐 | ☑ |
-| 832 | Storybook: `SkillsSection.stories.tsx` で UI を確認 & docs 追加 | ☑ |
-| 833 | Jest + RTL: `SkillsSection` のレンダリングテストとスナップショット追加 | ☑ |
-| 834 | Playwright: Profile ページでスキルタグの表示を確認する E2E を追加 | ☑ |
-| 835 | README & デザインドキュメントを更新 (スキルセクション仕様変更を反映) | ☐ |
+  | 830 | `ProfilePage` で `SkillsList` → `SkillsSection` に置換、古いコンポーネントを削除 | ☑ |
+  | 831 | アイコン: `simple-icons` または `lucide-react` を利用し、表示有無は `icon?` で条件分岐 | ☑ |
+  | 832 | Storybook: `SkillsSection.stories.tsx` で UI を確認 & docs 追加 | ☑ |
+  | 833 | Jest + RTL: `SkillsSection` のレンダリングテストとスナップショット追加 | ☑ |
+  | 834 | Playwright: Profile ページでスキルタグの表示を確認する E2E を追加 | ☑ |
+  | 835 | README & デザインドキュメントを更新 (スキルセクション仕様変更を反映) | ☐ |
