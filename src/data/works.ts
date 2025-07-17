@@ -41,6 +41,7 @@ const mockWorks: WorkData[] = [
     tags: ['React', 'Three.js', 'TypeScript', 'Next.js'],
     url: '/portfolio/neo-fusion-portfolio',
     cover: '/images/works/neo-fusion-portfolio.jpg',
+    type: 'Work',
     content: `
 # Neo-Typographic Fusion Portfolio
 
@@ -76,6 +77,7 @@ React Three Fiberを使用して動的な3D表現を実現し、ユーザビリ�
     tags: ['Three.js', 'WebGL', 'JavaScript', 'GLSL'],
     url: '/portfolio/interactive-3d-gallery',
     cover: '/images/works/interactive-3d-gallery.jpg',
+    type: 'Work',
     content: `
 # Interactive 3D Gallery
 
@@ -110,6 +112,7 @@ WebGLとThree.jsを使用したインタラクティブな3Dギャラリーア�
     tags: ['Framer Motion', 'React', 'CSS', 'Animation'],
     url: '/portfolio/motion-design-website',
     cover: '/images/works/motion-design-website.jpg',
+    type: 'Work',
     content: `
 # Motion Design Website
 

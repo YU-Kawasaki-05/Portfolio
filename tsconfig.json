@@ -20,6 +20,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
+      "@/features/*": ["./src/features/*"],
+      "@/shared/*": ["./src/shared/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "allowImportingTsExtensions": true

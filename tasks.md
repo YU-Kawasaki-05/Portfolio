@@ -141,6 +141,80 @@
 | **513** | Blog ページで Contentlayer と note 記事をマージして表示        |  ☑   |
 | **514** | ローカル/プレビューで note 記事の表示と CLS (≤ 0.1) を確認   |  ☑   |
 
+### 5.8 Directory Refactoring Preparation
+| ID      | Task                                                         | Done |
+| ------- | ------------------------------------------------------------ | :--: |
+| **580** | 現在のディレクトリ構成を詳細分析し、移行対象ファイルをリストアップ |  ☐   |
+| **581** | 新しいディレクトリ構成設計書を `design/08_directory-structure.md` に作成 |  ☐   |
+| **582** | `src/features/` ディレクトリを作成し、基本構造を準備 |  ☐   |
+| **583** | `src/shared/` ディレクトリを作成し、基本構造を準備 |  ☐   |
+| **584** | 移行用ヘルパースクリプト `scripts/migrate-files.ts` を作成 |  ☐   |
+| **585** | tsconfig.json のパスエイリアス設定を feature-based 用に拡張 |  ☐   |
+| **586** | Vitest 設定をfeature単位テスト実行に対応 |  ☐   |
+| **587** | Storybook 設定を新ディレクトリ構成に対応 |  ☐   |
+| **588** | ESLint 設定を feature-based imports ルールに更新 |  ☐   |
+| **589** | 移行前の完全バックアップとブランチ作成 (`feature/directory-refactor`) |  ☐   |
+
+### 5.9 Feature-Based Architecture Migration
+| ID      | Task                                                         | Done |
+| ------- | ------------------------------------------------------------ | :--: |
+| **590** | **Phase 1**: Profile 機能の移行開始 |  ☐   |
+| **591** | `src/features/profile/` ディレクトリ構造を作成 |  ☐   |
+| **592** | Profile関連コンポーネントを `features/profile/components/` に移行 |  ☐   |
+| **593** | `skills-section.tsx` + `skills-section.test.tsx` + `skills-section.stories.tsx` を同一ディレクトリに移行 |  ☐   |
+| **594** | `profile-card.tsx` + 関連テスト・ストーリーを同一ディレクトリに移行 |  ☐   |
+| **595** | Profile機能のデータ (`src/data/skills.tsx`) を `features/profile/data/` に移行 |  ☐   |
+| **596** | Profile機能の index.ts エクスポートファイルを作成 |  ☐   |
+| **597** | Profile機能の import 文を新パスに更新 (`src/app/profile/page.tsx` 等) |  ☐   |
+| **598** | Profile機能のテスト実行確認 (`pnpm test features/profile`) |  ☐   |
+| **599** | **Phase 2**: Portfolio 機能の移行開始 |  ☐   |
+| **5A0** | `src/features/portfolio/` ディレクトリ構造を作成 |  ☐   |
+| **5A1** | `work-table.tsx` + テスト・ストーリーを `features/portfolio/components/` に移行 |  ☐   |
+| **5A2** | Portfolio機能のデータ (`src/data/works.ts`) を `features/portfolio/data/` に移行 |  ☐   |
+| **5A3** | Portfolio機能の index.ts エクスポートファイルを作成 |  ☐   |
+| **5A4** | Portfolio機能の import 文を新パスに更新 |  ☐   |
+| **5A5** | Portfolio機能のテスト実行確認 |  ☐   |
+| **5A6** | **Phase 3**: Blog 機能の移行開始 |  ☐   |
+| **5A7** | `src/features/blog/` ディレクトリ構造を作成 |  ☐   |
+| **5A8** | `blog-grid.tsx` + テスト・ストーリーを `features/blog/components/` に移行 |  ☐   |
+| **5A9** | Blog機能のサービス層 (`scripts/fetch-notes.ts` 等) を `features/blog/services/` に移行 |  ☐   |
+| **5B0** | Blog機能の index.ts エクスポートファイルを作成 |  ☐   |
+| **5B1** | Blog機能の import 文を新パスに更新 |  ☐   |
+| **5B2** | Blog機能のテスト実行確認 |  ☐   |
+| **5B3** | **Phase 4**: Navigation 機能の移行開始 |  ☐   |
+| **5B4** | `src/features/navigation/` ディレクトリ構造を作成 |  ☐   |
+| **5B5** | `header-nav.tsx`, `navigation-cards.tsx` を `features/navigation/components/` に移行 |  ☐   |
+| **5B6** | Navigation関連テスト・ストーリーを同一ディレクトリに移行 |  ☐   |
+| **5B7** | Navigation機能の index.ts エクスポートファイルを作成 |  ☐   |
+| **5B8** | Navigation機能の import 文を新パスに更新 |  ☐   |
+| **5B9** | Navigation機能のテスト実行確認 |  ☐   |
+| **5C0** | **Phase 5**: Services 機能の移行開始 |  ☐   |
+| **5C1** | `src/features/services/` ディレクトリ構造を作成 |  ☐   |
+| **5C2** | `ServiceAccordionShowcase.tsx` を `features/services/components/` に移行 |  ☐   |
+| **5C3** | Services機能のデータ (`src/services/data.ts`) を `features/services/data/` に移行 |  ☐   |
+| **5C4** | Services機能の index.ts エクスポートファイルを作成 |  ☐   |
+| **5C5** | Services機能の import 文を新パスに更新 |  ☐   |
+| **5C6** | Services機能のテスト実行確認 |  ☐   |
+| **5C7** | **Phase 6**: Shared 共通要素の移行開始 |  ☐   |
+| **5C8** | UI コンポーネント (`src/components/ui/`) を `src/shared/components/ui/` に移行 |  ☐   |
+| **5C9** | Layout コンポーネント (`src/components/layout/`) を `src/shared/components/layout/` に移行 |  ☐   |
+| **5D0** | 3D コンポーネント (`hero3d.tsx` 等) を `src/shared/components/3d/` に移行 |  ☐   |
+| **5D1** | 共通ユーティリティ (`src/lib/`) を `src/shared/lib/` に移行 |  ☐   |
+| **5D2** | 共通型定義を `src/shared/types/` に作成・移行 |  ☐   |
+| **5D3** | **Phase 7**: 最終検証・クリーンアップ |  ☐   |
+| **5D4** | 古い `src/components/` ディレクトリを削除 |  ☐   |
+| **5D5** | 古い `src/data/` ディレクトリを削除 |  ☐   |
+| **5D6** | 古い `src/services/` ディレクトリを削除 |  ☐   |
+| **5D7** | 古い `tests/unit/` ディレクトリを削除（テストは各feature内に移行済み） |  ☐   |
+| **5D8** | 全ページの動作確認 (`pnpm dev` でサイト全体をテスト) |  ☐   |
+| **5D9** | 全テストの実行確認 (`pnpm test` で全feature統合テスト) |  ☐   |
+| **5E0** | Storybook の動作確認 (`pnpm storybook` で全ストーリー表示) |  ☐   |
+| **5E1** | E2E テストの実行確認 (`pnpm test:e2e` で主要フロー確認) |  ☐   |
+| **5E2** | ビルド確認 (`pnpm build` でプロダクションビルド成功) |  ☐   |
+| **5E3** | パフォーマンステスト (Lighthouse スコア維持確認) |  ☐   |
+| **5E4** | 新ディレクトリ構成ドキュメントの最終化 |  ☐   |
+| **5E5** | リファクタリング完了のコミット・プッシュ |  ☐   |
+
 ## Phase 6 – Deployment & Analytics
 
 | ID      | Task                                                         | Done |

@@ -4,26 +4,15 @@ import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
-import { allBlogs, Blog } from 'contentlayer/generated';
 import { Calendar, Tag, Search, Filter, ArrowRight, ExternalLink } from 'lucide-react';
-import notePosts from '@/data/notes.json';
-
-// note.comの記事とContentlayerのブログ記事の型を統合
-type MergedPost = {
-  slug: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  tags: string[];
-  url: string;
-  isExternal: boolean;
-  source?: 'note.com' | 'local';
-};
+import { getAllBlogs, BlogData } from '@/data/blogs';
 
 /**
  * Blogカードコンポーネント
  */
-function BlogCard({ post }: { post: MergedPost }) {
+function BlogCard({ post }: { post: BlogData }) {
+  const isExternal = post.source === 'note.com';
+  
   const CardContent = (
     <div className="group block bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg overflow-hidden hover:border-[#1479FF] transition-all duration-300 hover:scale-105 h-full flex flex-col">
       {/* カバー画像エリア */}
@@ -31,8 +20,8 @@ function BlogCard({ post }: { post: MergedPost }) {
         <div className="text-[#F9F9F9] text-lg font-bold opacity-50 text-center px-4">
           {post.title}
         </div>
-        {post.isExternal && (
-          <span className="absolute top-2 right-2 bg-red-500/80 text-white text-xs px-2 py-1 rounded-full">
+        {isExternal && (
+          <span className="absolute top-2 right-2 bg-[#F5C400]/80 text-[#0F0F0F] text-xs px-2 py-1 rounded-full font-semibold">
             note.com
           </span>
         )}
@@ -56,8 +45,8 @@ function BlogCard({ post }: { post: MergedPost }) {
           </div>
           
           <div className="flex items-center text-[#1479FF] text-sm font-medium">
-            {post.isExternal ? '読む' : '読む'}
-            {post.isExternal ? 
+            読む
+            {isExternal ? 
               <ExternalLink size={16} className="ml-1 group-hover:translate-x-1 transition-transform" /> :
               <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
             }
@@ -85,21 +74,22 @@ function BlogCard({ post }: { post: MergedPost }) {
     </div>
   );
 
-  if (post.isExternal) {
+  // 外部記事（note.com）の場合は外部リンク
+  if (isExternal && post.link) {
     return (
-      <a href={post.url} target="_blank" rel="noopener noreferrer" className="h-full">
+      <a href={post.link} target="_blank" rel="noopener noreferrer" className="h-full">
         {CardContent}
       </a>
     );
   }
 
+  // ローカル記事の場合は内部リンク
   return (
     <Link href={post.url} className="h-full">
       {CardContent}
     </Link>
   );
 }
-
 
 /**
  * BlogGridコンポーネント - ブログ記事一覧をカードグリッドで表示
@@ -108,29 +98,10 @@ export default function BlogGrid() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTag, setSelectedTag] = useState<string>('');
 
+  // 共通データソースから全記事を取得
   const allPosts = useMemo(() => {
-    const localPosts: MergedPost[] = allBlogs.map((blog: Blog) => ({
-      ...blog,
-      excerpt: blog.description || '',
-      isExternal: false,
-      source: 'local',
-    }));
-
-    const externalPosts: MergedPost[] = notePosts.map(post => ({
-      slug: post.link,
-      title: post.title,
-      excerpt: post.contentSnippet,
-      date: post.isoDate,
-      tags: ['note'],
-      url: post.link,
-      isExternal: true,
-      source: 'note.com'
-    }));
-    
-    return [...localPosts, ...externalPosts]
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    return getAllBlogs(); // 既にローカル記事とnote.com記事がマージされて日付順ソート済み
   }, []);
-
 
   // 全タグを取得
   const allTags = useMemo(() => Array.from(
@@ -155,8 +126,30 @@ export default function BlogGrid() {
             Blog
           </h1>
           <p className="text-[#7A7A7A] text-lg max-w-2xl mx-auto">
-            技術記事やプロジェクトの振り返りを発信しています
+            技術記事やプロジェクトの振り返り、外部記事も含めて発信しています
           </p>
+        </div>
+
+        {/* 統計情報 */}
+        <div className="mb-8 flex flex-wrap justify-center gap-6 text-center">
+          <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg px-4 py-3">
+            <div className="text-[#F9F9F9] text-2xl font-bold">
+              {allPosts.filter(p => p.source === 'local').length}
+            </div>
+            <div className="text-[#7A7A7A] text-sm">ローカル記事</div>
+          </div>
+          <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg px-4 py-3">
+            <div className="text-[#F5C400] text-2xl font-bold">
+              {allPosts.filter(p => p.source === 'note.com').length}
+            </div>
+            <div className="text-[#7A7A7A] text-sm">note.com記事</div>
+          </div>
+          <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg px-4 py-3">
+            <div className="text-[#1479FF] text-2xl font-bold">
+              {allTags.length}
+            </div>
+            <div className="text-[#7A7A7A] text-sm">タグ数</div>
+          </div>
         </div>
 
         {/* フィルター */}
@@ -193,6 +186,8 @@ export default function BlogGrid() {
         <div className="mb-6">
           <p className="text-[#7A7A7A] text-sm">
             {filteredPosts.length}件の記事が見つかりました
+            {searchTerm && ` (「${searchTerm}」の検索結果)`}
+            {selectedTag && ` (タグ: ${selectedTag})`}
           </p>
         </div>
 

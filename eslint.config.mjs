@@ -14,7 +14,29 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
-  ...storybook.configs["flat/recommended"]
+  ...storybook.configs["flat/recommended"],
+  {
+    rules: {
+      // Feature-based imports rules
+      "import/no-restricted-paths": [
+        "error",
+        {
+          zones: [
+            {
+              target: "./src/features/*",
+              from: ["./src/features/*", "!./src/features/*/index.ts"],
+              message: "Features should only import from their own index.ts or shared modules"
+            },
+            {
+              target: "./src/shared/*",
+              from: "./src/features/*",
+              message: "Shared modules should not import from features"
+            }
+          ]
+        }
+      ]
+    }
+  }
 ];
 
 export default eslintConfig;
