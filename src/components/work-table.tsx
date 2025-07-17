@@ -13,25 +13,9 @@ const allWorks = [
     slug: 'neo-fusion-portfolio',
     title: 'Neo-Typographic Fusion Portfolio',
     excerpt: '3Dタイポグラフィとモダンデザインを融合させたポートフォリオサイト',
-    date: '2024-01-15',
+    date: '2025-07-14',
     tags: ['React', 'Three.js', 'TypeScript', 'Next.js'],
     url: '/portfolio/neo-fusion-portfolio'
-  },
-  {
-    slug: 'interactive-3d-gallery',
-    title: 'Interactive 3D Gallery',
-    excerpt: 'WebGLを使用したインタラクティブな3Dギャラリーアプリケーション',
-    date: '2023-11-20',
-    tags: ['Three.js', 'WebGL', 'JavaScript', 'GLSL'],
-    url: '/portfolio/interactive-3d-gallery'
-  },
-  {
-    slug: 'motion-design-website',
-    title: 'Motion Design Website',
-    excerpt: 'Framer Motionを活用したアニメーション豊富なWebサイト',
-    date: '2023-09-10',
-    tags: ['Framer Motion', 'React', 'CSS', 'Animation'],
-    url: '/portfolio/motion-design-website'
   }
 ];
 
