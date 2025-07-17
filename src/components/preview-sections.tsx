@@ -1,69 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
-// import { allWorks, allBlogs } from 'contentlayer/generated';
 import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
 import { ArrowRight, Calendar, Tag } from 'lucide-react';
-
-// 一時的なモックデータ
-const allWorks = [
-  {
-    slug: 'neo-fusion-portfolio',
-    title: 'Neo-Typographic Fusion Portfolio',
-    excerpt: '3Dタイポグラフィとモダンデザインを融合させたポートフォリオサイト',
-    date: '2024-01-15',
-    tags: ['React', 'Three.js', 'TypeScript', 'Next.js'],
-    url: '/portfolio/neo-fusion-portfolio'
-  },
-  {
-    slug: 'interactive-3d-gallery',
-    title: 'Interactive 3D Gallery',
-    excerpt: 'WebGLを使用したインタラクティブな3Dギャラリーアプリケーション',
-    date: '2023-11-20',
-    tags: ['Three.js', 'WebGL', 'JavaScript', 'GLSL'],
-    url: '/portfolio/interactive-3d-gallery'
-  },
-  {
-    slug: 'motion-design-website',
-    title: 'Motion Design Website',
-    excerpt: 'Framer Motionを活用したアニメーション豊富なWebサイト',
-    date: '2023-09-10',
-    tags: ['Framer Motion', 'React', 'CSS', 'Animation'],
-    url: '/portfolio/motion-design-website'
-  }
-];
-
-const allBlogs = [
-  {
-    slug: 'react-three-fiber-basics',
-    title: 'React Three Fiberの基礎',
-    excerpt: 'React Three Fiberを使ってWebGL 3Dシーンを作成する方法を解説します',
-    date: '2024-01-10',
-    tags: ['React', 'Three.js', 'WebGL', '3D', 'Tutorial'],
-    url: '/blog/react-three-fiber-basics'
-  },
-  {
-    slug: 'nextjs-performance-optimization',
-    title: 'Next.js パフォーマンス最適化ガイド',
-    excerpt: 'Next.jsアプリケーションのパフォーマンスを向上させるテクニックをまとめました',
-    date: '2023-12-15',
-    tags: ['Next.js', 'Performance', 'Optimization', 'React'],
-    url: '/blog/nextjs-performance-optimization'
-  },
-  {
-    slug: 'modern-css-techniques',
-    title: 'モダンCSS テクニック集',
-    excerpt: 'CSS Grid、Flexbox、カスタムプロパティなど最新のCSS機能を活用したテクニック',
-    date: '2023-11-05',
-    tags: ['CSS', 'Grid', 'Flexbox', 'Frontend'],
-    url: '/blog/modern-css-techniques'
-  }
-];
+import { getLatestWorks, type WorkPreview } from '@/data/works';
+import { getLatestBlogs, type BlogPreview } from '@/data/blogs';
 
 /**
  * Worksプレビューカード
  */
-function WorkPreviewCard({ work }: { work: any }) {
+function WorkPreviewCard({ work }: { work: WorkPreview }) {
   return (
     <Link
       href={work.url}
@@ -121,11 +67,12 @@ function WorkPreviewCard({ work }: { work: any }) {
 /**
  * Blogプレビューカード
  */
-function BlogPreviewCard({ blog }: { blog: any }) {
+function BlogPreviewCard({ blog }: { blog: BlogPreview }) {
   return (
     <Link
-      href={blog.url}
+      href={blog.source === 'note.com' ? blog.link || blog.url : blog.url}
       className="group block bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg overflow-hidden hover:border-[#1479FF] transition-all duration-300 hover:scale-105"
+      {...(blog.source === 'note.com' ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
     >
       {/* カバー画像 */}
       <div className="aspect-video bg-gradient-to-br from-[#1479FF]/20 to-[#F5C400]/20 flex items-center justify-center">
@@ -152,7 +99,7 @@ function BlogPreviewCard({ blog }: { blog: any }) {
           </div>
           
           <div className="flex items-center text-[#1479FF] text-sm font-medium">
-            読む
+            {blog.source === 'note.com' ? '外部記事を読む' : '読む'}
             <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
           </div>
         </div>
@@ -180,9 +127,7 @@ function BlogPreviewCard({ blog }: { blog: any }) {
  * Worksプレビューセクション
  */
 export function WorksPreviewSection() {
-  const latestWorks = allWorks
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 3);
+  const latestWorks = getLatestWorks(3);
 
   return (
     <section className="py-20 bg-[#0F0F0F]">
@@ -223,9 +168,7 @@ export function WorksPreviewSection() {
  * Blogプレビューセクション
  */
 export function BlogPreviewSection() {
-  const latestBlogs = allBlogs
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 3);
+  const latestBlogs = getLatestBlogs(3);
 
   return (
     <section className="py-20 bg-[#0F0F0F]">
