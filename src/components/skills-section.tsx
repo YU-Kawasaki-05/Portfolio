@@ -11,7 +11,7 @@ export default function SkillsSection() {
         id="skills-section-heading"
         className="text-2xl sm:text-3xl font-bold font-heading text-[#F9F9F9] mb-6"
       >
-        Skills
+        開発経験のある技術
       </h2>
       <div className="border border-[#555] rounded-lg p-6 mt-6 mb-10">
         <div className="grid gap-4"
