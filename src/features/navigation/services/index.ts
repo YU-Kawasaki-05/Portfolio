@@ -1,2 +1,1 @@
-// Navigation feature services exports
-export * from './navigation-service';
+// Navigation services exports

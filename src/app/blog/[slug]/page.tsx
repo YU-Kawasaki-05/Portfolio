@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
 import { Calendar, Tag, ArrowLeft, Clock, Share2 } from 'lucide-react';
 import Link from 'next/link';
-import { getAllBlogs, getBlogBySlug, getRelatedBlogs } from '@/data/blogs';
+import { getAllBlogs, getBlogBySlug, getRelatedBlogs } from '@/features/blog';
 
 interface BlogPageProps {
   params: {

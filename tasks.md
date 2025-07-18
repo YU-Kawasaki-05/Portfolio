@@ -93,11 +93,11 @@
 ### 5.2 Unit Tests - Core Components
 | ID      | Task                                                         | Done |
 | ------- | ------------------------------------------------------------ | :--: |
-| **505** | `Hero3D` と `WorkTable` のユニットテストを作成                 |  ☐   |
-| **506** | `header-nav.tsx` のユニットテスト作成（レスポンシブ、ナビゲーション） |  ☐   |
-| **507** | `footer.tsx` のユニットテスト作成（リンク、アクセシビリティ） |  ☐   |
-| **508** | `navigation-cards.tsx` のユニットテスト作成（ホバー、ルーティング） |  ☐   |
-| **509** | `ServiceAccordionShowcase.tsx` のユニットテスト作成（展開/折りたたみ） |  ☐   |
+| **505** | `Hero3D` と `WorkTable` のユニットテストを作成                 |  ☑   |
+| **506** | `header-nav.tsx` のユニットテスト作成（レスポンシブ、ナビゲーション） |  ☑   |
+| **507** | `footer.tsx` のユニットテスト作成（リンク、アクセシビリティ） |  ☑   |
+| **508** | `navigation-cards.tsx` のユニットテスト作成（ホバー、ルーティング） |  ☑   |
+| **509** | `ServiceAccordionShowcase.tsx` のユニットテスト作成（展開/折りたたみ） |  ☑   |
 
 ### 5.3 Unit Tests - Feature Components
 | ID      | Task                                                         | Done |
@@ -147,7 +147,7 @@
 | **580** | 現在のディレクトリ構成を詳細分析し、移行対象ファイルをリストアップ |  ☑   |
 | **581** | 新しいディレクトリ構成設計書を `design/08_directory-structure.md` に作成 |  ☑   |
 | **582** | `src/features/` ディレクトリを作成し、基本構造を準備 |  ☑   |
-| **583** | `src/shared/` ディレクトリを作成し、基本構造を準備 |  ☐   |
+| **583** | `src/shared/` ディレクトリを作成し、基本構造を準備 |  ☑   |
 
 <!-- タスク582進行状況メモ -->
 <!-- 
@@ -158,7 +158,7 @@ Navigation: ✅ 完全 (components, hooks, utils, types, __tests__, __stories__,
 Services: ✅ 完全 (components, hooks, utils, types, __tests__, __stories__, data)
 Home: ✅ 完全 (components, hooks, utils, types, __tests__, __stories__, data, services)
 -->
-| **584** | 移行用ヘルパースクリプト `scripts/migrate-files.ts` を作成 |  ☐   |
+| **584** | 移行用ヘルパースクリプト `scripts/migrate-files.ts` を作成 |  ☑   |
 | **585** | tsconfig.json のパスエイリアス設定を feature-based 用に拡張 |  ☑   |
 | **586** | Vitest 設定をfeature単位テスト実行に対応 |  ☑   |
 | **587** | Storybook 設定を新ディレクトリ構成に対応 |  ☑   |
@@ -191,9 +191,9 @@ Home: ✅ 完全 (components, hooks, utils, types, __tests__, __stories__, data,
 | **5B0** | Blog機能の index.ts エクスポートファイルを作成 |  ☑   |
 | **5B1** | Blog機能の import 文を新パスに更新 |  ☑   |
 | **5B2** | Blog機能のテスト実行確認 |  ☑   |
-| **5B3** | **Phase 4**: Navigation 機能の移行開始 |  ☐   |
-| **5B4** | `src/features/navigation/` ディレクトリ構造を作成 |  ☐   |
-| **5B5** | `header-nav.tsx`, `navigation-cards.tsx` を `features/navigation/components/` に移行 |  ☐   |
+| **5B3** | **Phase 4**: Navigation 機能の移行開始 |  ☑   |
+| **5B4** | `src/features/navigation/` ディレクトリ構造を作成 |  ☑   |
+| **5B5** | `header-nav.tsx`, `navigation-cards.tsx` を `features/navigation/components/` に移行 |  ☑   |
 | **5B6** | Navigation関連テスト・ストーリーを同一ディレクトリに移行 |  ☐   |
 | **5B7** | Navigation機能の index.ts エクスポートファイルを作成 |  ☐   |
 | **5B8** | Navigation機能の import 文を新パスに更新 |  ☐   |
