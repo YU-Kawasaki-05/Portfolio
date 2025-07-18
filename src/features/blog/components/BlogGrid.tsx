@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
 import { Calendar, Tag, Search, Filter, ArrowRight, ExternalLink } from 'lucide-react';
-import { getAllBlogs, BlogData } from '@/data/blogs';
+import { getAllBlogs, BlogData } from '../data';
 
 /**
  * Blogカードコンポーネント
@@ -233,4 +233,4 @@ export default function BlogGrid() {
       </div>
     </div>
   );
-} 
+}

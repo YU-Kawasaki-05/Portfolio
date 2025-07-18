@@ -1,5 +1,4 @@
 import Parser from 'rss-parser';
-import fs from 'fs/promises';
 import path from 'path';
 
 const RSS_URL = 'https://note.com/kawa_04wsdase/rss';
@@ -15,7 +14,13 @@ type NoteItem = { [key: string]: any } & {
   contentSnippet: string;
 };
 
-async function fetchNotes() {
+export async function fetchNotes() {
+  // Note: This function should only be used in Node.js environment (build time)
+  if (typeof window !== 'undefined') {
+    console.warn('fetchNotes should not be called in browser environment');
+    return;
+  }
+
   console.log(`[+] Fetching RSS feed from: ${RSS_URL}`);
   const parser = new Parser<Record<string, unknown>, NoteItem>();
   
@@ -37,7 +42,9 @@ async function fetchNotes() {
       source: 'note.com', // 識別子を追加
     }));
 
-    await fs.writeFile(OUTPUT_PATH, JSON.stringify(articles, null, 2), 'utf-8');
+    // Use dynamic import for fs/promises to avoid build issues
+    const { writeFile } = await import('fs/promises');
+    await writeFile(OUTPUT_PATH, JSON.stringify(articles, null, 2), 'utf-8');
     console.log(`[+] Successfully saved ${articles.length} articles to ${OUTPUT_PATH}`);
 
   } catch (error) {
@@ -45,4 +52,7 @@ async function fetchNotes() {
   }
 }
 
-fetchNotes(); 
+// Execute if called directly
+if (require.main === module) {
+  fetchNotes();
+}

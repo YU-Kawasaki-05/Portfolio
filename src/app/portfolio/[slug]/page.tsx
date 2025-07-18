@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
 import { Calendar, Tag, ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import Link from 'next/link';
-import { getAllWorks, getWorkBySlug, getRelatedWorks } from '@/data/works';
+import { getAllWorks, getWorkBySlug, getRelatedWorks } from '@/features/portfolio';
 
 interface WorkPageProps {
   params: {

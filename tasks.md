@@ -77,18 +77,18 @@
 | **452** | `src/data/blogs.ts` を作成し、Blog データを一元管理 |  ☑   |
 | **453** | `preview-sections.tsx` を共通データソース利用に変更 |  ☑   |
 | **454** | `work-table.tsx` を共通データソース利用に変更 |  ☑   |
-| **455** | `[slug]/page.tsx` を共通データソース利用に変更 |  ☐   |
-| **456** | `blog-grid.tsx` の外部データとローカルデータの統合確認 |  ☐   |
-| **457** | 全ページでのデータ同期確認（1箇所編集→全箇所反映テスト） |  ☐   |
+| **455** | `[slug]/page.tsx` を共通データソース利用に変更 |  ☑   |
+| **456** | `blog-grid.tsx` の外部データとローカルデータの統合確認 |  ☑   |
+| **457** | 全ページでのデータ同期確認（1箇所編集→全箇所反映テスト） |  ☑   |
 
 ## Phase 5 – Testing & CI/CD
 
 ### 5.1 Test Environment Setup
 | ID      | Task                                                         | Done |
 | ------- | ------------------------------------------------------------ | :--: |
-| **500** | Jest + RTL をセットアップ (`setupTests.ts`)                      |  ☐   |
-| **501** | 既存の `skills-section.test.tsx` の `@ts-nocheck` を削除して修正 |  ☐   |
-| **502** | Vitest + Storybook 統合テストの設定確認 |  ☐   |
+| **500** | Jest + RTL をセットアップ (`setupTests.ts`)                      |  ☑   |
+| **501** | 既存の `skills-section.test.tsx` の `@ts-nocheck` を削除して修正 |  ☑   |
+| **502** | Vitest + Storybook 統合テストの設定確認 |  ☑   |
 
 ### 5.2 Unit Tests - Core Components
 | ID      | Task                                                         | Done |
@@ -112,7 +112,7 @@
 ### 5.4 Unit Tests - UI Components
 | ID      | Task                                                         | Done |
 | ------- | ------------------------------------------------------------ | :--: |
-| **520** | `ui/button.tsx` のユニットテスト作成（バリアント、アクセシビリティ） |  ☐   |
+| **520** | `ui/button.tsx` のユニットテスト作成（バリアント、アクセシビリティ） |  ☑   |
 | **521** | `ui/card.tsx` のユニットテスト作成（コンポーネント構成） |  ☐   |
 | **522** | `ui/badge.tsx` のユニットテスト作成（バリアント表示） |  ☐   |
 
@@ -144,16 +144,26 @@
 ### 5.8 Directory Refactoring Preparation
 | ID      | Task                                                         | Done |
 | ------- | ------------------------------------------------------------ | :--: |
-| **580** | 現在のディレクトリ構成を詳細分析し、移行対象ファイルをリストアップ |  ☐   |
-| **581** | 新しいディレクトリ構成設計書を `design/08_directory-structure.md` に作成 |  ☐   |
-| **582** | `src/features/` ディレクトリを作成し、基本構造を準備 |  ☐   |
+| **580** | 現在のディレクトリ構成を詳細分析し、移行対象ファイルをリストアップ |  ☑   |
+| **581** | 新しいディレクトリ構成設計書を `design/08_directory-structure.md` に作成 |  ☑   |
+| **582** | `src/features/` ディレクトリを作成し、基本構造を準備 |  ☑   |
 | **583** | `src/shared/` ディレクトリを作成し、基本構造を準備 |  ☐   |
+
+<!-- タスク582進行状況メモ -->
+<!-- 
+Profile: ✅ 完全 (components, hooks, utils, types, __tests__, __stories__, data)
+Portfolio: ✅ 完全 (components, hooks, utils, types, __tests__, __stories__, data, services)  
+Blog: ✅ 完全 (components, hooks, utils, types, __tests__, __stories__, data, services)
+Navigation: ✅ 完全 (components, hooks, utils, types, __tests__, __stories__, data, services)
+Services: ✅ 完全 (components, hooks, utils, types, __tests__, __stories__, data)
+Home: ✅ 完全 (components, hooks, utils, types, __tests__, __stories__, data, services)
+-->
 | **584** | 移行用ヘルパースクリプト `scripts/migrate-files.ts` を作成 |  ☐   |
-| **585** | tsconfig.json のパスエイリアス設定を feature-based 用に拡張 |  ☐   |
-| **586** | Vitest 設定をfeature単位テスト実行に対応 |  ☐   |
-| **587** | Storybook 設定を新ディレクトリ構成に対応 |  ☐   |
-| **588** | ESLint 設定を feature-based imports ルールに更新 |  ☐   |
-| **589** | 移行前の完全バックアップとブランチ作成 (`feature/directory-refactor`) |  ☐   |
+| **585** | tsconfig.json のパスエイリアス設定を feature-based 用に拡張 |  ☑   |
+| **586** | Vitest 設定をfeature単位テスト実行に対応 |  ☑   |
+| **587** | Storybook 設定を新ディレクトリ構成に対応 |  ☑   |
+| **588** | ESLint 設定を feature-based imports ルールに更新 |  ☑   |
+| **589** | 移行前の完全バックアップとブランチ作成 (`feature/directory-refactor`) |  ☑   |
 
 ### 5.9 Feature-Based Architecture Migration
 | ID      | Task                                                         | Done |
@@ -167,20 +177,20 @@
 | **596** | Profile機能の index.ts エクスポートファイルを作成 |  ☐   |
 | **597** | Profile機能の import 文を新パスに更新 (`src/app/profile/page.tsx` 等) |  ☐   |
 | **598** | Profile機能のテスト実行確認 (`pnpm test features/profile`) |  ☐   |
-| **599** | **Phase 2**: Portfolio 機能の移行開始 |  ☐   |
-| **5A0** | `src/features/portfolio/` ディレクトリ構造を作成 |  ☐   |
-| **5A1** | `work-table.tsx` + テスト・ストーリーを `features/portfolio/components/` に移行 |  ☐   |
-| **5A2** | Portfolio機能のデータ (`src/data/works.ts`) を `features/portfolio/data/` に移行 |  ☐   |
-| **5A3** | Portfolio機能の index.ts エクスポートファイルを作成 |  ☐   |
-| **5A4** | Portfolio機能の import 文を新パスに更新 |  ☐   |
-| **5A5** | Portfolio機能のテスト実行確認 |  ☐   |
-| **5A6** | **Phase 3**: Blog 機能の移行開始 |  ☐   |
-| **5A7** | `src/features/blog/` ディレクトリ構造を作成 |  ☐   |
-| **5A8** | `blog-grid.tsx` + テスト・ストーリーを `features/blog/components/` に移行 |  ☐   |
-| **5A9** | Blog機能のサービス層 (`scripts/fetch-notes.ts` 等) を `features/blog/services/` に移行 |  ☐   |
-| **5B0** | Blog機能の index.ts エクスポートファイルを作成 |  ☐   |
-| **5B1** | Blog機能の import 文を新パスに更新 |  ☐   |
-| **5B2** | Blog機能のテスト実行確認 |  ☐   |
+| **599** | **Phase 2**: Portfolio 機能の移行開始 |  ☑   |
+| **5A0** | `src/features/portfolio/` ディレクトリ構造を作成 |  ☑   |
+| **5A1** | `work-table.tsx` + テスト・ストーリーを `features/portfolio/components/` に移行 |  ☑   |
+| **5A2** | Portfolio機能のデータ (`src/data/works.ts`) を `features/portfolio/data/` に移行 |  ☑   |
+| **5A3** | Portfolio機能の index.ts エクスポートファイルを作成 |  ☑   |
+| **5A4** | Portfolio機能の import 文を新パスに更新 |  ☑   |
+| **5A5** | Portfolio機能のテスト実行確認 |  ☑   |
+| **5A6** | **Phase 3**: Blog 機能の移行開始 |  ☑   |
+| **5A7** | `src/features/blog/` ディレクトリ構造を作成 |  ☑   |
+| **5A8** | `blog-grid.tsx` + テスト・ストーリーを `features/blog/components/` に移行 |  ☑   |
+| **5A9** | Blog機能のサービス層 (`scripts/fetch-notes.ts` 等) を `features/blog/services/` に移行 |  ☑   |
+| **5B0** | Blog機能の index.ts エクスポートファイルを作成 |  ☑   |
+| **5B1** | Blog機能の import 文を新パスに更新 |  ☑   |
+| **5B2** | Blog機能のテスト実行確認 |  ☑   |
 | **5B3** | **Phase 4**: Navigation 機能の移行開始 |  ☐   |
 | **5B4** | `src/features/navigation/` ディレクトリ構造を作成 |  ☐   |
 | **5B5** | `header-nav.tsx`, `navigation-cards.tsx` を `features/navigation/components/` に移行 |  ☐   |
@@ -256,3 +266,48 @@
   | 833 | Jest + RTL: `SkillsSection` のレンダリングテストとスナップショット追加 | ☑ |
   | 834 | Playwright: Profile ページでスキルタグの表示を確認する E2E を追加 | ☑ |
   | 835 | README & デザインドキュメントを更新 (スキルセクション仕様変更を反映) | ☐ |
+
+## Critical Missing Tests - 必須テスト
+
+### 重要な統合テスト
+| ID      | Task                                                         | Done |
+| ------- | ------------------------------------------------------------ | :--: |
+| **900** | データソース統合テスト：Works/Blog データの整合性確認 | ☐ |
+| **901** | ページルーティングテスト：全ページアクセス可能性確認 | ☐ |
+| **902** | レスポンシブデザインテスト：モバイル/デスクトップ表示確認 | ☐ |
+| **903** | アクセシビリティテスト：基本的なa11y要件確認 | ☐ |
+| **904** | API統合テスト：note.com RSS取得の動作確認 | ☐ |
+
+### パフォーマンステスト
+| ID      | Task                                                         | Done |
+| ------- | ------------------------------------------------------------ | :--: |
+| **905** | Core Web Vitals測定：LCP, FID, CLS基準値クリア確認 | ☐ |
+| **906** | 3Dコンポーネント負荷テスト：Hero3Dのメモリリーク確認 | ☐ |
+| **907** | バンドルサイズ分析：初期ロード時間の最適化確認 | ☐ |
+
+### エラーハンドリングテスト
+| ID      | Task                                                         | Done |
+| ------- | ------------------------------------------------------------ | :--: |
+| **908** | 404エラーページテスト：存在しないルートのエラーハンドリング | ☐ |
+| **909** | データ取得失敗テスト：外部API障害時の表示確認 | ☐ |
+| **910** | 3Dレンダリング失敗テスト：WebGL未対応環境での fallback 確認 | ☐ |
+
+### ブラウザ互換性テスト
+| ID      | Task                                                         | Done |
+| ------- | ------------------------------------------------------------ | :--: |
+| **911** | クロスブラウザテスト：Chrome/Firefox/Safari での動作確認 | ☐ |
+| **912** | レガシーブラウザテスト：polyfill動作とgraceful degradation確認 | ☐ |
+
+### セキュリティテスト
+| ID      | Task                                                         | Done |
+| ------- | ------------------------------------------------------------ | :--: |
+| **913** | XSS脆弱性テスト：ユーザー入力値のサニタイズ確認 | ☐ |
+| **914** | CSP設定テスト：Content Security Policy の動作確認 | ☐ |
+| **915** | 外部リンクセキュリティ：rel="noopener noreferrer" 設定確認 | ☐ |
+
+### 回帰テスト（CI/CD必須）
+| ID      | Task                                                         | Done |
+| ------- | ------------------------------------------------------------ | :--: |
+| **916** | スモークテスト：主要機能の基本動作確認（自動化） | ☐ |
+| **917** | ビジュアル回帰テスト：デザインの意図しない変更検出 | ☐ |
+| **918** | パフォーマンス回帰テスト：Lighthouse スコア維持確認 | ☐ |

@@ -1,7 +1,6 @@
 import React from 'react';
-import { HeaderNav } from './header-nav';
+import { HeaderNav, SidebarNav } from '@/features/navigation';
 import { Footer } from './footer';
-import { SidebarNav } from './sidebar-nav';
 
 interface PageShellProps {
   children: React.ReactNode;

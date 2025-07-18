@@ -220,7 +220,8 @@ CSS変数を使用したテーマシステム：
 // 外部記事データを取得
 function getExternalBlogs(): BlogData[] {
   try {
-    const notesData: ExternalBlogData[] = require('./notes.json');
+    // Note: This path will need to be updated after data migration
+    const notesData: ExternalBlogData[] = require('../../../data/notes.json');
     
     return notesData.map((note, index) => ({
       slug: `note-${index + 1}`,

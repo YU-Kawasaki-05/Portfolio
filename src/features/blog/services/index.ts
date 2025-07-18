@@ -1,0 +1,1 @@
+export { fetchNotes } from './fetch-notes';

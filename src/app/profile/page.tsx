@@ -1,5 +1,4 @@
-import ProfileCard from '@/components/profile-card';
-import SkillsSection from '@/components/skills-section';
+import { ProfileCard, SkillsSection } from '@/features/profile';
 import { 
   SmoothScrollContainer, 
   ScrollReveal, 

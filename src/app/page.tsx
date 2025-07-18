@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import { WorksPreviewSection, BlogPreviewSection } from '@/components/preview-sections';
-import NavigationCards from '@/components/navigation-cards';
+import { NavigationCards } from '@/features/navigation';
 import { 
   SmoothScrollContainer, 
   ScrollReveal 

@@ -4,7 +4,7 @@ import "./globals.css";
 import PageTransition from "@/components/page-transition";
 import MotionProvider, { MotionToggle } from "@/components/motion-provider";
 import PerformanceOptimizer from "@/components/performance-optimizer";
-import HeaderNav from "@/components/layout/header-nav";
+import { HeaderNav } from "@/features/navigation";
 import { Footer } from "@/components/layout/footer";
 
 // Neo‑Typographic Fusion フォント設定

@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
 import { ArrowRight, Calendar, Tag } from 'lucide-react';
-import { getLatestWorks, type WorkPreview } from '@/data/works';
-import { getLatestBlogs, type BlogPreview } from '@/data/blogs';
+import { getLatestWorks, type WorkPreview } from '@/features/portfolio';
+import { getLatestBlogs, type BlogPreview } from '@/features/blog';
 
 /**
  * Worksプレビューカード
