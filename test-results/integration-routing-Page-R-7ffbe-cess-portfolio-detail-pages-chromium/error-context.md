@@ -1,0 +1,93 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - navigation:
+    - link "K KawasakiK":
+      - /url: /
+    - link "Home":
+      - /url: /
+    - link "Works":
+      - /url: /portfolio
+    - link "Blog":
+      - /url: /blog
+    - link "Profile":
+      - /url: /profile
+    - link "Services":
+      - /url: /services
+    - link "SNS":
+      - /url: /sns
+- main:
+  - link "Portfolio一覧に戻る":
+    - /url: /portfolio
+  - heading "Neo-Typographic Fusion Portfolio" [level=1]
+  - paragraph: 3Dタイポグラフィとモダンデザインを融合させたポートフォリオサイト
+  - text: 2025年7月14日 React Three.js TypeScript Next.js
+  - link "ライブデモ":
+    - /url: https://neo-fusion-portfolio.vercel.app
+  - link "ソースコード":
+    - /url: https://github.com/username/neo-fusion-portfolio
+  - text: Neo-Typographic Fusion Portfolio
+  - article: "# Neo-Typographic Fusion Portfolio ## 概要 3Dタイポグラフィとモダンデザインを融合させたポートフォリオサイトです。 React Three Fiberを使用して動的な3D表現を実現し、ユーザビリティを損なわない洗練されたUIを提供しています。 ## 技術スタック - **Frontend**: Next.js 15, React 18, TypeScript - **3D Graphics**: Three.js, React Three Fiber - **Styling**: Tailwind CSS - **Animation**: Framer Motion, GSAP - **Testing**: Vitest, Playwright ## 主要機能 - 3Dタイポグラフィアニメーション - レスポンシブデザイン - ダークテーマ - パフォーマンス最適化 - アクセシビリティ対応 ## 実装のポイント パフォーマンスを重視し、3D要素の最適化とコードスプリッティングを実施しました。"
+  - heading "関連作品" [level=2]
+  - link "Interactive 3D Gallery Interactive 3D Gallery WebGLを使用したインタラクティブな3Dギャラリーアプリケーション":
+    - /url: /portfolio/interactive-3d-gallery
+    - text: Interactive 3D Gallery
+    - heading "Interactive 3D Gallery" [level=3]
+    - paragraph: WebGLを使用したインタラクティブな3Dギャラリーアプリケーション
+  - link "Motion Design Website Motion Design Website Framer Motionを活用したアニメーション豊富なWebサイト":
+    - /url: /portfolio/motion-design-website
+    - text: Motion Design Website
+    - heading "Motion Design Website" [level=3]
+    - paragraph: Framer Motionを活用したアニメーション豊富なWebサイト
+- contentinfo:
+  - text: K
+  - heading "KawasakiK" [level=3]
+  - paragraph: 広範な生成AI知識と開発知見を活用し開発した川崎Kの個人サイト。 React、Next.js、Three.jsを使用したWebエクスペリエンス。
+  - link "GitHub":
+    - /url: https://github.com/YU-Kawasaki-05
+  - link "X":
+    - /url: https://x.com/foooten_
+  - link "LinkedIn":
+    - /url: https://www.linkedin.com/in/yu-kawasaki-a05441296/
+  - link "Email":
+    - /url: mailto:contact@neo-fusion.dev
+  - heading "Navigation" [level=4]
+  - list:
+    - listitem:
+      - link "Home ホーム":
+        - /url: /
+    - listitem:
+      - link "Works 事例と実績":
+        - /url: /portfolio
+    - listitem:
+      - link "Blog ブログ":
+        - /url: /blog
+    - listitem:
+      - link "Profile プロフィール":
+        - /url: /profile
+  - heading "Services" [level=4]
+  - list:
+    - listitem:
+      - link "Services サービス":
+        - /url: /services
+    - listitem:
+      - link "SNS ソーシャル":
+        - /url: /sns
+  - heading "Resources" [level=4]
+  - list:
+    - listitem:
+      - link "Tech Blog 技術ブログ":
+        - /url: /blog
+    - listitem:
+      - link "Consulting コンサルティング":
+        - /url: /services
+  - paragraph: © 2025 KawasakiK. All rights reserved.
+  - link "Privacy Policy":
+    - /url: /privacy
+  - link "Terms of Service":
+    - /url: /terms
+  - text: Made with ❤️ and ☕ in Tokyo
+- button "モーションを無効化":
+  - img
+```

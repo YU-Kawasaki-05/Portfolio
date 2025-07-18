@@ -1,2 +1,2 @@
-// Shared 3D components exports
-// Will be populated when 3D components are migrated
+// 3D components exports
+export { default as Hero3D } from './hero3d';

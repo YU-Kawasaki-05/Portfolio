@@ -1,2 +1,4 @@
-// Shared UI components exports
-// Will be populated when UI components are migrated
+// UI components exports
+export * from './button';
+export * from './card';
+export * from './badge';

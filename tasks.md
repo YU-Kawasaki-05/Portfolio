@@ -119,10 +119,10 @@
 ### 5.5 E2E Tests
 | ID      | Task                                                         | Done |
 | ------- | ------------------------------------------------------------ | :--: |
-| **530** | Playwright で Home → Portfolio の E2E テストを作成             |  ☐   |
-| **531** | Playwright E2E: レスポンシブナビゲーションテスト |  ☐   |
-| **532** | Playwright E2E: ブログ検索・フィルタリングテスト |  ☐   |
-| **533** | Playwright E2E: サービスアコーディオンテスト |  ☐   |
+| **530** | Playwright で Home → Portfolio の E2E テストを作成             |  ☑   |
+| **531** | Playwright E2E: レスポンシブナビゲーションテスト |  ☑   |
+| **532** | Playwright E2E: ブログ検索・フィルタリングテスト |  ☑   |
+| **533** | Playwright E2E: サービスアコーディオンテスト |  ☑   |
 
 ### 5.6 Storybook Tests
 | ID      | Task                                                         | Done |
@@ -133,8 +133,8 @@
 ### 5.7 CI/CD & Coverage
 | ID      | Task                                                         | Done |
 | ------- | ------------------------------------------------------------ | :--: |
-| **550** | GitHub Actions: `ci.yml` で lint, test, build を実行         |  ☐   |
-| **551** | テストカバレッジ 80% を達成し、バッジを README に追加          |  ☐   |
+| **550** | GitHub Actions: `ci.yml` で lint, test, build を実行         |  ☑   |
+| **551** | テストカバレッジ 80% を達成し、バッジを README に追加          |  ☑   |
 | **510** | note.com RSS 取得バッチ (`/scripts/fetch-notes.ts`) を作成     |  ☑   |
 | **511** | 取得データを `/data/notes.json` に保存する処理を実装           |  ☑   |
 | **512** | GitHub Actions でバッチを定期実行 (daily at 03:00 UTC)      |  ☑   |
@@ -194,23 +194,23 @@ Home: ✅ 完全 (components, hooks, utils, types, __tests__, __stories__, data,
 | **5B3** | **Phase 4**: Navigation 機能の移行開始 |  ☑   |
 | **5B4** | `src/features/navigation/` ディレクトリ構造を作成 |  ☑   |
 | **5B5** | `header-nav.tsx`, `navigation-cards.tsx` を `features/navigation/components/` に移行 |  ☑   |
-| **5B6** | Navigation関連テスト・ストーリーを同一ディレクトリに移行 |  ☐   |
-| **5B7** | Navigation機能の index.ts エクスポートファイルを作成 |  ☐   |
-| **5B8** | Navigation機能の import 文を新パスに更新 |  ☐   |
-| **5B9** | Navigation機能のテスト実行確認 |  ☐   |
-| **5C0** | **Phase 5**: Services 機能の移行開始 |  ☐   |
-| **5C1** | `src/features/services/` ディレクトリ構造を作成 |  ☐   |
-| **5C2** | `ServiceAccordionShowcase.tsx` を `features/services/components/` に移行 |  ☐   |
-| **5C3** | Services機能のデータ (`src/services/data.ts`) を `features/services/data/` に移行 |  ☐   |
-| **5C4** | Services機能の index.ts エクスポートファイルを作成 |  ☐   |
-| **5C5** | Services機能の import 文を新パスに更新 |  ☐   |
-| **5C6** | Services機能のテスト実行確認 |  ☐   |
-| **5C7** | **Phase 6**: Shared 共通要素の移行開始 |  ☐   |
-| **5C8** | UI コンポーネント (`src/components/ui/`) を `src/shared/components/ui/` に移行 |  ☐   |
-| **5C9** | Layout コンポーネント (`src/components/layout/`) を `src/shared/components/layout/` に移行 |  ☐   |
-| **5D0** | 3D コンポーネント (`hero3d.tsx` 等) を `src/shared/components/3d/` に移行 |  ☐   |
-| **5D1** | 共通ユーティリティ (`src/lib/`) を `src/shared/lib/` に移行 |  ☐   |
-| **5D2** | 共通型定義を `src/shared/types/` に作成・移行 |  ☐   |
+| **5B6** | Navigation関連テスト・ストーリーを同一ディレクトリに移行 |  ☑   |
+| **5B7** | Navigation機能の index.ts エクスポートファイルを作成 |  ☑   |
+| **5B8** | Navigation機能の import 文を新パスに更新 |  ☑   |
+| **5B9** | Navigation機能のテスト実行確認 |  ☑   |
+| **5C0** | **Phase 5**: Services 機能の移行開始 |  ☑   |
+| **5C1** | `src/features/services/` ディレクトリ構造を作成 |  ☑   |
+| **5C2** | `ServiceAccordionShowcase.tsx` を `features/services/components/` に移行 |  ☑   |
+| **5C3** | Services機能のデータ (`src/services/data.ts`) を `features/services/data/` に移行 |  ☑   |
+| **5C4** | Services機能の index.ts エクスポートファイルを作成 |  ☑   |
+| **5C5** | Services機能の import 文を新パスに更新 |  ☑   |
+| **5C6** | Services機能のテスト実行確認 |  ☑   |
+| **5C7** | **Phase 6**: Shared 共通要素の移行開始 |  ☑   |
+| **5C8** | UI コンポーネント (`src/components/ui/`) を `src/shared/components/ui/` に移行 |  ☑   |
+| **5C9** | Layout コンポーネント (`src/components/layout/`) を `src/shared/components/layout/` に移行 |  ☑   |
+| **5D0** | 3D コンポーネント (`hero3d.tsx` 等) を `src/shared/components/3d/` に移行 |  ☑   |
+| **5D1** | 共通ユーティリティ (`src/lib/`) を `src/shared/lib/` に移行 |  ☑   |
+| **5D2** | 共通型定義を `src/shared/types/` に作成・移行 |  ☑   |
 | **5D3** | **Phase 7**: 最終検証・クリーンアップ |  ☐   |
 | **5D4** | 古い `src/components/` ディレクトリを削除 |  ☐   |
 | **5D5** | 古い `src/data/` ディレクトリを削除 |  ☐   |
@@ -295,19 +295,19 @@ Home: ✅ 完全 (components, hooks, utils, types, __tests__, __stories__, data,
 ### ブラウザ互換性テスト
 | ID      | Task                                                         | Done |
 | ------- | ------------------------------------------------------------ | :--: |
-| **911** | クロスブラウザテスト：Chrome/Firefox/Safari での動作確認 | ☐ |
-| **912** | レガシーブラウザテスト：polyfill動作とgraceful degradation確認 | ☐ |
+| **911** | クロスブラウザテスト：Chrome/Firefox/Safari での動作確認 | ☑ |
+| **912** | レガシーブラウザテスト：polyfill動作とgraceful degradation確認 | ☑ |
 
 ### セキュリティテスト
 | ID      | Task                                                         | Done |
 | ------- | ------------------------------------------------------------ | :--: |
-| **913** | XSS脆弱性テスト：ユーザー入力値のサニタイズ確認 | ☐ |
-| **914** | CSP設定テスト：Content Security Policy の動作確認 | ☐ |
-| **915** | 外部リンクセキュリティ：rel="noopener noreferrer" 設定確認 | ☐ |
+| **913** | XSS脆弱性テスト：ユーザー入力値のサニタイズ確認 | ☑ |
+| **914** | CSP設定テスト：Content Security Policy の動作確認 | ☑ |
+| **915** | 外部リンクセキュリティ：rel="noopener noreferrer" 設定確認 | ☑ |
 
 ### 回帰テスト（CI/CD必須）
 | ID      | Task                                                         | Done |
 | ------- | ------------------------------------------------------------ | :--: |
-| **916** | スモークテスト：主要機能の基本動作確認（自動化） | ☐ |
-| **917** | ビジュアル回帰テスト：デザインの意図しない変更検出 | ☐ |
-| **918** | パフォーマンス回帰テスト：Lighthouse スコア維持確認 | ☐ |
+| **916** | スモークテスト：主要機能の基本動作確認（自動化） | ☑ |
+| **917** | ビジュアル回帰テスト：デザインの意図しない変更検出 | ☑ |
+| **918** | パフォーマンス回帰テスト：Lighthouse スコア維持確認 | ☑ |

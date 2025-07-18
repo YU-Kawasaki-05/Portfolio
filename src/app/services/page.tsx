@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 
-const ServiceAccordionShowcase = dynamic(() => import('@/components/ServiceAccordionShowcase'));
+const ServiceAccordionShowcase = dynamic(() => import('@/features/services/components/ServiceAccordionShowcase'));
 
 export default function ServicesPage() {
   // testimonials セクションや旧サービスカードは廃止。必要なら別コンポーネントへ。

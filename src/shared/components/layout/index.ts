@@ -1,2 +1,5 @@
-// Shared layout components exports
-// Will be populated when layout components are migrated
+// Layout components exports
+export { PageShell } from './page-shell';
+export { Footer } from './footer';
+export { default as HeaderNav } from './header-nav';
+export { SidebarNav } from './sidebar-nav';

@@ -1,2 +1,4 @@
-// Shared components exports
-// Will be populated as components are migrated
+// Shared components main exports
+export * from './ui';
+export * from './layout';
+export * from './3d';
