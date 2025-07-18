@@ -1,7 +1,7 @@
 'use client';
 
-import { skills } from '@/data/skills';
-import SkillBadge from '@/components/skill-badge';
+import { skills } from '../data';
+import SkillBadge from './SkillBadge';
 
 /** SkillsSection - シンプルなスキルタグ一覧 */
 export default function SkillsSection() {
@@ -24,4 +24,4 @@ export default function SkillsSection() {
       </div>
     </section>
   );
-} 
+}

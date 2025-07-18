@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 
-import SkillsSection from '@/components/skills-section';
+import SkillsSection from './SkillsSection';
 
 describe('SkillsSection', () => {
   it('renders all skills', () => {
@@ -30,4 +30,4 @@ describe('SkillsSection', () => {
     expect(gridContainer).toBeInTheDocument();
     expect(gridContainer).toHaveClass('grid', 'gap-4');
   });
-}); 
+});

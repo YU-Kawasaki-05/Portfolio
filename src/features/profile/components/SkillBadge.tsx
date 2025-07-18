@@ -1,4 +1,4 @@
-import { Skill } from '@/data/skills';
+import { Skill } from '../data';
 import { Badge } from '@/components/ui/badge';
 import type { FC } from 'react';
 
@@ -19,4 +19,4 @@ const SkillBadge: FC<SkillBadgeProps> = ({ skill }) => {
   );
 };
 
-export default SkillBadge; 
+export default SkillBadge;

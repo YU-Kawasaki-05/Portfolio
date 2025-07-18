@@ -26,4 +26,4 @@ export const skills: Skill[] = [
   { name: 'pnpm', icon: <Package size={16} /> },
   { name: 'Python' },
   { name: 'FastAPI' },
-]; 
+];

@@ -102,12 +102,12 @@
 ### 5.3 Unit Tests - Feature Components
 | ID      | Task                                                         | Done |
 | ------- | ------------------------------------------------------------ | :--: |
-| **510** | `page-transition.tsx` のユニットテスト作成（アニメーション状態） |  ☐   |
-| **511** | `blog-grid.tsx` のユニットテスト作成（検索、フィルタリング） |  ☐   |
-| **512** | `profile-card.tsx` のユニットテスト作成（データ表示、リンク） |  ☐   |
-| **513** | `optimized-image.tsx` のユニットテスト作成（遅延読み込み、エラー処理） |  ☐   |
-| **514** | `motion-provider.tsx` のユニットテスト作成（コンテキスト、設定） |  ☐   |
-| **515** | `parallax-container.tsx` のユニットテスト作成（スクロール効果） |  ☐   |
+| **510** | `page-transition.tsx` のユニットテスト作成（アニメーション状態） |  ☑   |
+| **511** | `blog-grid.tsx` のユニットテスト作成（検索、フィルタリング） |  ☑   |
+| **512** | `profile-card.tsx` のユニットテスト作成（データ表示、リンク） |  ☑   |
+| **513** | `optimized-image.tsx` のユニットテスト作成（遅延読み込み、エラー処理） |  ☑   |
+| **514** | `motion-provider.tsx` のユニットテスト作成（コンテキスト、設定） |  ☑   |
+| **515** | `parallax-container.tsx` のユニットテスト作成（スクロール効果） |  ☑   |
 
 ### 5.4 Unit Tests - UI Components
 | ID      | Task                                                         | Done |
@@ -168,15 +168,15 @@ Home: ✅ 完全 (components, hooks, utils, types, __tests__, __stories__, data,
 ### 5.9 Feature-Based Architecture Migration
 | ID      | Task                                                         | Done |
 | ------- | ------------------------------------------------------------ | :--: |
-| **590** | **Phase 1**: Profile 機能の移行開始 |  ☐   |
-| **591** | `src/features/profile/` ディレクトリ構造を作成 |  ☐   |
-| **592** | Profile関連コンポーネントを `features/profile/components/` に移行 |  ☐   |
-| **593** | `skills-section.tsx` + `skills-section.test.tsx` + `skills-section.stories.tsx` を同一ディレクトリに移行 |  ☐   |
-| **594** | `profile-card.tsx` + 関連テスト・ストーリーを同一ディレクトリに移行 |  ☐   |
-| **595** | Profile機能のデータ (`src/data/skills.tsx`) を `features/profile/data/` に移行 |  ☐   |
-| **596** | Profile機能の index.ts エクスポートファイルを作成 |  ☐   |
-| **597** | Profile機能の import 文を新パスに更新 (`src/app/profile/page.tsx` 等) |  ☐   |
-| **598** | Profile機能のテスト実行確認 (`pnpm test features/profile`) |  ☐   |
+| **590** | **Phase 1**: Profile 機能の移行開始 |  ☑   |
+| **591** | `src/features/profile/` ディレクトリ構造を作成 |  ☑   |
+| **592** | Profile関連コンポーネントを `features/profile/components/` に移行 |  ☑   |
+| **593** | `skills-section.tsx` + `skills-section.test.tsx` + `skills-section.stories.tsx` を同一ディレクトリに移行 |  ☑   |
+| **594** | `profile-card.tsx` + 関連テスト・ストーリーを同一ディレクトリに移行 |  ☑   |
+| **595** | Profile機能のデータ (`src/data/skills.tsx`) を `features/profile/data/` に移行 |  ☑   |
+| **596** | Profile機能の index.ts エクスポートファイルを作成 |  ☑   |
+| **597** | Profile機能の import 文を新パスに更新 (`src/app/profile/page.tsx` 等) |  ☑   |
+| **598** | Profile機能のテスト実行確認 (`pnpm test features/profile`) |  ☑   |
 | **599** | **Phase 2**: Portfolio 機能の移行開始 |  ☑   |
 | **5A0** | `src/features/portfolio/` ディレクトリ構造を作成 |  ☑   |
 | **5A1** | `work-table.tsx` + テスト・ストーリーを `features/portfolio/components/` に移行 |  ☑   |
