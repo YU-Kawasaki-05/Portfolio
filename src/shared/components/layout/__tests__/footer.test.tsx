@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 
-import { Footer } from '@/components/layout/footer';
+import { Footer } from '@/shared/components/layout/footer';
 
 describe('Footer', () => {
   it('renders the footer element', () => {

@@ -1,15 +1,15 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { WorksPreviewSection, BlogPreviewSection } from '@/components/preview-sections';
+import { WorksPreviewSection, BlogPreviewSection } from '@/features/home';
 import { NavigationCards } from '@/features/navigation';
 import { 
   SmoothScrollContainer, 
   ScrollReveal 
-} from '@/components/parallax-container';
+} from '@/shared/components/layout/parallax-container';
 
 // Hero3Dを動的インポートしてSSRを無効化（Three.jsのため）
-const Hero3D = dynamic(() => import('@/components/hero3d'), {
+const Hero3D = dynamic(() => import('@/shared/components/3d/hero3d'), {
   ssr: false,
   loading: () => (
     <div className="min-h-screen bg-[#0F0F0F] flex items-center justify-center">

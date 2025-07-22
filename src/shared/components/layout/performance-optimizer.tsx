@@ -265,4 +265,4 @@ export const performanceUtils = {
       setTimeout(callback, 1);
     }
   },
-}; 
+};

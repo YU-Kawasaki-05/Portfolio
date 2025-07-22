@@ -188,4 +188,4 @@ export function useResponsiveAnimation() {
     delay: isMotionEnabled ? 0.1 : 0,
     ease: isMotionEnabled ? [0.25, 0.46, 0.45, 0.94] : [0, 0, 0, 0],
   };
-} 
+}

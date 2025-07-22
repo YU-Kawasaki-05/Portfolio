@@ -261,4 +261,4 @@ export function useLazyImage(src: string, threshold = 0.1) {
   };
 
   return { observerRef, imageSrc, isVisible };
-} 
+}
