@@ -6,7 +6,7 @@ import SkillBadge from './SkillBadge';
 /** SkillsSection - シンプルなスキルタグ一覧 */
 export default function SkillsSection() {
   return (
-    <section aria-labelledby="skills-section-heading">
+    <section aria-labelledby="skills-section-heading" role="region" aria-label="開発経験のある技術">
       <h2
         id="skills-section-heading"
         className="text-2xl sm:text-3xl font-bold font-heading text-[#F9F9F9] mb-6"

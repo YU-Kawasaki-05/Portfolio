@@ -1,5 +1,5 @@
 import { Skill } from '../data';
-import { Badge } from '@/components/ui/badge';
+import { Badge } from '@/shared/components/ui/badge';
 import type { FC } from 'react';
 
 interface SkillBadgeProps {

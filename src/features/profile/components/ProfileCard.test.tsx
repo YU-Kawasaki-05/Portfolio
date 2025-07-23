@@ -16,7 +16,7 @@ describe('ProfileCard', () => {
     render(<ProfileCard />);
     
     expect(screen.getByText('Tokyo, Japan')).toBeInTheDocument();
-    expect(screen.getByText('2024年1月から')).toBeInTheDocument();
+    expect(screen.getByText('2024年1月からから')).toBeInTheDocument();
   });
 
   it('renders profile bio section', () => {

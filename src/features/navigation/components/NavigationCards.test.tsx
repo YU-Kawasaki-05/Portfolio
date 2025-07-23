@@ -107,7 +107,7 @@ describe('NavigationCards', () => {
   it('has proper section styling', () => {
     render(<NavigationCards />);
     
-    const section = screen.getByRole('region') || screen.getByText('Explore').closest('section');
+    const section = screen.getByRole('heading', { name: 'Explore' }).closest('section');
     expect(section).toHaveClass('py-20', 'bg-[#0F0F0F]');
   });
 

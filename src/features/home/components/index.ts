@@ -1,1 +1,1 @@
-export * from './preview-sections';
+export * from './PreviewSections';

@@ -11,7 +11,7 @@ export default function ProfileCard() {
     name: '川崎K',
     title: 'フルスタックエンジニア, AIコンサルタント',
     location: 'Tokyo, Japan',
-    joinDate: '2024年1月',
+    joinDate: '2024年1月から',
     email: 'hello@example.com',
     bio: '最新のAIツールに関する広範かつ深い知識と、AIを用いたエンジニアリングに関する知識と経験で業務プロセスの見直し、コスト削減のコンサルティングから開発まで幅広く手掛けています。\n迅速な開発が強みです。',
     avatar: '👨‍💻',

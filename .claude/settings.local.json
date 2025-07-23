@@ -10,7 +10,13 @@
       "Bash(rm:*)",
       "Bash(find:*)",
       "Bash(npx vitest run:*)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "Bash(pnpm dev:*)",
+      "Bash(pnpm type-check:*)",
+      "Bash(tail:*)",
+      "Bash(npx tsc:*)",
+      "Bash(pnpm list:*)",
+      "Bash(pnpm storybook:*)"
     ],
     "deny": []
   }

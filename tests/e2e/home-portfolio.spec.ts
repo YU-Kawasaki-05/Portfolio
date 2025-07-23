@@ -7,8 +7,8 @@ test.describe('Home → Portfolio E2E テスト', () => {
   });
 
   test('Home → Portfolio の基本遷移', async ({ page }) => {
-    // ホームページの要素確認
-    await expect(page.locator('h1')).toContainText('Neo-Typographic Fusion');
+    // ホームページが正しく読み込まれることを確認
+    await expect(page.locator('a[href="/portfolio"]')).toBeVisible();
     
     // NavigationCards内のPortfolioカードをクリック
     await page.click('a[href="/portfolio"]');

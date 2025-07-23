@@ -5,7 +5,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Text, OrbitControls, Float, Preload } from '@react-three/drei';
 import { Mesh } from 'three';
 import Link from 'next/link';
-import { useMotionPreference } from '@/components/motion-provider';
+import { useMotionPreference } from '@/shared/components/layout/motion-provider';
 
 /**
  * 回転する3Dテキストコンポーネント
@@ -246,13 +246,13 @@ export default function Hero3D() {
       alpha: true,
       powerPreference: 'high-performance' as const,
     },
-    dpr: [1, typeof window !== 'undefined' ? Math.min(window.devicePixelRatio, 2) : 2],
+    dpr: [1, typeof window !== 'undefined' ? Math.min(window.devicePixelRatio, 2) : 2] as [number, number],
     performance: { min: 0.5 },
     frameloop: isMotionEnabled ? 'always' as const : 'demand' as const,
   }), [isMotionEnabled]);
 
   return (
-    <section className="relative min-h-screen bg-[#0F0F0F] flex items-center justify-center overflow-hidden">
+    <section role="banner" className="relative min-h-screen bg-[#0F0F0F] flex items-center justify-center overflow-hidden">
       {/* 3Dキャンバス */}
       <div className="absolute inset-0 z-0">
         <ErrorBoundary

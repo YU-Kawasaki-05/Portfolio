@@ -1,43 +1,71 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import WorkTable from '../components/WorkTable';
 
-// Mock the works data
-vi.mock('../data', () => ({
-  getAllWorks: () => [
-    {
-      slug: 'test-work-1',
-      title: 'Test Work 1',
-      excerpt: 'This is a test work description',
-      date: '2024-01-15',
-      tags: ['React', 'TypeScript'],
-      url: '/portfolio/test-work-1',
-    },
-    {
-      slug: 'test-work-2',
-      title: 'Test Work 2',
-      excerpt: 'Another test work description',
-      date: '2023-12-10',
-      tags: ['Next.js', 'Tailwind'],
-      url: '/portfolio/test-work-2',
-    },
-  ],
-  searchWorks: (query: string) => [
-    {
-      slug: 'test-work-1',
-      title: 'Test Work 1',
-      excerpt: 'This is a test work description',
-      date: '2024-01-15',
-      tags: ['React', 'TypeScript'],
-      url: '/portfolio/test-work-1',
-    },
-  ],
-  getWorksByTag: (tag: string) => [],
-  getAllTags: () => ['React', 'TypeScript', 'Next.js', 'Tailwind'],
-}));
+// モジュール全体をモック（factory 内完結）
+vi.mock('../data', () => {
+  const getAllWorks = vi.fn();
+  const searchWorks = vi.fn();
+  const getWorksByTag = vi.fn();
+  const getAllTags = vi.fn();
+
+  return {
+    getAllWorks,
+    searchWorks,
+    getWorksByTag,
+    getAllTags,
+  };
+});
+
+// モック関数を取得
+import { getAllWorks, searchWorks, getWorksByTag, getAllTags, type WorkData } from '../data';
+const mockGetAllWorks = vi.mocked(getAllWorks);
+const mockSearchWorks = vi.mocked(searchWorks);
+const mockGetWorksByTag = vi.mocked(getWorksByTag);
+const mockGetAllTags = vi.mocked(getAllTags);
+
+// 共有サンプルデータ
+const mockWorksSample: WorkData[] = [
+  {
+    slug: 'test-work-1',
+    title: 'Test Work 1',
+    excerpt: 'This is a test work description',
+    date: '2024-01-15',
+    tags: ['React', 'TypeScript'],
+    url: '/portfolio/test-work-1',
+    type: 'Work',
+  },
+  {
+    slug: 'test-work-2',
+    title: 'Test Work 2',
+    excerpt: 'Another test work description',
+    date: '2023-12-10',
+    tags: ['Next.js', 'Tailwind'],
+    url: '/portfolio/test-work-2',
+    type: 'Work',
+  },
+];
 
 describe('WorkTable', () => {
+  beforeEach(() => {
+    // 各テストの前にモックをリセット
+    vi.clearAllMocks();
+    // デフォルトのモック値を再設定
+    mockGetAllWorks.mockReturnValue(mockWorksSample);
+    mockSearchWorks.mockImplementation((query: string) => {
+      return mockWorksSample.filter(work =>
+        work.title.toLowerCase().includes(query.toLowerCase()) ||
+        work.excerpt.toLowerCase().includes(query.toLowerCase()) ||
+        work.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
+      );
+    });
+    mockGetWorksByTag.mockImplementation((tag: string) => {
+      return mockWorksSample.filter(work => work.tags.includes(tag));
+    });
+    mockGetAllTags.mockReturnValue(['React', 'TypeScript', 'Next.js', 'Tailwind']);
+  });
+
   it('renders the component with heading', () => {
     render(<WorkTable />);
     
@@ -81,32 +109,36 @@ describe('WorkTable', () => {
   });
 
   it('shows reset button when no results', async () => {
-    // Override mock to return empty array
-    vi.doMock('../data', () => ({
-      getAllWorks: () => [],
-      searchWorks: () => [],
-      getWorksByTag: () => [],
-      getAllTags: () => [],
-    }));
-    
-    const { rerender } = render(<WorkTable />);
-    rerender(<WorkTable />);
-    
-    expect(screen.getByText('検索条件に一致する作品が見つかりませんでした')).toBeInTheDocument();
-    expect(screen.getByText('フィルターをリセット')).toBeInTheDocument();
+    render(<WorkTable />);
+    // 検索入力に「empty」と入力して結果を空にする
+    const searchInput = screen.getByPlaceholderText('プロジェクトを検索...');
+    fireEvent.change(searchInput, { target: { value: 'empty' } });
+
+    await waitFor(() => {
+      expect(screen.getByText('検索条件に一致する作品が見つかりませんでした')).toBeInTheDocument();
+      expect(screen.getByText('フィルターをリセット')).toBeInTheDocument();
+    });
   });
 
-  it('resets filters when reset button is clicked', () => {
+  it('resets filters when reset button is clicked', async () => {
     render(<WorkTable />);
     
     const searchInput = screen.getByPlaceholderText('プロジェクトを検索...');
     const tagSelect = screen.getByRole('combobox');
     
-    // Set some filter values
-    fireEvent.change(searchInput, { target: { value: 'test' } });
-    fireEvent.change(tagSelect, { target: { value: 'React' } });
-    
-    expect(searchInput).toHaveValue('test');
-    expect(tagSelect).toHaveValue('React');
+    // Set検索条件で結果ゼロにする（searchWorks がフィルタリング）
+    fireEvent.change(searchInput, { target: { value: 'nonexistent' } });
+    await waitFor(() => {
+      expect(screen.getByText('検索条件に一致する作品が見つかりませんでした')).toBeInTheDocument();
+    });
+
+    const resetButton = screen.getByText('フィルターをリセット');
+    fireEvent.click(resetButton);
+
+    await waitFor(() => {
+      expect(searchInput).toHaveValue('');
+      expect(tagSelect).toHaveValue('');
+      expect(screen.getByText('Test Work 1')).toBeInTheDocument(); // Works should reappear
+    });
   });
-});
+}); 

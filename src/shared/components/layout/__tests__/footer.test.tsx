@@ -61,16 +61,18 @@ describe('Footer', () => {
     expect(screen.getByText('Navigation')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /Home/ })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /Works/ })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /Blog/ })).toBeInTheDocument();
+    // フッターに複数のBlogリンクがあるため、より具体的なものを選定
+    expect(screen.getByRole('link', { name: 'Blog ブログ' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Tech Blog 技術ブログ' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /Profile/ })).toBeInTheDocument();
   });
 
   it('renders services section links', () => {
     render(<Footer />);
     
-    expect(screen.getByText('Services')).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /Services/ })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /SNS/ })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Services サービス' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'SNS ソーシャル' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Consulting コンサルティング' })).toBeInTheDocument();
   });
 
   it('renders resources section links', () => {

@@ -2,7 +2,7 @@ import Parser from 'rss-parser';
 import path from 'path';
 
 const RSS_URL = 'https://note.com/kawa_04wsdase/rss';
-const OUTPUT_PATH = path.join(process.cwd(), 'src/data/notes.json');
+const OUTPUT_PATH = path.join(process.cwd(), 'src/features/blog/data/notes.json');
 
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
 type NoteItem = { [key: string]: any } & {

@@ -4,7 +4,7 @@ import { describe, it, expect, vi } from 'vitest';
 import userEvent from '@testing-library/user-event';
 
 // Services data のモック
-vi.mock('@/services/data', () => ({
+vi.mock('../data', () => ({
   services: [
     {
       title: 'テストサービス1',

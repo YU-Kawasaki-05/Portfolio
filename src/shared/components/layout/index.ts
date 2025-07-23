@@ -2,7 +2,6 @@
 export { PageShell } from './page-shell';
 export { Footer } from './footer';
 export { default as HeaderNav } from './header-nav';
-export { SidebarNav } from './sidebar-nav';
 export { default as MotionProvider } from './motion-provider';
 export { MotionToggle, ResponsiveMotion, useMotionPreference } from './motion-provider';
 export { default as PageTransition } from './page-transition';

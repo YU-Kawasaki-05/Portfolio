@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import HeaderNav from './HeaderNav';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import HeaderNav from '@/shared/components/layout/header-nav';
 
 const meta: Meta<typeof HeaderNav> = {
   title: 'Navigation/HeaderNav',

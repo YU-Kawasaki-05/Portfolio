@@ -50,6 +50,7 @@ const mockBlogs: BlogData[] = [
     date: '2024-01-10',
     tags: ['React', 'Three.js', 'WebGL', '3D', 'Tutorial'],
     url: '/blog/react-three-fiber-basics',
+    type: 'Blog',
     cover: '/images/blog/react-three-fiber-basics.jpg',
     source: 'local',
     content: `
@@ -102,6 +103,7 @@ React Three Fiberを使うことで、Reactの開発体験をそのまま3D開�
     date: '2023-12-15',
     tags: ['Next.js', 'Performance', 'Optimization', 'React'],
     url: '/blog/nextjs-performance-optimization',
+    type: 'Blog',
     cover: '/images/blog/nextjs-performance-optimization.jpg',
     source: 'local',
     content: `
@@ -163,6 +165,7 @@ export const metadata = {
     date: '2023-11-05',
     tags: ['CSS', 'Grid', 'Flexbox', 'Frontend'],
     url: '/blog/modern-css-techniques',
+    type: 'Blog',
     cover: '/images/blog/modern-css-techniques.jpg',
     source: 'local',
     content: `
@@ -221,7 +224,7 @@ CSS変数を使用したテーマシステム：
 function getExternalBlogs(): BlogData[] {
   try {
     // Note: This path will need to be updated after data migration
-    const notesData: ExternalBlogData[] = require('../../../data/notes.json');
+    const notesData: ExternalBlogData[] = require('./notes.json');
     
     return notesData.map((note, index) => ({
       slug: `note-${index + 1}`,
@@ -230,6 +233,7 @@ function getExternalBlogs(): BlogData[] {
       date: note.isoDate.split('T')[0], // ISO日付からYYYY-MM-DD形式に変換
       tags: ['note.com', 'External'],
       url: note.link, // 外部リンク
+      type: 'Blog',
       source: 'note.com' as const,
       link: note.link,
       content: note.contentSnippet || ''

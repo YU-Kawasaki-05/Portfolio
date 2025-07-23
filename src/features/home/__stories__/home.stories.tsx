@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { useHome } from '../hooks/use-home';
 import { getGreeting } from '../utils/home-utils';
 import { HomeService } from '../services/home-service';
