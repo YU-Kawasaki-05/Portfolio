@@ -1,11 +1,11 @@
 ﻿import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Inter, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
-import PageTransition from "@/components/page-transition";
-import MotionProvider, { MotionToggle } from "@/components/motion-provider";
-import PerformanceOptimizer from "@/components/performance-optimizer";
-import HeaderNav from "@/components/layout/header-nav";
-import { Footer } from "@/components/layout/footer";
+import PageTransition from "@/shared/components/layout/page-transition";
+import MotionProvider, { MotionToggle } from "@/shared/components/layout/motion-provider";
+import PerformanceOptimizer from "@/shared/components/layout/performance-optimizer";
+import { HeaderNav } from "@/features/navigation";
+import { Footer } from "@/shared/components/layout/footer";
 
 // Neo‑Typographic Fusion フォント設定
 const spaceGrotesk = Space_Grotesk({

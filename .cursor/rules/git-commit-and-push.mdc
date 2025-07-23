@@ -6,7 +6,7 @@ alwaysApply: false
 ---
 description: >
   ステージ済み変更を **詳細な日本語コミットメッセージ** にまとめ、
-  `git commit` ➜ `git push origin feature/design-system-update` まで実行するルール。
+  `git commit` ➜ `git push origin feature/directory-refactor` まで実行するルール。
   Conventional Commits + 日本語補足文 を採用。
 
 applyMode: Agent Requested

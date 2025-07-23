@@ -3,37 +3,7 @@ import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
 import { Calendar, Tag, ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import Link from 'next/link';
-
-// 一時的なモックデータ
-const allWorks = [
-  {
-    slug: 'neo-fusion-portfolio',
-    title: 'Neo-Typographic Fusion Portfolio',
-    excerpt: '3Dタイポグラフィとモダンデザインを融合させたポートフォリオサイト',
-    date: '2025-07-14',
-    tags: ['React', 'Three.js', 'TypeScript', 'Next.js'],
-    url: '/portfolio/neo-fusion-portfolio',
-    cover: null,
-    content: `このプロジェクトは、モダンなWebテクノロジーを駆使して制作されたポートフォリオサイトです。
-
-## 技術仕様
-
-- **フレームワーク**: Next.js 14 with App Router
-- **3Dライブラリ**: React Three Fiber & Drei
-- **アニメーション**: Framer Motion & GSAP
-- **スタイリング**: Tailwind CSS
-- **タイプセーフティ**: TypeScript
-
-## 主な機能
-
-1. **3Dタイポグラフィ**: WebGLを使用したインタラクティブな文字表現
-2. **パララックス効果**: GSAPを活用したスムーズなスクロールアニメーション
-3. **レスポンシブデザイン**: モバイルからデスクトップまで最適化
-4. **パフォーマンス最適化**: Lighthouse スコア 95+ を達成
-
-このポートフォリオサイトは、ユーザビリティとビジュアルインパクトを両立させることを目指して開発されました。`
-  }
-];
+import { getAllWorks, getWorkBySlug, getRelatedWorks } from '@/features/portfolio';
 
 interface WorkPageProps {
   params: {
@@ -43,6 +13,7 @@ interface WorkPageProps {
 
 // 静的パラメータ生成
 export async function generateStaticParams() {
+  const allWorks = getAllWorks();
   return allWorks.map((work) => ({
     slug: work.slug,
   }));
@@ -50,7 +21,7 @@ export async function generateStaticParams() {
 
 // メタデータ生成
 export async function generateMetadata({ params }: WorkPageProps) {
-  const work = allWorks.find((work) => work.slug === params.slug);
+  const work = getWorkBySlug(params.slug);
   
   if (!work) {
     return {
@@ -72,11 +43,14 @@ export async function generateMetadata({ params }: WorkPageProps) {
 }
 
 export default function WorkPage({ params }: WorkPageProps) {
-  const work = allWorks.find((work) => work.slug === params.slug);
+  const work = getWorkBySlug(params.slug);
 
   if (!work) {
     notFound();
   }
+
+  // 関連作品を取得
+  const relatedWorks = getRelatedWorks(params.slug, 2);
 
   return (
     <div className="bg-[#0F0F0F] min-h-screen">
@@ -127,20 +101,29 @@ export default function WorkPage({ params }: WorkPageProps) {
 
             {/* アクションボタン */}
             <div className="flex flex-wrap gap-4">
-              <button className="inline-flex items-center bg-[#FF2D55] hover:bg-[#FF2D55]/90 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105">
-                <ExternalLink size={18} className="mr-2" />
-                ライブデモ
-              </button>
+              {work.demo && (
+                <a 
+                  href={work.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-[#FF2D55] hover:bg-[#FF2D55]/90 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+                >
+                  <ExternalLink size={18} className="mr-2" />
+                  ライブデモ
+                </a>
+              )}
               
-              <a 
-                href="https://github.com/YU-Kawasaki-05/Portfolio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center border border-[#1479FF] text-[#1479FF] hover:bg-[#1479FF] hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
-              >
-                <Github size={18} className="mr-2" />
-                ソースコード
-              </a>
+              {work.github && (
+                <a 
+                  href={work.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center border border-[#1479FF] text-[#1479FF] hover:bg-[#1479FF] hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+                >
+                  <Github size={18} className="mr-2" />
+                  ソースコード
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -163,41 +146,40 @@ export default function WorkPage({ params }: WorkPageProps) {
       </article>
 
       {/* 関連作品 */}
-      <section className="bg-[#1A1A1A] border-t border-[#2A2A2A] py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold font-heading text-[#F9F9F9] mb-8">
-            その他の作品
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {allWorks
-              .filter((otherWork) => otherWork.slug !== work.slug)
-              .slice(0, 2)
-              .map((otherWork) => (
+      {relatedWorks.length > 0 && (
+        <section className="bg-[#1A1A1A] border-t border-[#2A2A2A] py-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold font-heading text-[#F9F9F9] mb-8">
+              関連作品
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {relatedWorks.map((relatedWork) => (
                 <Link
-                  key={otherWork.slug}
-                  href={otherWork.url}
+                  key={relatedWork.slug}
+                  href={relatedWork.url}
                   className="group block bg-[#2A2A2A] border border-[#333] rounded-lg overflow-hidden hover:border-[#FF2D55] transition-all duration-300 hover:scale-105"
                 >
                   <div className="aspect-video bg-gradient-to-br from-[#FF2D55]/20 to-[#1479FF]/20 flex items-center justify-center">
                     <div className="text-[#F9F9F9] text-lg font-bold opacity-50">
-                      {otherWork.title}
+                      {relatedWork.title}
                     </div>
                   </div>
                   
                   <div className="p-6">
                     <h3 className="text-[#F9F9F9] text-xl font-bold mb-2 group-hover:text-[#FF2D55] transition-colors">
-                      {otherWork.title}
+                      {relatedWork.title}
                     </h3>
                     <p className="text-[#7A7A7A] text-sm line-clamp-2">
-                      {otherWork.excerpt}
+                      {relatedWork.excerpt}
                     </p>
                   </div>
                 </Link>
               ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </div>
   );
 } 

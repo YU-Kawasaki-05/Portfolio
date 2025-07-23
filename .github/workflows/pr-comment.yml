@@ -1,0 +1,148 @@
+name: PR Comment Automation
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  pr-comment:
+    name: Add PR Comment with Test Results
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: '8'
+          
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        
+      - name: Run tests with coverage
+        run: pnpm test:coverage
+        continue-on-error: true
+        
+      - name: Generate test summary
+        run: |
+          echo "## 🧪 Test Results Summary" > test-summary.md
+          echo "" >> test-summary.md
+          echo "### ✅ Test Coverage" >> test-summary.md
+          echo "" >> test-summary.md
+          if [ -f coverage/coverage-summary.json ]; then
+            node -e "
+              const fs = require('fs');
+              const coverage = JSON.parse(fs.readFileSync('coverage/coverage-summary.json', 'utf8'));
+              const total = coverage.total;
+              console.log(\`| Metric | Coverage | Status |\`);
+              console.log(\`|--------|----------|--------|\`);
+              console.log(\`| Lines | \${total.lines.pct}% | \${total.lines.pct >= 80 ? '✅' : '❌'} |\`);
+              console.log(\`| Functions | \${total.functions.pct}% | \${total.functions.pct >= 80 ? '✅' : '❌'} |\`);
+              console.log(\`| Branches | \${total.branches.pct}% | \${total.branches.pct >= 80 ? '✅' : '❌'} |\`);
+              console.log(\`| Statements | \${total.statements.pct}% | \${total.statements.pct >= 80 ? '✅' : '❌'} |\`);
+            " >> test-summary.md
+          else
+            echo "Coverage report not found" >> test-summary.md
+          fi
+          echo "" >> test-summary.md
+          echo "### 📊 Build Info" >> test-summary.md
+          echo "" >> test-summary.md
+          echo "- **Node.js**: $(node --version)" >> test-summary.md
+          echo "- **pnpm**: $(pnpm --version)" >> test-summary.md
+          echo "- **Commit**: \`${GITHUB_SHA:0:7}\`" >> test-summary.md
+          echo "- **Branch**: \`${GITHUB_HEAD_REF}\`" >> test-summary.md
+          echo "" >> test-summary.md
+          echo "### 🔗 Links" >> test-summary.md
+          echo "" >> test-summary.md
+          echo "- [📋 Full Coverage Report](https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID})" >> test-summary.md
+          echo "- [🚀 Preview Deploy](https://vercel.com/deployments)" >> test-summary.md
+          
+      - name: Comment PR
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          recreate: true
+          path: test-summary.md
+
+  lighthouse-pr:
+    name: Lighthouse PR Check
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: '8'
+          
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        
+      - name: Build application
+        run: pnpm build
+        
+      - name: Start application
+        run: pnpm start &
+        
+      - name: Wait for server
+        run: npx wait-on http://localhost:3000 --timeout 60000
+        
+      - name: Run Lighthouse
+        id: lighthouse
+        run: |
+          npm install -g lighthouse
+          lighthouse http://localhost:3000 --output=json --output-path=lighthouse-results.json --chrome-flags="--headless --no-sandbox"
+          
+      - name: Generate Lighthouse comment
+        run: |
+          echo "## 🏆 Lighthouse Performance Report" > lighthouse-comment.md
+          echo "" >> lighthouse-comment.md
+          node -e "
+            const fs = require('fs');
+            const results = JSON.parse(fs.readFileSync('lighthouse-results.json', 'utf8'));
+            const categories = results.lhr.categories;
+            
+            console.log('| Category | Score | Status |');
+            console.log('|----------|-------|--------|');
+            
+            Object.entries(categories).forEach(([key, category]) => {
+              const score = Math.round(category.score * 100);
+              const status = score >= 90 ? '🟢' : score >= 70 ? '🟡' : '🔴';
+              console.log(\`| \${category.title} | \${score} | \${status} |\`);
+            });
+            
+            console.log('');
+            console.log('### 📈 Core Web Vitals');
+            console.log('');
+            
+            const audits = results.lhr.audits;
+            const lcp = audits['largest-contentful-paint']?.numericValue;
+            const fcp = audits['first-contentful-paint']?.numericValue;
+            const cls = audits['cumulative-layout-shift']?.numericValue;
+            
+            if (lcp) console.log(\`- **LCP**: \${(lcp/1000).toFixed(2)}s \${lcp <= 2500 ? '✅' : '❌'}\`);
+            if (fcp) console.log(\`- **FCP**: \${(fcp/1000).toFixed(2)}s \${fcp <= 1800 ? '✅' : '❌'}\`);
+            if (cls) console.log(\`- **CLS**: \${cls.toFixed(3)} \${cls <= 0.1 ? '✅' : '❌'}\`);
+          " >> lighthouse-comment.md
+          
+      - name: Comment Lighthouse Results
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: lighthouse
+          recreate: true
+          path: lighthouse-comment.md 

@@ -1,10 +1,9 @@
-import ProfileCard from '@/components/profile-card';
-import SkillsSection from '@/components/skills-section';
+import { ProfileCard, SkillsSection } from '@/features/profile';
 import { 
   SmoothScrollContainer, 
   ScrollReveal, 
   ParallaxBackground 
-} from '@/components/parallax-container';
+} from '@/shared/components/layout/parallax-container';
 
 export default function ProfilePage() {
   return (

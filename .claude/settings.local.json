@@ -1,7 +1,24 @@
 {
   "permissions": {
     "allow": [
-      "Bash(pnpm lint:*)"
+      "Bash(pnpm lint:*)",
+      "Bash(pnpm test:*)",
+      "Bash(git checkout:*)",
+      "Bash(mkdir:*)",
+      "Bash(pnpm build:*)",
+      "Bash(touch:*)",
+      "Bash(rm:*)",
+      "Bash(find:*)",
+      "Bash(npx vitest run:*)",
+      "Bash(cp:*)",
+      "Bash(pnpm dev:*)",
+      "Bash(pnpm type-check:*)",
+      "Bash(tail:*)",
+      "Bash(npx tsc:*)",
+      "Bash(pnpm list:*)",
+      "Bash(pnpm storybook:*)",
+      "Bash(ls:*)",
+      "Bash(npx playwright test:*)"
     ],
     "deny": []
   }

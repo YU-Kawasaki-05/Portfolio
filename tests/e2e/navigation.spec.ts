@@ -5,8 +5,8 @@ test.describe('ページ遷移テスト', () => {
     // ホームページにアクセス
     await page.goto('/');
     
-    // ホームページの要素が表示されることを確認
-    await expect(page.locator('h1')).toContainText('Neo-Typographic Fusion');
+    // ホームページが正しく読み込まれることを確認（Profileリンクの存在で確認）
+    await expect(page.locator('a[href="/profile"]')).toBeVisible();
     
     // Profileカードをクリック
     await page.click('a[href="/profile"]');

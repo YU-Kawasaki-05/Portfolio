@@ -1,0 +1,188 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - navigation:
+    - link "K KawasakiK":
+      - /url: /
+    - link "Home":
+      - /url: /
+    - link "Works":
+      - /url: /portfolio
+    - link "Blog":
+      - /url: /blog
+    - link "Profile":
+      - /url: /profile
+    - link "Services":
+      - /url: /services
+    - link "SNS":
+      - /url: /sns
+- main:
+  - heading "Blog" [level=1]
+  - paragraph: 技術記事やプロジェクトの振り返り、外部記事も含めて発信しています
+  - text: 3 ローカル記事 12 note.com記事 14 タグ数
+  - textbox "記事を検索...": NonExistentKeyword12345
+  - combobox:
+    - option "すべてのタグ" [selected]
+    - option "3D"
+    - option "CSS"
+    - option "External"
+    - option "Flexbox"
+    - option "Frontend"
+    - option "Grid"
+    - option "Next.js"
+    - option "Optimization"
+    - option "Performance"
+    - option "React"
+    - option "Three.js"
+    - option "Tutorial"
+    - option "WebGL"
+    - option "note.com"
+  - paragraph: 15件の記事が見つかりました
+  - link "うまく行かないことしかない（事業日記_2025.6.12） note.com うまく行かないことしかない（事業日記_2025.6.12） 初めに ～ これを読んでくれたあなたへ ～ 続きをみる 2025年6月13日 読む note.com External":
+    - /url: https://note.com/kawa_04wsdase/n/ndb5f51e5d55c
+    - text: うまく行かないことしかない（事業日記_2025.6.12） note.com
+    - heading "うまく行かないことしかない（事業日記_2025.6.12）" [level=3]
+    - paragraph: 初めに ～ これを読んでくれたあなたへ ～ 続きをみる
+    - text: 2025年6月13日 読む note.com External
+  - link "ぐったり（事業日記_2025.6.10） note.com ぐったり（事業日記_2025.6.10） 昨晩先輩に呼ばれ馬場のカラオケ館に行って、そのあと悪乗りで朝まで釣りをしたので体がおわってます。17:00仕事開始。泣いた。 でもめっちゃ楽しかったのでOK。 事業記録 続きをみる 2025年6月11日 読む note.com External":
+    - /url: https://note.com/kawa_04wsdase/n/ne44e3c922f5e
+    - text: ぐったり（事業日記_2025.6.10） note.com
+    - heading "ぐったり（事業日記_2025.6.10）" [level=3]
+    - paragraph: 昨晩先輩に呼ばれ馬場のカラオケ館に行って、そのあと悪乗りで朝まで釣りをしたので体がおわってます。17:00仕事開始。泣いた。 でもめっちゃ楽しかったのでOK。 事業記録 続きをみる
+    - text: 2025年6月11日 読む note.com External
+  - link "事業日記 (日報_6/7、中身激薄) note.com 事業日記 (日報_6/7、中身激薄) 一日スタート 続きをみる 2025年6月9日 読む note.com External":
+    - /url: https://note.com/kawa_04wsdase/n/n83410e1d5538
+    - text: 事業日記 (日報_6/7、中身激薄) note.com
+    - heading "事業日記 (日報_6/7、中身激薄)" [level=3]
+    - paragraph: 一日スタート 続きをみる
+    - text: 2025年6月9日 読む note.com External
+  - link "事業日記 (日報_2025-06-06) note.com 事業日記 (日報_2025-06-06) いつか僕にファンがついて、これが読まれたらいいなと思ってます。 ファンがつくとしたら、芸人になった後ですかね。 小川（幼馴染）とM-1に出るので、そこで3回戦ぐらいまで行けたら最高です。ABCとかKOCも出れたら楽しそうです。多分ネタを書くのはぼくですが、おもろいのも書けるのも小川の方です。 コンサ 2025年6月6日 読む note.com External":
+    - /url: https://note.com/kawa_04wsdase/n/n63e5c2f2b881
+    - text: 事業日記 (日報_2025-06-06) note.com
+    - heading "事業日記 (日報_2025-06-06)" [level=3]
+    - paragraph: いつか僕にファンがついて、これが読まれたらいいなと思ってます。 ファンがつくとしたら、芸人になった後ですかね。 小川（幼馴染）とM-1に出るので、そこで3回戦ぐらいまで行けたら最高です。ABCとかKOCも出れたら楽しそうです。多分ネタを書くのはぼくですが、おもろいのも書けるのも小川の方です。 コンサ
+    - text: 2025年6月6日 読む note.com External
+  - 'link "(めっちゃまえのやつ) 周遊vol.2: 鬱憤 note.com (めっちゃまえのやつ) 周遊vol.2: 鬱憤 年度が替わった 4月1日。4月になると、ちゃんと春になったなと思う。 今日は早稲田の入学式をやっている。 早稲田大学中央図書館の2階奥の窓際席、窓の外に見えるはずの桜と早稲田町の建物たちは雨粒でさえぎらていて残念。 今日はやけに人が少ないな。入学式や新歓で人が消えているのか、はたまた雨だからか。おか 2025年6月6日 読む note.com External"':
+    - /url: https://note.com/kawa_04wsdase/n/n689a5e428adb
+    - text: "(めっちゃまえのやつ) 周遊vol.2: 鬱憤 note.com"
+    - 'heading "(めっちゃまえのやつ) 周遊vol.2: 鬱憤" [level=3]'
+    - paragraph: 年度が替わった 4月1日。4月になると、ちゃんと春になったなと思う。 今日は早稲田の入学式をやっている。 早稲田大学中央図書館の2階奥の窓際席、窓の外に見えるはずの桜と早稲田町の建物たちは雨粒でさえぎらていて残念。 今日はやけに人が少ないな。入学式や新歓で人が消えているのか、はたまた雨だからか。おか
+    - text: 2025年6月6日 読む note.com External
+  - link "日報(2025.6.5) note.com 日報(2025.6.5) 作業 今日は、コードの仕様変更とかAWSのあれこれを続けてます。 まあまあむずかしいものに向き合ってるので、肩の痛みが半端ない。 続きをみる 2025年6月6日 読む note.com External":
+    - /url: https://note.com/kawa_04wsdase/n/nb7bdff79c2d3
+    - text: 日報(2025.6.5) note.com
+    - heading "日報(2025.6.5)" [level=3]
+    - paragraph: 作業 今日は、コードの仕様変更とかAWSのあれこれを続けてます。 まあまあむずかしいものに向き合ってるので、肩の痛みが半端ない。 続きをみる
+    - text: 2025年6月6日 読む note.com External
+  - link "日報_2025.6.2 note.com 日報_2025.6.2 眠れない人間になり果てた私ですが、朝は5時半ごろ寝れました。 お酒のんで寝ようかと思いました。 ちなみに開発してると楽しいので、全然眠くなく続けられます。 9:30ごろ起き、10:00ごろ家を出て早稲田大学戸山図書館へ。 相変わらずいい設備です。 まずCursorを動かして、開発中のLINEボットを 2025年6月4日 読む note.com External":
+    - /url: https://note.com/kawa_04wsdase/n/n9371008ec72e
+    - text: 日報_2025.6.2 note.com
+    - heading "日報_2025.6.2" [level=3]
+    - paragraph: 眠れない人間になり果てた私ですが、朝は5時半ごろ寝れました。 お酒のんで寝ようかと思いました。 ちなみに開発してると楽しいので、全然眠くなく続けられます。 9:30ごろ起き、10:00ごろ家を出て早稲田大学戸山図書館へ。 相変わらずいい設備です。 まずCursorを動かして、開発中のLINEボットを
+    - text: 2025年6月4日 読む note.com External
+  - link "実験者の周遊vol.1 (最近あんた何してるのさ) note.com 実験者の周遊vol.1 (最近あんた何してるのさ) 今から今週のタスクを考えるのですが、紙のノートに書くぐらいならこちらに書こうと思いました。 そして、なんかタイトルを付けてvol.1, vol.2, …と書けた方が書きやすいしわかりやすいかなってことでタイトルつけてみました。特に意味はないです。 ゆくゆく面白いことが書けるといいなと思ってます。 ま 2025年3月31日 読む note.com External":
+    - /url: https://note.com/kawa_04wsdase/n/n0311dcc8d23b
+    - text: 実験者の周遊vol.1 (最近あんた何してるのさ) note.com
+    - heading "実験者の周遊vol.1 (最近あんた何してるのさ)" [level=3]
+    - paragraph: 今から今週のタスクを考えるのですが、紙のノートに書くぐらいならこちらに書こうと思いました。 そして、なんかタイトルを付けてvol.1, vol.2, …と書けた方が書きやすいしわかりやすいかなってことでタイトルつけてみました。特に意味はないです。 ゆくゆく面白いことが書けるといいなと思ってます。 ま
+    - text: 2025年3月31日 読む note.com External
+  - link "気付いてないだけで、選択肢は限りない。身の振り方はどう選んだらいいんでしょうか？ note.com 気付いてないだけで、選択肢は限りない。身の振り方はどう選んだらいいんでしょうか？ ちょっといろいろ整理するためのメモです。 ずっと迷う。これまでもこれからも。 続きをみる 2025年3月13日 読む note.com External":
+    - /url: https://note.com/kawa_04wsdase/n/n7002d2356cca
+    - text: 気付いてないだけで、選択肢は限りない。身の振り方はどう選んだらいいんでしょうか？ note.com
+    - heading "気付いてないだけで、選択肢は限りない。身の振り方はどう選んだらいいんでしょうか？" [level=3]
+    - paragraph: ちょっといろいろ整理するためのメモです。 ずっと迷う。これまでもこれからも。 続きをみる
+    - text: 2025年3月13日 読む note.com External
+  - link "最近すきなものの話（感謝を込めて） note.com 最近すきなものの話（感謝を込めて） 近くのスーパーで売ってる見切り品の野菜とフルーツ ありがとうヨークマート。僕はスムージーを作るんで、こういう野菜があるとありがたいです。少しダメになってる方が味の主張が弱くてまずくないので。 続きをみる 2024年12月17日 読む note.com External":
+    - /url: https://note.com/kawa_04wsdase/n/nab48a5590dc2
+    - text: 最近すきなものの話（感謝を込めて） note.com
+    - heading "最近すきなものの話（感謝を込めて）" [level=3]
+    - paragraph: 近くのスーパーで売ってる見切り品の野菜とフルーツ ありがとうヨークマート。僕はスムージーを作るんで、こういう野菜があるとありがたいです。少しダメになってる方が味の主張が弱くてまずくないので。 続きをみる
+    - text: 2024年12月17日 読む note.com External
+  - link "人見知りは治らない note.com 人見知りは治らない 前回の最後に書こうと思ったことはもう忘れたので、思ったことを書きます。 営業のバイトをしました。人見知り・営業に対する苦手意識を変えたくて。 結論、人見知りも何も治らなかったです。仕事してる時は仕事モードになってて、プライベートとは隔絶されてる感じ。 だから、根本の人見知りを治すのは仕事じゃなくてプ 2024年12月15日 読む note.com External":
+    - /url: https://note.com/kawa_04wsdase/n/n1a1cac867892
+    - text: 人見知りは治らない note.com
+    - heading "人見知りは治らない" [level=3]
+    - paragraph: 前回の最後に書こうと思ったことはもう忘れたので、思ったことを書きます。 営業のバイトをしました。人見知り・営業に対する苦手意識を変えたくて。 結論、人見知りも何も治らなかったです。仕事してる時は仕事モードになってて、プライベートとは隔絶されてる感じ。 だから、根本の人見知りを治すのは仕事じゃなくてプ
+    - text: 2024年12月15日 読む note.com External
+  - 'link "最初の記事: なに書いたらいいかわからない。 note.com 最初の記事: なに書いたらいいかわからない。 本当に何を書いたらいいかわからないんですが、ただ一つルールを決めたいと思います。 「AIを使わない」ことです。 別に僕はnoteに対して生産性を発揮する必要なんかないので、楽しく書きたいと思っています。だから、というわけじゃないけれども、AIは使わないようにしたいです。 そういえば、あんまり人には言 2024年12月13日 読む note.com External"':
+    - /url: https://note.com/kawa_04wsdase/n/n260c356366d5
+    - text: "最初の記事: なに書いたらいいかわからない。 note.com"
+    - 'heading "最初の記事: なに書いたらいいかわからない。" [level=3]'
+    - paragraph: 本当に何を書いたらいいかわからないんですが、ただ一つルールを決めたいと思います。 「AIを使わない」ことです。 別に僕はnoteに対して生産性を発揮する必要なんかないので、楽しく書きたいと思っています。だから、というわけじゃないけれども、AIは使わないようにしたいです。 そういえば、あんまり人には言
+    - text: 2024年12月13日 読む note.com External
+  - link "React Three Fiberの基礎 React Three Fiberの基礎 React Three Fiberを使ってWebGL 3Dシーンを作成する方法を解説します 2024年1月10日 読む React Three.js WebGL +2":
+    - /url: /blog/react-three-fiber-basics
+    - text: React Three Fiberの基礎
+    - heading "React Three Fiberの基礎" [level=3]
+    - paragraph: React Three Fiberを使ってWebGL 3Dシーンを作成する方法を解説します
+    - text: 2024年1月10日 読む React Three.js WebGL +2
+  - link "Next.js パフォーマンス最適化ガイド Next.js パフォーマンス最適化ガイド Next.jsアプリケーションのパフォーマンスを向上させるテクニックをまとめました 2023年12月15日 読む Next.js Performance Optimization +1":
+    - /url: /blog/nextjs-performance-optimization
+    - text: Next.js パフォーマンス最適化ガイド
+    - heading "Next.js パフォーマンス最適化ガイド" [level=3]
+    - paragraph: Next.jsアプリケーションのパフォーマンスを向上させるテクニックをまとめました
+    - text: 2023年12月15日 読む Next.js Performance Optimization +1
+  - link "モダンCSS テクニック集 モダンCSS テクニック集 CSS Grid、Flexbox、カスタムプロパティなど最新のCSS機能を活用したテクニック 2023年11月5日 読む CSS Grid Flexbox +1":
+    - /url: /blog/modern-css-techniques
+    - text: モダンCSS テクニック集
+    - heading "モダンCSS テクニック集" [level=3]
+    - paragraph: CSS Grid、Flexbox、カスタムプロパティなど最新のCSS機能を活用したテクニック
+    - text: 2023年11月5日 読む CSS Grid Flexbox +1
+  - button "前へ"
+  - text: "1"
+  - button "次へ"
+- contentinfo:
+  - text: K
+  - heading "KawasakiK" [level=3]
+  - paragraph: 広範な生成AI知識と開発知見を活用し開発した川崎Kの個人サイト。 React、Next.js、Three.jsを使用したWebエクスペリエンス。
+  - link "GitHub":
+    - /url: https://github.com/YU-Kawasaki-05
+  - link "X":
+    - /url: https://x.com/foooten_
+  - link "LinkedIn":
+    - /url: https://www.linkedin.com/in/yu-kawasaki-a05441296/
+  - link "Email":
+    - /url: mailto:contact@neo-fusion.dev
+  - heading "Navigation" [level=4]
+  - list:
+    - listitem:
+      - link "Home ホーム":
+        - /url: /
+    - listitem:
+      - link "Works 事例と実績":
+        - /url: /portfolio
+    - listitem:
+      - link "Blog ブログ":
+        - /url: /blog
+    - listitem:
+      - link "Profile プロフィール":
+        - /url: /profile
+  - heading "Services" [level=4]
+  - list:
+    - listitem:
+      - link "Services サービス":
+        - /url: /services
+    - listitem:
+      - link "SNS ソーシャル":
+        - /url: /sns
+  - heading "Resources" [level=4]
+  - list:
+    - listitem:
+      - link "Tech Blog 技術ブログ":
+        - /url: /blog
+    - listitem:
+      - link "Consulting コンサルティング":
+        - /url: /services
+  - paragraph: © 2025 KawasakiK. All rights reserved.
+  - link "Privacy Policy":
+    - /url: /privacy
+  - link "Terms of Service":
+    - /url: /terms
+  - text: Made with ❤️ and ☕ in Tokyo
+- button "モーションを無効化":
+  - img
+- alert
+- button "Open Next.js Dev Tools":
+  - img
+```

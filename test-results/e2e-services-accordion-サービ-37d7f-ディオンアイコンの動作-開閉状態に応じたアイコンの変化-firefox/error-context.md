@@ -1,0 +1,107 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - navigation:
+    - link "K KawasakiK":
+      - /url: /
+    - link "Home":
+      - /url: /
+    - link "Works":
+      - /url: /portfolio
+    - link "Blog":
+      - /url: /blog
+    - link "Profile":
+      - /url: /profile
+    - link "Services":
+      - /url: /services
+    - link "SNS":
+      - /url: /sns
+- main:
+  - paragraph: Loading...
+  - heading "Services" [level=1]
+  - paragraph: 生成AIに関する幅広い知見とコンサルティング・開発の経験を活かし、お客様が望む結果のために尽力します。
+  - button "Consulting"
+  - heading "AIコンサルティング" [level=3]
+  - text: ¥200,000/月~ • 継続
+  - paragraph: 業務プロセスのAI化に関する包括的なコンサルティング
+  - heading "含まれる内容" [level=4]
+  - list:
+    - listitem: 業務プロセスの把握
+    - listitem: 経営者、従業員へのヒアリング
+    - listitem: 業務プロセスのAI化施策の提案
+    - listitem: AIを用いた売上 / 利益向上施策の策定
+    - listitem: システム開発の方針の策定
+    - listitem: 既存AIツールの活用支援
+  - heading "生成AI導入支援" [level=3]
+  - text: ¥100,000/月~ • 継続
+  - paragraph: 業務プロセスのAI化からシステム開発まで包括的なコンサルティング
+  - heading "含まれる内容" [level=4]
+  - list:
+    - listitem: 業務プロセスの把握
+    - listitem: 経営者、従業員へのヒアリング
+    - listitem: 業務プロセスのAI化施策の提案
+    - listitem: AIを用いた売上 / 利益改善施策の提案
+    - listitem: システムの要件定義・設計から開発・導入までの伴走支援
+    - listitem: 既存AIツールの活用支援
+  - button "Development"
+  - button "Automation"
+  - button "Training"
+  - heading "プロジェクトを始めませんか？" [level=2]
+  - paragraph: お客様のビジョンを実現するため、まずはお気軽にご相談ください。 無料でプロジェクトの概要をお聞きし、最適なソリューションをご提案いたします。
+  - button "無料相談を申し込む"
+  - button "ポートフォリオを見る"
+- contentinfo:
+  - text: K
+  - heading "KawasakiK" [level=3]
+  - paragraph: 広範な生成AI知識と開発知見を活用し開発した川崎Kの個人サイト。 React、Next.js、Three.jsを使用したWebエクスペリエンス。
+  - link "GitHub":
+    - /url: https://github.com/YU-Kawasaki-05
+  - link "X":
+    - /url: https://x.com/foooten_
+  - link "LinkedIn":
+    - /url: https://www.linkedin.com/in/yu-kawasaki-a05441296/
+  - link "Email":
+    - /url: mailto:contact@neo-fusion.dev
+  - heading "Navigation" [level=4]
+  - list:
+    - listitem:
+      - link "Home ホーム":
+        - /url: /
+    - listitem:
+      - link "Works 事例と実績":
+        - /url: /portfolio
+    - listitem:
+      - link "Blog ブログ":
+        - /url: /blog
+    - listitem:
+      - link "Profile プロフィール":
+        - /url: /profile
+  - heading "Services" [level=4]
+  - list:
+    - listitem:
+      - link "Services サービス":
+        - /url: /services
+    - listitem:
+      - link "SNS ソーシャル":
+        - /url: /sns
+  - heading "Resources" [level=4]
+  - list:
+    - listitem:
+      - link "Tech Blog 技術ブログ":
+        - /url: /blog
+    - listitem:
+      - link "Consulting コンサルティング":
+        - /url: /services
+  - paragraph: © 2025 KawasakiK. All rights reserved.
+  - link "Privacy Policy":
+    - /url: /privacy
+  - link "Terms of Service":
+    - /url: /terms
+  - text: Made with ❤️ and ☕ in Tokyo
+- button "モーションを無効化":
+  - img
+- alert
+- button "Open Next.js Dev Tools":
+  - img
+```

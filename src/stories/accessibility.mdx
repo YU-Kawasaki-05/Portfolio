@@ -1,0 +1,127 @@
+# Accessibility Guidelines
+
+This documentation covers accessibility standards and testing for our component library.
+
+## Overview
+
+Our components are built with accessibility in mind, following WCAG 2.1 AA guidelines. We use automated testing with the `@storybook/addon-a11y` to catch accessibility issues during development.
+
+## Key Accessibility Features
+
+### Color Contrast
+- All text meets WCAG AA color contrast requirements
+- Interactive elements have sufficient contrast in all states (hover, focus, disabled)
+- Colors are not the only way to convey information
+
+### Keyboard Navigation
+- All interactive elements are keyboard accessible
+- Focus indicators are visible and clear
+- Tab order follows logical reading flow
+- Custom keyboard shortcuts follow standard conventions
+
+### Screen Reader Support
+- Proper semantic HTML elements are used
+- ARIA labels and descriptions are provided where needed
+- Live regions announce dynamic content changes
+- Form controls have associated labels
+
+### Focus Management
+- Focus is managed properly in interactive components
+- Focus traps work correctly in modals and dropdowns
+- Focus returns to appropriate elements when closing overlays
+
+## Component-Specific Guidelines
+
+### Buttons
+- Use semantic `<button>` elements or proper ARIA roles
+- Provide accessible names via text content or `aria-label`
+- Support keyboard activation (Enter and Space keys)
+- Clearly indicate disabled state to screen readers
+
+### Cards
+- Use appropriate heading hierarchy within cards
+- Provide `aria-labelledby` or `aria-label` for complex cards
+- Ensure interactive cards are keyboard accessible
+- Group related content logically
+
+### Badges
+- Use `role="status"` for status indicators
+- Include `aria-live` regions for dynamic badge updates
+- Provide descriptive text for icon-only badges
+- Ensure color is not the only indicator
+
+## Testing
+
+### Automated Testing
+Our Storybook setup includes automated accessibility testing:
+- WCAG 2.1 Level A and AA compliance
+- Color contrast validation
+- Keyboard navigation testing
+- Screen reader compatibility checks
+
+### Manual Testing Checklist
+- [ ] Navigate entire interface using only keyboard
+- [ ] Test with screen reader (NVDA, JAWS, VoiceOver)
+- [ ] Verify focus indicators are visible
+- [ ] Check color contrast in all states
+- [ ] Test with zoom up to 200%
+- [ ] Validate with users who have disabilities
+
+### Browser Testing
+Test accessibility across different browsers and assistive technologies:
+- Chrome with ChromeVox
+- Firefox with NVDA
+- Safari with VoiceOver
+- Edge with Narrator
+
+## Best Practices
+
+### Development
+1. Use semantic HTML elements when possible
+2. Add ARIA attributes only when semantic HTML isn't sufficient
+3. Test early and often with real assistive technologies
+4. Include accessibility considerations in design reviews
+
+### Design
+1. Ensure sufficient color contrast (4.5:1 for normal text, 3:1 for large text)
+2. Design clear focus indicators
+3. Provide multiple ways to convey information (not just color)
+4. Consider cognitive load and reading complexity
+
+### Content
+1. Write clear, descriptive link and button text
+2. Use proper heading hierarchy
+3. Provide alternative text for images
+4. Write content at appropriate reading level
+
+## Resources
+
+- [WCAG 2.1 Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
+- [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/)
+- [WebAIM Resources](https://webaim.org/)
+- [a11y Project](https://www.a11yproject.com/)
+
+## Accessibility Testing Tools
+
+### Automated Tools
+- Storybook a11y addon (built-in)
+- axe DevTools browser extension
+- Lighthouse accessibility audit
+- WAVE Web Accessibility Evaluator
+
+### Screen Readers
+- **Windows**: NVDA (free), JAWS
+- **macOS**: VoiceOver (built-in)
+- **Linux**: Orca (built-in with GNOME)
+- **Mobile**: TalkBack (Android), VoiceOver (iOS)
+
+## Reporting Issues
+
+When you find accessibility issues:
+1. Document the specific problem
+2. Include steps to reproduce
+3. Note which assistive technology was affected
+4. Suggest potential solutions
+5. Assign appropriate priority level
+
+Remember: Accessibility is not a feature—it's a fundamental requirement for inclusive web experiences.
