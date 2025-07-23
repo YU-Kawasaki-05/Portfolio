@@ -16,7 +16,9 @@
       "Bash(tail:*)",
       "Bash(npx tsc:*)",
       "Bash(pnpm list:*)",
-      "Bash(pnpm storybook:*)"
+      "Bash(pnpm storybook:*)",
+      "Bash(ls:*)",
+      "Bash(npx playwright test:*)"
     ],
     "deny": []
   }

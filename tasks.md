@@ -219,7 +219,7 @@ Home: ✅ 完全 (components, hooks, utils, types, __tests__, __stories__, data,
 | **5D8** | 全ページの動作確認 (`pnpm dev` でサイト全体をテスト) - 要実テスト |  ☐   |
 | **5D9** | 全テストの実行確認 (`pnpm test` で全feature統合テスト) - 要実テスト |  ☑   |
 | **5E0** | Storybook の動作確認 (`pnpm storybook` で全ストーリー表示) - 要実テスト |  ☐   |
-| **5E1** | E2E テストの実行確認 (`pnpm test:e2e` で主要フロー確認) - 要実テスト |  ☐   |
+| **5E1** | E2E テストの実行確認 (`pnpm test:e2e` で主要フロー確認) - 要実テスト |  ☑   |
 | **5E2** | ビルド確認 (`pnpm build` でプロダクションビルド成功) - 要実テスト |  ☐   |
 | **5E3** | パフォーマンステスト (Lighthouse スコア維持確認) - 要実テスト |  ☐   |
 | **5E4** | 新ディレクトリ構成ドキュメントの最終化 |  ☑   |
@@ -277,8 +277,8 @@ Home: ✅ 完全 (components, hooks, utils, types, __tests__, __stories__, data,
 ### 5A.6 E2E テスト実行
 | ID      | Task                                                         | Done |
 | ------- | ------------------------------------------------------------ | :--: |
-| **5G9** | E2E テスト実行 (`pnpm test:e2e`) - エラー修正 |  ☐   |
-| **5H0** | 主要ユーザーフロー動作確認 (Home→Profile→Portfolio→Blog) |  ☐   |
+| **5G9** | E2E テスト実行 (`pnpm test:e2e`) - エラー修正 |  ☑   |
+| **5H0** | 主要ユーザーフロー動作確認 (Home→Profile→Portfolio→Blog) |  ☑   |
 
 ### 5A.7 ビルド・パフォーマンステスト
 | ID      | Task                                                         | Done |

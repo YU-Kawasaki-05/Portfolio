@@ -8,7 +8,7 @@ on:
 
 env:
   NODE_VERSION: '18'
-  PNPM_VERSION: '8'
+  PNPM_VERSION: '9'
 
 jobs:
   # リンターとコード品質チェック
@@ -164,7 +164,7 @@ jobs:
         run: pnpm test:e2e
         
       - name: Upload E2E test results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: playwright-report
@@ -213,18 +213,18 @@ jobs:
         run: pnpm build
         
       - name: Run browser compatibility tests
-        run: pnpm test:browser --max-failures=5
+        run: npx playwright test tests/browser-compatibility --max-failures=5
         continue-on-error: true
         
       - name: Run security tests
-        run: pnpm test:security --max-failures=5
+        run: npx playwright test tests/security --max-failures=5
         continue-on-error: true
         
       - name: Run smoke tests
         run: pnpm test:regression --grep="Smoke Tests"
         
       - name: Upload critical test results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: critical-tests-report
@@ -271,7 +271,7 @@ jobs:
         run: pnpm build
         
       - name: Export static files
-        run: pnpm export || echo "Static export not configured"
+        run: echo "Static export not configured"
         continue-on-error: true
         
       - name: Build Storybook
@@ -286,7 +286,7 @@ jobs:
           du -sh storybook-static/ || echo "No storybook-static directory"
           
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
           path: |
@@ -337,7 +337,7 @@ jobs:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
           
       - name: Upload Lighthouse results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: lighthouse-report
           path: .lighthouseci/

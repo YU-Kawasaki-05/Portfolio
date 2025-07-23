@@ -1,0 +1,203 @@
+﻿2025-07-23T05:35:03.3865404Z Current runner version: '2.326.0'
+2025-07-23T05:35:03.3889170Z ##[group]Runner Image Provisioner
+2025-07-23T05:35:03.3890220Z Hosted Compute Agent
+2025-07-23T05:35:03.3890745Z Version: 20250711.363
+2025-07-23T05:35:03.3891339Z Commit: 6785254374ce925a23743850c1cb91912ce5c14c
+2025-07-23T05:35:03.3892047Z Build Date: 2025-07-11T20:04:25Z
+2025-07-23T05:35:03.3892968Z ##[endgroup]
+2025-07-23T05:35:03.3893508Z ##[group]Operating System
+2025-07-23T05:35:03.3894185Z Ubuntu
+2025-07-23T05:35:03.3894683Z 24.04.2
+2025-07-23T05:35:03.3895105Z LTS
+2025-07-23T05:35:03.3895598Z ##[endgroup]
+2025-07-23T05:35:03.3896067Z ##[group]Runner Image
+2025-07-23T05:35:03.3896629Z Image: ubuntu-24.04
+2025-07-23T05:35:03.3897081Z Version: 20250720.1.0
+2025-07-23T05:35:03.3898171Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250720.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-07-23T05:35:03.3899654Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250720.1
+2025-07-23T05:35:03.3900678Z ##[endgroup]
+2025-07-23T05:35:03.3901762Z ##[group]GITHUB_TOKEN Permissions
+2025-07-23T05:35:03.3903884Z Contents: read
+2025-07-23T05:35:03.3904439Z Metadata: read
+2025-07-23T05:35:03.3904912Z Packages: read
+2025-07-23T05:35:03.3905511Z ##[endgroup]
+2025-07-23T05:35:03.3907614Z Secret source: Actions
+2025-07-23T05:35:03.3908263Z Prepare workflow directory
+2025-07-23T05:35:03.4311118Z Prepare all required actions
+2025-07-23T05:35:03.4354316Z Getting action download info
+2025-07-23T05:35:03.9669103Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-07-23T05:35:03.9670102Z Version: 4.2.2
+2025-07-23T05:35:03.9671301Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-07-23T05:35:03.9672783Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-07-23T05:35:03.9673463Z ##[endgroup]
+2025-07-23T05:35:04.0848106Z ##[group]Download immutable action package 'actions/setup-node@v4'
+2025-07-23T05:35:04.0849043Z Version: 4.4.0
+2025-07-23T05:35:04.0849808Z Digest: sha256:9427cefe82346e992fb5b949e3569b39d537ae41aa3086483b14eceebfc16bc1
+2025-07-23T05:35:04.0850763Z Source commit SHA: 49933ea5288caeca8642d1e84afbd3f7d6820020
+2025-07-23T05:35:04.0851540Z ##[endgroup]
+2025-07-23T05:35:04.1755545Z Download action repository 'pnpm/action-setup@v2' (SHA:eae0cfeb286e66ffb5155f1a79b90583a127a68b)
+2025-07-23T05:35:04.7807461Z Download action repository 'actions/dependency-review-action@v3' (SHA:cc4f6536e38d1126c5e3b0683d469a14f23bfea4)
+2025-07-23T05:35:05.3810998Z ##[group]Download immutable action package 'github/codeql-action@v2'
+2025-07-23T05:35:05.3812223Z Version: 2.28.1
+2025-07-23T05:35:05.3813641Z Digest: sha256:ca0c3f852f8f87e9e9672080dd0e35c5af66f6e92be4b2b18e4f15e15398d037
+2025-07-23T05:35:05.3815189Z Source commit SHA: b8d3b6e8af63cde30bdc382c0bc28114f4346c88
+2025-07-23T05:35:05.3816271Z ##[endgroup]
+2025-07-23T05:35:11.1024516Z Complete job name: Security Audit
+2025-07-23T05:35:11.1712570Z ##[group]Run actions/checkout@v4
+2025-07-23T05:35:11.1713277Z with:
+2025-07-23T05:35:11.1713556Z   repository: YU-Kawasaki-05/Portfolio
+2025-07-23T05:35:11.1714195Z   token: ***
+2025-07-23T05:35:11.1714415Z   ssh-strict: true
+2025-07-23T05:35:11.1714638Z   ssh-user: git
+2025-07-23T05:35:11.1714861Z   persist-credentials: true
+2025-07-23T05:35:11.1715122Z   clean: true
+2025-07-23T05:35:11.1715360Z   sparse-checkout-cone-mode: true
+2025-07-23T05:35:11.1715628Z   fetch-depth: 1
+2025-07-23T05:35:11.1715852Z   fetch-tags: false
+2025-07-23T05:35:11.1716071Z   show-progress: true
+2025-07-23T05:35:11.1716296Z   lfs: false
+2025-07-23T05:35:11.1716499Z   submodules: false
+2025-07-23T05:35:11.1716723Z   set-safe-directory: true
+2025-07-23T05:35:11.1717174Z env:
+2025-07-23T05:35:11.1717387Z   NODE_VERSION: 18
+2025-07-23T05:35:11.1717604Z   PNPM_VERSION: 8
+2025-07-23T05:35:11.1717829Z ##[endgroup]
+2025-07-23T05:35:11.2837555Z Syncing repository: YU-Kawasaki-05/Portfolio
+2025-07-23T05:35:11.2839076Z ##[group]Getting Git version info
+2025-07-23T05:35:11.2839502Z Working directory is '/home/runner/work/Portfolio/Portfolio'
+2025-07-23T05:35:11.2840476Z [command]/usr/bin/git version
+2025-07-23T05:35:11.2895953Z git version 2.50.1
+2025-07-23T05:35:11.2922687Z ##[endgroup]
+2025-07-23T05:35:11.2937487Z Temporarily overriding HOME='/home/runner/work/_temp/ae529fbf-d374-4229-87fd-2343c82024ea' before making global git config changes
+2025-07-23T05:35:11.2938781Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-23T05:35:11.2943232Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Portfolio/Portfolio
+2025-07-23T05:35:11.2981749Z Deleting the contents of '/home/runner/work/Portfolio/Portfolio'
+2025-07-23T05:35:11.2985640Z ##[group]Initializing the repository
+2025-07-23T05:35:11.2989542Z [command]/usr/bin/git init /home/runner/work/Portfolio/Portfolio
+2025-07-23T05:35:11.3087529Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-07-23T05:35:11.3088520Z hint: is subject to change. To configure the initial branch name to use in all
+2025-07-23T05:35:11.3089400Z hint: of your new repositories, which will suppress this warning, call:
+2025-07-23T05:35:11.3089915Z hint:
+2025-07-23T05:35:11.3090242Z hint: 	git config --global init.defaultBranch <name>
+2025-07-23T05:35:11.3090578Z hint:
+2025-07-23T05:35:11.3090887Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-07-23T05:35:11.3091411Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-07-23T05:35:11.3091817Z hint:
+2025-07-23T05:35:11.3092031Z hint: 	git branch -m <name>
+2025-07-23T05:35:11.3092588Z hint:
+2025-07-23T05:35:11.3092994Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-07-23T05:35:11.3093611Z Initialized empty Git repository in /home/runner/work/Portfolio/Portfolio/.git/
+2025-07-23T05:35:11.3101191Z [command]/usr/bin/git remote add origin https://github.com/YU-Kawasaki-05/Portfolio
+2025-07-23T05:35:11.3138412Z ##[endgroup]
+2025-07-23T05:35:11.3138860Z ##[group]Disabling automatic garbage collection
+2025-07-23T05:35:11.3143013Z [command]/usr/bin/git config --local gc.auto 0
+2025-07-23T05:35:11.3173838Z ##[endgroup]
+2025-07-23T05:35:11.3174492Z ##[group]Setting up auth
+2025-07-23T05:35:11.3181835Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-23T05:35:11.3215765Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-23T05:35:11.3525894Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-23T05:35:11.3559155Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-23T05:35:11.3821980Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-07-23T05:35:11.3866884Z ##[endgroup]
+2025-07-23T05:35:11.3867716Z ##[group]Fetching the repository
+2025-07-23T05:35:11.3876763Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +340ce7a4ebbb69d08a6cf1587b34e43a757bd433:refs/remotes/pull/8/merge
+2025-07-23T05:35:11.9476810Z From https://github.com/YU-Kawasaki-05/Portfolio
+2025-07-23T05:35:11.9477572Z  * [new ref]         340ce7a4ebbb69d08a6cf1587b34e43a757bd433 -> pull/8/merge
+2025-07-23T05:35:11.9516327Z ##[endgroup]
+2025-07-23T05:35:11.9516762Z ##[group]Determining the checkout info
+2025-07-23T05:35:11.9518948Z ##[endgroup]
+2025-07-23T05:35:11.9524532Z [command]/usr/bin/git sparse-checkout disable
+2025-07-23T05:35:11.9562960Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-07-23T05:35:11.9590100Z ##[group]Checking out the ref
+2025-07-23T05:35:11.9594107Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/8/merge
+2025-07-23T05:35:12.0092520Z Note: switching to 'refs/remotes/pull/8/merge'.
+2025-07-23T05:35:12.0092979Z 
+2025-07-23T05:35:12.0093775Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-07-23T05:35:12.0094452Z changes and commit them, and you can discard any commits you make in this
+2025-07-23T05:35:12.0094967Z state without impacting any branches by switching back to a branch.
+2025-07-23T05:35:12.0095261Z 
+2025-07-23T05:35:12.0095495Z If you want to create a new branch to retain commits you create, you may
+2025-07-23T05:35:12.0095956Z do so (now or later) by using -c with the switch command. Example:
+2025-07-23T05:35:12.0096219Z 
+2025-07-23T05:35:12.0096334Z   git switch -c <new-branch-name>
+2025-07-23T05:35:12.0096516Z 
+2025-07-23T05:35:12.0096617Z Or undo this operation with:
+2025-07-23T05:35:12.0096778Z 
+2025-07-23T05:35:12.0096870Z   git switch -
+2025-07-23T05:35:12.0097006Z 
+2025-07-23T05:35:12.0097380Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-07-23T05:35:12.0097892Z 
+2025-07-23T05:35:12.0098473Z HEAD is now at 340ce7a Merge 286a6bc06a468e607fb1f87b911e85407770d1f2 into 6f78980ada28a529860c1563a6f8230f5bc19da5
+2025-07-23T05:35:12.0103210Z ##[endgroup]
+2025-07-23T05:35:12.0144185Z [command]/usr/bin/git log -1 --format=%H
+2025-07-23T05:35:12.0167725Z 340ce7a4ebbb69d08a6cf1587b34e43a757bd433
+2025-07-23T05:35:12.0396625Z ##[group]Run actions/setup-node@v4
+2025-07-23T05:35:12.0396924Z with:
+2025-07-23T05:35:12.0397099Z   node-version: 18
+2025-07-23T05:35:12.0397295Z   always-auth: false
+2025-07-23T05:35:12.0397492Z   check-latest: false
+2025-07-23T05:35:12.0397819Z   token: ***
+2025-07-23T05:35:12.0397990Z env:
+2025-07-23T05:35:12.0398145Z   NODE_VERSION: 18
+2025-07-23T05:35:12.0398330Z   PNPM_VERSION: 8
+2025-07-23T05:35:12.0398505Z ##[endgroup]
+2025-07-23T05:35:12.2251244Z Found in cache @ /opt/hostedtoolcache/node/18.20.8/x64
+2025-07-23T05:35:12.2259082Z ##[group]Environment details
+2025-07-23T05:35:12.5989663Z node: v18.20.8
+2025-07-23T05:35:12.5990205Z npm: 10.8.2
+2025-07-23T05:35:12.5990510Z yarn: 1.22.22
+2025-07-23T05:35:12.5991531Z ##[endgroup]
+2025-07-23T05:35:12.6122693Z ##[group]Run pnpm/action-setup@v2
+2025-07-23T05:35:12.6122993Z with:
+2025-07-23T05:35:12.6123165Z   version: 8
+2025-07-23T05:35:12.6123338Z   dest: ~/setup-pnpm
+2025-07-23T05:35:12.6123539Z   run_install: null
+2025-07-23T05:35:12.6123734Z   package_json_file: package.json
+2025-07-23T05:35:12.6123966Z   standalone: false
+2025-07-23T05:35:12.6124136Z env:
+2025-07-23T05:35:12.6124293Z   NODE_VERSION: 18
+2025-07-23T05:35:12.6124468Z   PNPM_VERSION: 8
+2025-07-23T05:35:12.6124656Z ##[endgroup]
+2025-07-23T05:35:12.7039715Z ##[group]Running self-installer...
+2025-07-23T05:35:13.2729601Z Progress: resolved 1, reused 0, downloaded 0, added 0
+2025-07-23T05:35:13.2824767Z Packages: +1
+2025-07-23T05:35:13.2825229Z +
+2025-07-23T05:35:13.9076479Z Packages are hard linked from the content-addressable store to the virtual store.
+2025-07-23T05:35:13.9077436Z   Content-addressable store is at: /home/runner/.local/share/pnpm/store/v3
+2025-07-23T05:35:13.9078261Z   Virtual store is at:             node_modules/.pnpm
+2025-07-23T05:35:13.9309838Z 
+2025-07-23T05:35:13.9310431Z dependencies:
+2025-07-23T05:35:13.9311024Z + pnpm 8.15.9 (10.13.1 is available)
+2025-07-23T05:35:13.9311331Z 
+2025-07-23T05:35:13.9343331Z Done in 1s
+2025-07-23T05:35:14.2735121Z Progress: resolved 1, reused 0, downloaded 1, added 1, done
+2025-07-23T05:35:14.2877791Z ##[endgroup]
+2025-07-23T05:35:14.2880695Z Installation Completed!
+2025-07-23T05:35:14.2974929Z ##[group]Run pnpm install --frozen-lockfile
+2025-07-23T05:35:14.2975327Z [36;1mpnpm install --frozen-lockfile[0m
+2025-07-23T05:35:14.3008745Z shell: /usr/bin/bash -e {0}
+2025-07-23T05:35:14.3008998Z env:
+2025-07-23T05:35:14.3009171Z   NODE_VERSION: 18
+2025-07-23T05:35:14.3009362Z   PNPM_VERSION: 8
+2025-07-23T05:35:14.3009610Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2025-07-23T05:35:14.3009899Z ##[endgroup]
+2025-07-23T05:35:14.8334549Z  WARN  Ignoring not compatible lockfile at /home/runner/work/Portfolio/Portfolio/pnpm-lock.yaml
+2025-07-23T05:35:14.8357425Z  ERR_PNPM_NO_LOCKFILE  Cannot install with "frozen-lockfile" because pnpm-lock.yaml is absent
+2025-07-23T05:35:14.8357819Z 
+2025-07-23T05:35:14.8358404Z Note that in CI environments this setting is true by default. If you still need to run install in such cases, use "pnpm install --no-frozen-lockfile"
+2025-07-23T05:35:14.8644003Z ##[error]Process completed with exit code 1.
+2025-07-23T05:35:14.8719443Z Post job cleanup.
+2025-07-23T05:35:14.9687142Z Pruning is unnecessary.
+2025-07-23T05:35:14.9811656Z Post job cleanup.
+2025-07-23T05:35:15.0825225Z [command]/usr/bin/git version
+2025-07-23T05:35:15.0869265Z git version 2.50.1
+2025-07-23T05:35:15.0912499Z Temporarily overriding HOME='/home/runner/work/_temp/7d201a4d-0634-4f74-bd05-dc6a7eb656a2' before making global git config changes
+2025-07-23T05:35:15.0913964Z Adding repository directory to the temporary git global config as a safe directory
+2025-07-23T05:35:15.0918378Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Portfolio/Portfolio
+2025-07-23T05:35:15.0955758Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-07-23T05:35:15.0991556Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-07-23T05:35:15.1227679Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-07-23T05:35:15.1249695Z http.https://github.com/.extraheader
+2025-07-23T05:35:15.1262635Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-07-23T05:35:15.1296491Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-07-23T05:35:15.1654621Z Cleaning up orphan processes

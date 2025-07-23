@@ -1,0 +1,136 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - navigation:
+    - link "K KawasakiK":
+      - /url: /
+    - button "メニューを開く"
+- main:
+  - text: Loading 3D Scene...
+  - heading "Latest Works" [level=2]
+  - paragraph: 最新のプロジェクトと制作実績をご紹介します
+  - link "Neo-Typographic Fusion Portfolio Neo-Typographic Fusion Portfolio 3Dタイポグラフィとモダンデザインを融合させたポートフォリオサイト 2025年7月14日 詳細を見る React Three.js TypeScript":
+    - /url: /portfolio/neo-fusion-portfolio
+    - text: Neo-Typographic Fusion Portfolio
+    - heading "Neo-Typographic Fusion Portfolio" [level=3]
+    - paragraph: 3Dタイポグラフィとモダンデザインを融合させたポートフォリオサイト
+    - text: 2025年7月14日 詳細を見る React Three.js TypeScript
+  - link "Interactive 3D Gallery Interactive 3D Gallery WebGLを使用したインタラクティブな3Dギャラリーアプリケーション 2023年11月20日 詳細を見る Three.js WebGL JavaScript":
+    - /url: /portfolio/interactive-3d-gallery
+    - text: Interactive 3D Gallery
+    - heading "Interactive 3D Gallery" [level=3]
+    - paragraph: WebGLを使用したインタラクティブな3Dギャラリーアプリケーション
+    - text: 2023年11月20日 詳細を見る Three.js WebGL JavaScript
+  - link "Motion Design Website Motion Design Website Framer Motionを活用したアニメーション豊富なWebサイト 2023年9月10日 詳細を見る Framer Motion React CSS":
+    - /url: /portfolio/motion-design-website
+    - text: Motion Design Website
+    - heading "Motion Design Website" [level=3]
+    - paragraph: Framer Motionを活用したアニメーション豊富なWebサイト
+    - text: 2023年9月10日 詳細を見る Framer Motion React CSS
+  - link "すべての作品を見る":
+    - /url: /portfolio
+  - heading "Latest Articles" [level=2]
+  - paragraph: 技術記事やプロジェクトの振り返りを発信しています
+  - link "うまく行かないことしかない（事業日記_2025.6.12） うまく行かないことしかない（事業日記_2025.6.12） 初めに ～ これを読んでくれたあなたへ ～ 続きをみる 2025年6月13日 外部記事を読む note.com External":
+    - /url: https://note.com/kawa_04wsdase/n/ndb5f51e5d55c
+    - text: うまく行かないことしかない（事業日記_2025.6.12）
+    - heading "うまく行かないことしかない（事業日記_2025.6.12）" [level=3]
+    - paragraph: 初めに ～ これを読んでくれたあなたへ ～ 続きをみる
+    - text: 2025年6月13日 外部記事を読む note.com External
+  - link "ぐったり（事業日記_2025.6.10） ぐったり（事業日記_2025.6.10） 昨晩先輩に呼ばれ馬場のカラオケ館に行って、そのあと悪乗りで朝まで釣りをしたので体がおわってます。17:00仕事開始。泣いた。 でもめっちゃ楽しかったのでOK。 事業記録 続きをみる 2025年6月11日 外部記事を読む note.com External":
+    - /url: https://note.com/kawa_04wsdase/n/ne44e3c922f5e
+    - text: ぐったり（事業日記_2025.6.10）
+    - heading "ぐったり（事業日記_2025.6.10）" [level=3]
+    - paragraph: 昨晩先輩に呼ばれ馬場のカラオケ館に行って、そのあと悪乗りで朝まで釣りをしたので体がおわってます。17:00仕事開始。泣いた。 でもめっちゃ楽しかったのでOK。 事業記録 続きをみる
+    - text: 2025年6月11日 外部記事を読む note.com External
+  - link "事業日記 (日報_6/7、中身激薄) 事業日記 (日報_6/7、中身激薄) 一日スタート 続きをみる 2025年6月9日 外部記事を読む note.com External":
+    - /url: https://note.com/kawa_04wsdase/n/n83410e1d5538
+    - text: 事業日記 (日報_6/7、中身激薄)
+    - heading "事業日記 (日報_6/7、中身激薄)" [level=3]
+    - paragraph: 一日スタート 続きをみる
+    - text: 2025年6月9日 外部記事を読む note.com External
+  - link "すべての記事を見る":
+    - /url: /blog
+  - heading "Explore" [level=2]
+  - paragraph: 各セクションをご覧いただき、私の活動や実績をご確認ください
+  - link "Profile スキル、経歴、プロフィール情報をご覧いただけます 詳細を見る":
+    - /url: /profile
+    - heading "Profile" [level=3]
+    - paragraph: スキル、経歴、プロフィール情報をご覧いただけます
+    - text: 詳細を見る
+  - link "Portfolio 制作実績とプロジェクトの詳細をご紹介します 詳細を見る":
+    - /url: /portfolio
+    - heading "Portfolio" [level=3]
+    - paragraph: 制作実績とプロジェクトの詳細をご紹介します
+    - text: 詳細を見る
+  - link "Blog 技術記事やプロジェクトの振り返りを発信しています 詳細を見る":
+    - /url: /blog
+    - heading "Blog" [level=3]
+    - paragraph: 技術記事やプロジェクトの振り返りを発信しています
+    - text: 詳細を見る
+  - link "Services 提供サービスと料金プランをご確認いただけます 詳細を見る":
+    - /url: /services
+    - heading "Services" [level=3]
+    - paragraph: 提供サービスと料金プランをご確認いただけます
+    - text: 詳細を見る
+  - link "SNS ソーシャルメディアでの活動と最新情報をお届けします 詳細を見る":
+    - /url: /sns
+    - heading "SNS" [level=3]
+    - paragraph: ソーシャルメディアでの活動と最新情報をお届けします
+    - text: 詳細を見る
+  - paragraph: ご質問やお仕事のご依頼は、各ページのお問い合わせフォームからお気軽にどうぞ
+- contentinfo:
+  - text: K
+  - heading "KawasakiK" [level=3]
+  - paragraph: 広範な生成AI知識と開発知見を活用し開発した川崎Kの個人サイト。 React、Next.js、Three.jsを使用したWebエクスペリエンス。
+  - link "GitHub":
+    - /url: https://github.com/YU-Kawasaki-05
+  - link "X":
+    - /url: https://x.com/foooten_
+  - link "LinkedIn":
+    - /url: https://www.linkedin.com/in/yu-kawasaki-a05441296/
+  - link "Email":
+    - /url: mailto:contact@neo-fusion.dev
+  - heading "Navigation" [level=4]
+  - list:
+    - listitem:
+      - link "Home ホーム":
+        - /url: /
+    - listitem:
+      - link "Works 事例と実績":
+        - /url: /portfolio
+    - listitem:
+      - link "Blog ブログ":
+        - /url: /blog
+    - listitem:
+      - link "Profile プロフィール":
+        - /url: /profile
+  - heading "Services" [level=4]
+  - list:
+    - listitem:
+      - link "Services サービス":
+        - /url: /services
+    - listitem:
+      - link "SNS ソーシャル":
+        - /url: /sns
+  - heading "Resources" [level=4]
+  - list:
+    - listitem:
+      - link "Tech Blog 技術ブログ":
+        - /url: /blog
+    - listitem:
+      - link "Consulting コンサルティング":
+        - /url: /services
+  - paragraph: © 2025 KawasakiK. All rights reserved.
+  - link "Privacy Policy":
+    - /url: /privacy
+  - link "Terms of Service":
+    - /url: /terms
+  - text: Made with ❤️ and ☕ in Tokyo
+- button "モーションを無効化":
+  - img
+- alert
+- button "Open Next.js Dev Tools":
+  - img
+```

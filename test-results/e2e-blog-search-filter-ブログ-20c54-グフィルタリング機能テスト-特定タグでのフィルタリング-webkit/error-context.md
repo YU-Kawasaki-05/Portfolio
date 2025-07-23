@@ -1,0 +1,110 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - navigation:
+    - link "K KawasakiK":
+      - /url: /
+    - link "Home":
+      - /url: /
+    - link "Works":
+      - /url: /portfolio
+    - link "Blog":
+      - /url: /blog
+    - link "Profile":
+      - /url: /profile
+    - link "Services":
+      - /url: /services
+    - link "SNS":
+      - /url: /sns
+- main:
+  - heading "Blog" [level=1]
+  - paragraph: 技術記事やプロジェクトの振り返り、外部記事も含めて発信しています
+  - text: 3 ローカル記事 12 note.com記事 14 タグ数
+  - textbox "記事を検索..."
+  - combobox:
+    - option "すべてのタグ"
+    - option "3D"
+    - option "CSS"
+    - option "External"
+    - option "Flexbox"
+    - option "Frontend"
+    - option "Grid"
+    - option "Next.js"
+    - option "Optimization"
+    - option "Performance"
+    - option "React" [selected]
+    - option "Three.js"
+    - option "Tutorial"
+    - option "WebGL"
+    - option "note.com"
+  - paragraph: "2件の記事が見つかりました (タグ: React)"
+  - link "React Three Fiberの基礎 React Three Fiberの基礎 React Three Fiberを使ってWebGL 3Dシーンを作成する方法を解説します 2024年1月10日 読む React Three.js WebGL +2":
+    - /url: /blog/react-three-fiber-basics
+    - text: React Three Fiberの基礎
+    - heading "React Three Fiberの基礎" [level=3]
+    - paragraph: React Three Fiberを使ってWebGL 3Dシーンを作成する方法を解説します
+    - text: 2024年1月10日 読む React Three.js WebGL +2
+  - link "Next.js パフォーマンス最適化ガイド Next.js パフォーマンス最適化ガイド Next.jsアプリケーションのパフォーマンスを向上させるテクニックをまとめました 2023年12月15日 読む Next.js Performance Optimization +1":
+    - /url: /blog/nextjs-performance-optimization
+    - text: Next.js パフォーマンス最適化ガイド
+    - heading "Next.js パフォーマンス最適化ガイド" [level=3]
+    - paragraph: Next.jsアプリケーションのパフォーマンスを向上させるテクニックをまとめました
+    - text: 2023年12月15日 読む Next.js Performance Optimization +1
+  - button "前へ"
+  - text: "1"
+  - button "次へ"
+- contentinfo:
+  - text: K
+  - heading "KawasakiK" [level=3]
+  - paragraph: 広範な生成AI知識と開発知見を活用し開発した川崎Kの個人サイト。 React、Next.js、Three.jsを使用したWebエクスペリエンス。
+  - link "GitHub":
+    - /url: https://github.com/YU-Kawasaki-05
+  - link "X":
+    - /url: https://x.com/foooten_
+  - link "LinkedIn":
+    - /url: https://www.linkedin.com/in/yu-kawasaki-a05441296/
+  - link "Email":
+    - /url: mailto:contact@neo-fusion.dev
+  - heading "Navigation" [level=4]
+  - list:
+    - listitem:
+      - link "Home ホーム":
+        - /url: /
+    - listitem:
+      - link "Works 事例と実績":
+        - /url: /portfolio
+    - listitem:
+      - link "Blog ブログ":
+        - /url: /blog
+    - listitem:
+      - link "Profile プロフィール":
+        - /url: /profile
+  - heading "Services" [level=4]
+  - list:
+    - listitem:
+      - link "Services サービス":
+        - /url: /services
+    - listitem:
+      - link "SNS ソーシャル":
+        - /url: /sns
+  - heading "Resources" [level=4]
+  - list:
+    - listitem:
+      - link "Tech Blog 技術ブログ":
+        - /url: /blog
+    - listitem:
+      - link "Consulting コンサルティング":
+        - /url: /services
+  - paragraph: © 2025 KawasakiK. All rights reserved.
+  - link "Privacy Policy":
+    - /url: /privacy
+  - link "Terms of Service":
+    - /url: /terms
+  - text: Made with ❤️ and ☕ in Tokyo
+- button "モーションを無効化":
+  - img
+- alert
+- button "Open Next.js Dev Tools":
+  - img
+```
