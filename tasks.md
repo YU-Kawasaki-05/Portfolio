@@ -270,9 +270,9 @@ Home: ✅ 完全 (components, hooks, utils, types, __tests__, __stories__, data,
 ### 5A.5 Storybook 動作確認
 | ID      | Task                                                         | Done |
 | ------- | ------------------------------------------------------------ | :--: |
-| **5G6** | Storybook 起動確認 (`pnpm storybook`) - エラー修正 |  ☐   |
-| **5G7** | 全ストーリー表示確認 - コンポーネント別動作テスト |  ☐   |
-| **5G8** | アクセシビリティテスト (a11y addon) 動作確認 |  ☐   |
+| **5G6** | Storybook 起動確認 (`pnpm storybook`) - エラー修正 |  ☑   |
+| **5G7** | 全ストーリー表示確認 - コンポーネント別動作テスト |  ☑   |
+| **5G8** | アクセシビリティテスト (a11y addon) 動作確認 |  ☑   |
 
 ### 5A.6 E2E テスト実行
 | ID      | Task                                                         | Done |
